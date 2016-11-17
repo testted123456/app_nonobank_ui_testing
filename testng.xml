@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="com.nonobank.apps.listener.TestngListener" /> 
+		<listener class-name="org.testng.reporters.FailedReporter" /> 
+		<listener class-name="com.nonobank.apps.listener.TestngRetryListener" /> 
+	</listeners>
+ 	<test name="user">
+		<classes>
+			<!-- <class name="com.nonobank.apps.testcase.mxd.user.Login"></class>
+			<class name="com.nonobank.apps.testcase.mxd.user.EmergencyBorrow"></class>
+			<class name="com.nonobank.apps.testcase.mxd.user.Register"></class> -->
+			<class name="com.nonobank.apps.testcase.mxd.user.LargeBorrow"></class>  
+			<!-- <class name="com.nonobank.apps.testcase.mxd.user.Register"></class> -->
+		</classes>
+	</test>  
+<!-- 	<test name="loginRegister">
+		<classes>
+			<class name="com.nonobank.apps.testcase.mxd.loginRegister.ForgetGesturePassword"></class>
+ 			<class name="com.nonobank.apps.testcase.mxd.loginRegister.LoginByErrorPassword"></class>
+			<class name="com.nonobank.apps.testcase.mxd.loginRegister.NoLoginState"></class>
+			<class name="com.nonobank.apps.testcase.mxd.loginRegister.RegisterByException"></class>
+			<class name="com.nonobank.apps.testcase.mxd.loginRegister.RegisterProtocol"></class> 
+		</classes>
+	</test> -->
+</suite> 
