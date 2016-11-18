@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="用户名">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/mine_user_name']</prop>
+	</element>
+	<element name="设置图标">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/mine_setting_entrance']</prop>
+	</element>
+	<element name="邮件图标">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_icon_message']</prop>
+	</element>
+	<element name="头像图标">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_user_avatar']</prop>
+	</element>
+	<element name="累计收益金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_total_earns']</prop>
+	</element>
+	<element name="累计收益显示按钮">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/amount_eye']</prop>
+	</element>
+	<element name="总资产">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_total_asset']</prop>
+	</element>
+	<element name="可用余额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_total_balance']</prop>
+	</element>
+	<element name="充值">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/mine_recharge']</prop>
+	</element>
+	<element name="提现">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/mine_takecash']</prop>
+	</element>
+	<element name="诺诺钱包">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_wallet_image']</prop>
+	</element>
+	<element name="投资记录">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_invest']</prop>
+	</element>
+	<element name="我的福利">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_walfare']</prop>
+	</element>
+	<element name="我的债权">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_creditor_right_transfer']</prop>
+	</element>
+	<element name="银行卡管理">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_bankcard']</prop>
+	</element>
+	<element name="我的客服">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_customer_service']</prop>
+	</element>
+</elements>

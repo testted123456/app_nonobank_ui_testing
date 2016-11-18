@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="跑马灯">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/top_bar_one']</prop>
+	</element>
+	<element name="邀请有礼">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/top_bar_two']</prop>
+	</element>
+	<element name="攒钱活动">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/top_bar_three']</prop>
+	</element>
+	<element name="安全保障">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/top_bar_four']</prop>
+	</element>
+	
+</elements>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="页面标题">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/title_name']</prop>
+	</element>
+	<element name="返回按钮">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageButton[@resource-id='com.nonoapp:id/back_btn']</prop>
+	</element>
+	<element name="页面右侧标题">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageButton[@resource-id='com.nonoapp:id/text_right']</prop>
+	</element>
+	<element name="我的">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rBtn_mine']</prop>
+	</element>
+	<element name="发现">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rBtn_find']</prop>
+	</element>
+	<element name="发现消息数量">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_find_msg_count']</prop>
+	</element>
+	<element name="产品">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rBtn_product']</prop>
+	</element>
+	<element name="首页">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rBtn_home']</prop>
+	</element>
+	
+</elements>

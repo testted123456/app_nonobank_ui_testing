@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="请输入手机号/麦子通行证">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_telephone']</prop>
+	</element>
+	<element name="登录密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_password']</prop>
+	</element>
+	<element name="密码显示键">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/login_password_eye']</prop>
+	</element>
+	<element name="忘记密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/tv_find_password']</prop>
+	</element>
+	<element name="登录">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/login_btn']</prop>
+	</element>
+</elements>
