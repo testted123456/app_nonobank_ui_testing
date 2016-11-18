@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="默认">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rbtn_tab1']</prop>
+	</element>
+	<element name="期限">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rbtn_tab2']</prop>
+	</element>
+	<element name="收益">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rbtn_tab3']</prop>
+	</element>
+	<element name="listView">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ListView[@resource-id='android:id/list']</prop>
+	</element>
+	
+	
+	
+</elements>

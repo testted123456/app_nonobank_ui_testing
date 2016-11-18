@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="预期年化收益">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_rate']</prop>
+	</element>
+	<element name="项目金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_amount']</prop>
+	</element>
+	<element name="项目期限">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_expect']</prop>
+	</element>
+	<element name="起投金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_start_money']</prop>
+	</element>
+	<element name="项目进度">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_schedule_text']</prop>
+	</element>
+	<element name="收益说明">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_earnings_intro']</prop>
+	</element>
+	<element name="保障方式">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/product_detail_security_mode']</prop>
+	</element>
+	<element name="产品介绍">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_product_intro_entrance']</prop>
+	</element>
+	<element name="投资金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_invest_count']</prop>
+	</element>
+	<element name="投资金额减号">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_product_cut']</prop>
+	</element>
+	<element name="投资金额加号">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_product_add']</prop>
+	</element>
+	<element name="预期收益">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_expect_earning']</prop>
+	</element>
+	<element name="剩余可投">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_residue_invest_amount']</prop>
+	</element>
+	<element name="马上投资">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_invest_product']</prop>
+	</element>
+	
+</elements>

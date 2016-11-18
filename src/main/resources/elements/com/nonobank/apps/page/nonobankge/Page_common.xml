@@ -4,6 +4,10 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/title_name']</prop>
 	</element>
+	<element name="页面标题2">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/tv_title']</prop>
+	</element>
 	<element name="返回按钮">
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.ImageButton[@resource-id='com.nonoapp:id/back_btn']</prop>

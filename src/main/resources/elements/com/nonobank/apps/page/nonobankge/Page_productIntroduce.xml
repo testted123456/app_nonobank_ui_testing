@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="计划介绍">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@text='计划介绍']</prop>
+	</element>
+	<element name="计划总结">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_tips']</prop>
+	</element>
+	<element name="投资及收益率">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_invest_info']</prop>
+	</element>
+	<element name="如何获得收益">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_profit_info']</prop>
+	</element>
+	<element name="退出方式">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_quit_info']</prop>
+	</element>
+	<element name="退出手续费">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_fee_info']</prop>
+	</element>
+	<element name="计息时间">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_profit_start_time']</prop>
+	</element>
+	<element name="收款方式">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_collection_mode']</prop>
+	</element>
+	<element name="帮助中心">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_help_center']</prop>
+	</element>
+	<element name="服务协议">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_open_agreement']</prop>
+	</element>
+	<element name="购买记录">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RadioButton[@@text='购买记录']</prop>
+	</element>
+</elements>
