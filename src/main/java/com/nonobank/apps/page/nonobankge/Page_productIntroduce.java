@@ -62,9 +62,14 @@ public class Page_productIntroduce extends BasePage{
 		return collectionMode;
 	}
 	public void click_helpCenter(){
-		
+		logger.info("[Page]点击帮助中心。。。。。。");
+		WebElement element = objectRepository.getWebElement("帮助中心");
+		element.click();
 	}
-	
-	
+	public void click_serviceProtocol(){
+		logger.info("[Page]点击服务协议。。。。。。");
+		WebElement element = objectRepository.getWebElement("服务协议");
+		element.click();
+	}
 	
 }

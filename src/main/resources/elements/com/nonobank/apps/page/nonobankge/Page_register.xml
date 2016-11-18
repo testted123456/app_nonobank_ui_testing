@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <elements>
-	<element name="请输入手机号/麦子通行证">
+	<element name="请输入手机号">
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_telephone']</prop>
 	</element>
-	<element name="登录密码">
+	<element name="请输入图片验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_safe_code']</prop>
+	</element>
+	<element name="图片验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_get_safecode_picture']</prop>
+	</element>
+	<element name="获取验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_get_verification_code']</prop>
+	</element>
+	<element name="请输入短信验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/et_verification_code']</prop>
+	</element>
+	<element name="请输入邀请码(选填)">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_invitation_code']</prop>
+	</element>
+	<element name="请输入密码">
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_password']</prop>
 	</element>
-	<element name="密码显示键">
+	<element name="密码显示按钮">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/login_password_eye']</prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/register_password_eye']</prop>
 	</element>
-	<element name="忘记密码">
+	<element name="注册">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/tv_find_password']</prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/register_btn']</prop>
 	</element>
-	<element name="登录">
+	<element name="登录>">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/login_btn']</prop>
+		<prop name="android">//android.widget.TextView[@text='登录>']</prop>
 	</element>
 </elements>

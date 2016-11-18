@@ -4,6 +4,10 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/ll_nnwallet_entrance']</prop>
 	</element>
+	<element name="诺诺钱包利息">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_nnmoney_rate']</prop>
+	</element>
 	<element name="新客专区">
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_xkzq_entrance']</prop>
