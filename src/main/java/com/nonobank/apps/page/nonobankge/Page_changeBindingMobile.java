@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import com.nonobank.apps.page.base.BasePage;
 
 public class Page_changeBindingMobile extends BasePage{
-	public static Logger logger = LogManager.getLogger(Page_ChangeBindingMobile.class);
+	public static Logger logger = LogManager.getLogger(Page_changeBindingMobile.class);
 
 	public void input_mobile(String mobile){
 		logger.info("[Page]输入要绑定的手机。。。。。。");
