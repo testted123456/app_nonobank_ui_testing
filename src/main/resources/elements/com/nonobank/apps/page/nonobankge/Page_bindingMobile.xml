@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="当前绑定手机">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_bindphone_number']</prop>
+	</element>
+	<element name="请输入登录密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindphone_pwd']</prop>
+	</element>
+	<element name="更换绑定">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_bindphone_change_number']</prop>
+	</element>
+	<element name="小提示">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='更换绑定手机号后，您的原来手机号码将被重置到未认证状态，再次登录请使用新手机号码，密码不变。']</prop>
+	</element>
+	
+</elements>

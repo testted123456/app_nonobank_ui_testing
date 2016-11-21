@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="请输入要绑定的手机号">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_changephone_number']</prop>
+	</element>
+	<element name="发送验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_changephone_send_yzm']</prop>
+	</element>
+	<element name="验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_changephone_yzm']</prop>
+	</element>
+	<element name="去验证">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_changephone_validate']</prop>
+	</element>
+	
+</elements>

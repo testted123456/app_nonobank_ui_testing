@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="登录密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_setting_login_pwd']</prop>
+	</element>
+	<element name="支付密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_setting_pay_pwd']</prop>
+	</element>
+	<element name="手势密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_setting_gesture']</prop>
+	</element>
+	<element name="手势密码开关">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.CheckBox[@resource-id='com.nonoapp:id/cbox_setting_gesture']</prop>
+	</element>
+</elements>

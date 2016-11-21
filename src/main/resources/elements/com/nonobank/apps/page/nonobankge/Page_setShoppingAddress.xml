@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="省份">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Spinner[@resource-id='com.nonoapp:id/address_sp_province']</prop>
+	</element>
+	<element name="城市">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Spinner[@resource-id='com.nonoapp:id/address_sp_city']</prop>
+	</element>
+	<element name="详细地址">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_address_detail']</prop>
+	</element>
+	<element name="提交">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_submit_address']</prop>
+	</element>
+</elements>
