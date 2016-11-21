@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import com.nonobank.apps.page.base.BasePage;
 
 
-public class Page_xkzq extends BasePage{
-	public static Logger logger = LogManager.getLogger(Page_xkzq.class);
+public class Page_productList extends BasePage{
+	public static Logger logger = LogManager.getLogger(Page_productList.class);
 	
 	public void click_byProductName(String productName){
 		logger.info("【Page】通过产品名点击。。。。");
