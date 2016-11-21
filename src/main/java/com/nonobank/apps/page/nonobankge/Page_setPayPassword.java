@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 
 import com.nonobank.apps.page.base.BasePage;
 
-public class Page_payment_password extends BasePage{
+public class Page_setPayPassword extends BasePage{
 	
-public static Logger logger = LogManager.getLogger(Page_payment_password.class);
+public static Logger logger = LogManager.getLogger(Page_setPayPassword.class);
 	
 	public void input_password(String password){
 		logger.info("[Page]输入支付密码。。。。。。");
