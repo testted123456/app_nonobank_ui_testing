@@ -19,6 +19,15 @@ public class Page_findPassword extends BasePage {
 		WebElement element = objectRepository.getWebElement("获取验证码");
 		element.sendKeys(smsCode);
 	}
-	
+	public void input_idCard(String idCard){
+		logger.info("[Page]输入身份证号。。。。。。");
+		WebElement element = objectRepository.getWebElement("请输入身份证号");
+		element.sendKeys(idCard);
+	}
+	public void click_submit(){
+		logger.info("[Page]点击提交。。。。。。");
+		WebElement element = objectRepository.getWebElement("提交");
+		element.click();
+	}
 	
 }
