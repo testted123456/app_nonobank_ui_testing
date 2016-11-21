@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="债权列表">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='债权列表']</prop>
+	</element>
+	<element name="债转记录">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='债转记录']</prop>
+	</element>
+</elements>

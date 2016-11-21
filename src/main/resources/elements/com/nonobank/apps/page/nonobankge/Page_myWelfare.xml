@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="现金券">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='现金券']</prop>
+	</element>
+	<element name="加息券">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='加息券']</prop>
+	</element>
+	<element name="特权本金">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='特权本金']</prop>
+	</element>
+	<element name="我的诺币">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='我的诺币']</prop>
+	</element>
+	<element name="现金红包">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='现金红包']</prop>
+	</element>
+</elements>
