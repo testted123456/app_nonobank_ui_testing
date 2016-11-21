@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="姓名">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_name']</prop>
+	</element>
+	<element name="身份证号码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_card_no']</prop>
+	</element>
+	<element name="实名认证">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_auth']</prop>
+	</element>	
+	<element name="小提示">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='个人信息一旦确认将不可更改']</prop>
+	</element>	
+	<element name="弹窗-提示信息">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='个人信息一旦确认将不可更改，请核对信息是否正确']</prop>
+	</element>	
+	<element name="弹窗-姓名">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_name']</prop>
+	</element>	
+	<element name="弹窗-身份证号码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_idcard']</prop>
+	</element>	
+	<element name="弹窗-返回修改">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_left']</prop>
+	</element>	
+	<element name="弹窗-确定">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_right']</prop>
+	</element>
+	
+</elements>
