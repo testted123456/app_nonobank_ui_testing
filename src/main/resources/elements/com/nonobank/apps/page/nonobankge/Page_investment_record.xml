@@ -4,6 +4,10 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.TextView[@text='计划类']</prop>
 	</element>
+	<element name="诺诺盈">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='诺诺盈']</prop>
+	</element>
 	<element name="债转类">
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.TextView[@text='债转类']</prop>

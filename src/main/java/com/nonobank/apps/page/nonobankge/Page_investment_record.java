@@ -16,9 +16,17 @@ public class Page_investment_record extends BasePage{
 		element.click();
 	}
 	
+	public void click_nonoying_class(){
+		logger.info("【Page】点击诺诺盈。。。。。。");
+		WebElement element = objectRepository.getWebElement("诺诺盈");
+		element.click();
+	}
+	
 	public void click_debtswap_class(){
 		logger.info("【Page】点击债转类。。。。。。");
 		WebElement element = objectRepository.getWebElement("债转类");
 		element.click();
 	}
+	
+
 }
