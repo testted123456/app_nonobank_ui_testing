@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="商城">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_market']</prop>
+	</element>
+	<element name="社区">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_community']</prop>
+	</element>
+	<element name="活动">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/com.nonoapp:id/find_unit_activity']</prop>
+	</element>
+	<element name="娱乐">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_entertainment']</prop>
+	</element>
+	<element name="直播">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_discussion']</prop>
+	</element>
+	<element name="名校贷">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_mxd']</prop>
+	</element>
+	
+</elements>
