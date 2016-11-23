@@ -50,10 +50,10 @@
 	</element>
 	<element name="诺币">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_walfare']</prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/market_main_privilege_nuobi_lin']</prop>
 	</element>
 	<element name="兑换记录">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/mine_unit_creditor_right_transfer']</prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/market_main_privilege_exchange']</prop>
 	</element>
 </elements>
