@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="底层区域">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/ll_bottom_area']</prop>
+	</element>
+	<element name="索引1">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_index_a']</prop>
+	</element>
+	<element name="索引2">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_index_b']</prop>
+	</element>
+	<element name="索引3">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_index_c']</prop>
+	</element>
+	<element name="索引4">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_index_d']</prop>
+	</element>
+	
+</elements>

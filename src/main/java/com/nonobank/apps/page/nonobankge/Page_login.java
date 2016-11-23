@@ -29,12 +29,16 @@ public class Page_login extends BasePage{
 		WebElement element = objectRepository.getWebElement("忘记密码");
 		element.click();
 	}
-	public void click_forget_login(){
+	public void click_login(){
 		logger.info("[Page]点击登录。。。。。。");
 		WebElement element = objectRepository.getWebElement("登录");
 		element.click();
 	}
-	
+	public boolean isExist_login(){
+		logger.info("[Page]登录按钮是否存在。。。。。。");
+		boolean isExist_login=objectRepository.isElementExists("登录", 5);
+		return isExist_login;
+	}
 	
 	
 }

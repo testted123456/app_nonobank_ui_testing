@@ -42,6 +42,16 @@ public class Page_common extends BasePage{
 		WebElement element = objectRepository.getWebElement("我的");
 		element.click();
 	}
+	public boolean isExist_me(){
+		logger.info("[Page]我的是否存在。。。。。。");
+		boolean isExist_me=objectRepository.isElementExists("我的", 5);
+		return isExist_me;
+	}
+	public boolean is_me_displayed(){
+		logger.info("[Page]我的是否显示。。。。。。");
+		WebElement element = objectRepository.getWebElement("我的");
+		return element.isDisplayed();
+	}
 	public void click_find(){
 		logger.info("[Page]点击发现。。。。。。");
 		WebElement element = objectRepository.getWebElement("发现");
