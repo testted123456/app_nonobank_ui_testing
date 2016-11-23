@@ -24,5 +24,20 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_mxd']</prop>
 	</element>
-	
+	<element name="公司介绍">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_company_intro']</prop>
+	</element>
+	<element name="运营数据">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_data']</prop>
+	</element>
+	<element name="新手课堂">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_newbee']</prop>
+	</element>
+	<element name="公司新闻">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/find_unit_company_news']</prop>
+	</element>
 </elements>
