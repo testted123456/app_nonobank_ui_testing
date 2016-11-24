@@ -29,7 +29,7 @@ public class Page_login extends BasePage{
 		WebElement element = objectRepository.getWebElement("忘记密码");
 		element.click();
 	}
-	public void click_forget_login(){
+	public void click_login(){
 		logger.info("[Page]点击登录。。。。。。");
 		WebElement element = objectRepository.getWebElement("登录");
 		element.click();

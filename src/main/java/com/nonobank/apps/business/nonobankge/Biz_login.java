@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.nonobank.apps.page.nonobankge.Page_login;
-import com.nonobank.apps.page.nonobankge.Page_register;
 import com.nonobank.apps.testcase.base.BaseCase;
 
 public class Biz_login extends BaseCase {
