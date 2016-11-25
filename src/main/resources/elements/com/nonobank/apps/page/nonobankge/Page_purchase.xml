@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="购买金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_invest_amount']</prop>
+	</element>
+	<element name="预期年化">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_rate']</prop>
+	</element>
+	<element name="投资期限">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_time']</prop>
+	</element>
+	<element name="预期收益">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_earn']</prop>
+	</element>
+	<element name="付款方式">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_content_bankcard1']</prop>
+	</element>
+	<element name="现金券">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_content_cash']</prop>
+	</element>
+	<element name="加息券">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_content_rate']</prop>
+	</element>
+	<element name="待支付金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/api_tv_amount_needpay']</prop>
+	</element>
+	<element name="确认支付">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/api_btn_pay']</prop>
+	</element>
+	
+</elements>

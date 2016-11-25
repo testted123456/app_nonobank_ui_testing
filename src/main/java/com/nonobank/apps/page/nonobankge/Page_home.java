@@ -15,7 +15,7 @@ public class Page_home extends BasePage{
 		element.click();
 	}
 	public void click_top_bar_two(){
-		logger.info("[Page]点击跑马灯。。。。。。");
+		logger.info("[Page]点击邀请有礼。。。。。。");
 		WebElement element = objectRepository.getWebElement("邀请有礼");
 		element.click();
 	}

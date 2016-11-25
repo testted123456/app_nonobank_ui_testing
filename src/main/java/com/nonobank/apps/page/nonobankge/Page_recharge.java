@@ -16,16 +16,17 @@ public class Page_recharge extends BasePage{
 		return popUp;
 	}
 	
-	public void click_settingIcon(){
+	public void click_CPM_settingIcon(){
 		logger.info("[Page]点击弹窗-立即设置。。。。。。");
 		WebElement element = objectRepository.getWebElement("弹窗-立即设置");
 		element.click();
 	}
 	
-	public String getText_balance(){
+	public double getText_balance(){
 		logger.info("[Page]获取账户余额。。。。。。");
 		WebElement element = objectRepository.getWebElement("账户余额");
-		String balance=element.getText();
+		String balance_str=element.getText();
+		double balance=Double.parseDouble(balance_str);
 		return balance;
 	}
 	

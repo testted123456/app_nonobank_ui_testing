@@ -10,16 +10,16 @@ public class Page_setPayPassword extends BasePage{
 	
 public static Logger logger = LogManager.getLogger(Page_setPayPassword.class);
 	
-	public void input_password(String password){
+	public void input_password(String payPassword){
 		logger.info("[Page]输入支付密码。。。。。。");
 		WebElement element = objectRepository.getWebElement("支付密码");
-		element.sendKeys(password);
+		element.sendKeys(payPassword);
 	}
 	
-	public void input_confirmPassword(String password){
+	public void input_confirmPassword(String payPassword_second){
 		logger.info("[Page]确认支付密码。。。。。。");
 		WebElement element = objectRepository.getWebElement("确认支付密码");
-		element.sendKeys(password);
+		element.sendKeys(payPassword_second);
 	}
 	
 	public void click_confirm(){

@@ -14,10 +14,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("诺诺钱包");
 		element.click();
 	}
-	public String getText_nnmoney_rate(){
+	public double getText_nnmoney_rate(){
 		logger.info("[Page]获取诺诺钱包利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("诺诺钱包利息");
-		String nnmoney_rate=element.getText();
+		String nnmoney_rate_str=element.getText();
+		double nnmoney_rate=Double.parseDouble(nnmoney_rate_str);
 		return nnmoney_rate;
 	}
 	public void click_xkzq(){
@@ -25,10 +26,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("新客专区");
 		element.click();
 	}
-	public String getText_xkzq_rate(){
+	public double getText_xkzq_rate(){
 		logger.info("[Page]获取新客专区利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("新客专区利息");
-		String xkzq_rate=element.getText();
+		String xkzq_rate_str=element.getText();
+		double xkzq_rate=Double.parseDouble(xkzq_rate_str);
 		return xkzq_rate;
 	}
 	public void click_yys(){
@@ -36,10 +38,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("月月升");
 		element.click();
 	}
-	public String getText_yys_rate(){
+	public double getText_yys_rate(){
 		logger.info("[Page]获取月月升利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("月月升利息");
-		String yys_rate=element.getText();
+		String yys_rate_str=element.getText();
+		double yys_rate=Double.parseDouble(yys_rate_str);
 		return yys_rate;
 	}
 	public void click_dqtz(){
@@ -47,10 +50,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("短期投资");
 		element.click();
 	}
-	public String getText_dqtz_rate(){
+	public double getText_dqtz_rate(){
 		logger.info("[Page]获取短期投资利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("短期投资利息");
-		String dqtz_rate=element.getText();
+		String dqtz_rate_str=element.getText();
+		double dqtz_rate=Double.parseDouble(dqtz_rate_str);
 		return dqtz_rate;
 	}
 	public void click_cqtz(){
@@ -58,10 +62,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("长期投资");
 		element.click();
 	}
-	public String getText_cqtz_rate(){
+	public double getText_cqtz_rate(){
 		logger.info("[Page]获取长期投资利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("长期投资利息");
-		String cqtz_rate=element.getText();
+		String cqtz_rate_str=element.getText();
+		double cqtz_rate=Double.parseDouble(cqtz_rate_str);
 		return cqtz_rate;
 	}
 	public void click_tstz(){
@@ -69,10 +74,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("特色投资");
 		element.click();
 	}
-	public String getText_tstz_rate(){
+	public double getText_tstz_rate(){
 		logger.info("[Page]获取特色投资利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("特色投资利息");
-		String tstz_rate=element.getText();
+		String tstz_rate_str=element.getText();
+		double tstz_rate=Double.parseDouble(tstz_rate_str);
 		return tstz_rate;
 	}
 	public void click_zzzq(){
@@ -80,10 +86,11 @@ public class Page_product extends BasePage{
 		WebElement element = objectRepository.getWebElement("债转专区");
 		element.click();
 	}
-	public String getText_zzzq_rate(){
+	public double getText_zzzq_rate(){
 		logger.info("[Page]获取债转专区利息。。。。。。");
 		WebElement element = objectRepository.getWebElement("债转专区利息");
-		String zzzq_rate=element.getText();
+		String zzzq_rate_str=element.getText();
+		double zzzq_rate=Double.parseDouble(zzzq_rate_str);
 		return zzzq_rate;
 	}
 	

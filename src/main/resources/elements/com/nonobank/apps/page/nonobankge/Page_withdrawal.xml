@@ -24,4 +24,21 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_take_cash_next']</prop>
 	</element>
+	<element name="弹窗-提现金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/dw_tv_amount']</prop>
+	</element>
+	<element name="弹窗-输入支付密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_dialog_paypwd']</prop>
+	</element>
+	<element name="弹窗-忘记密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_dialog_forget']</prop>
+	</element>
+	<element name="弹窗-确定">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_dialog_confirm']</prop>
+	</element>
+	
 </elements>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="支付金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_balance']</prop>
+	</element>
+	<element name="付款方式">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_bankcard']</prop>
+	</element>
+	<element name="银行限额信息">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_bank_desc']</prop>
+	</element>
+	<element name="下一步">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_next']</prop>
+	</element>
+	<element name="弹窗-充值金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/dw_tv_amount']</prop>
+	</element>
+	<element name="弹窗-请输入支付密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_dialog_paypwd']</prop>
+	</element>
+	<element name="弹窗-忘记密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_dialog_paypwd']</prop>
+	</element>
+	<element name="弹窗-确定">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_dialog_confirm']</prop>
+	</element>
+	<element name="弹窗-提示信息">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_content']</prop>
+	</element>
+	<element name="弹窗-验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_quick_pay_dyn']</prop>
+	</element>
+	<element name="弹窗-确认充值">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_quick_pay']</prop>
+	</element>
+	
+	
+</elements>

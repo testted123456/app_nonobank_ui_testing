@@ -30,10 +30,11 @@ public class Page_me extends BasePage{
 		WebElement element = objectRepository.getWebElement("头像图标");
 		element.click();
 	}
-	public String getText_total_earns(){
+	public double getText_total_earns(){
 		logger.info("[Page]获取累计收益金额。。。。。。");
 		WebElement element = objectRepository.getWebElement("累计收益金额");
-		String total_earns=element.getText();
+		String total_earns_str=element.getText();
+		double total_earns=Double.parseDouble(total_earns_str);
 		return total_earns;
 	}
 	public void click_amount_eye(){
@@ -41,16 +42,18 @@ public class Page_me extends BasePage{
 		WebElement element = objectRepository.getWebElement("累计收益显示按钮");
 		element.click();
 	}
-	public String getText_total_asset(){
+	public double getText_total_asset(){
 		logger.info("[Page]获取总资产。。。。。。");
 		WebElement element = objectRepository.getWebElement("总资产");
-		String total_asset=element.getText();
+		String total_asset_str=element.getText();
+		double total_asset=Double.parseDouble(total_asset_str);
 		return total_asset;
 	}
-	public String getText_total_balance(){
+	public double getText_total_balance(){
 		logger.info("[Page]获取可用余额。。。。。。");
 		WebElement element = objectRepository.getWebElement("可用余额");
-		String total_balance=element.getText();
+		String total_balance_str=element.getText();
+		double total_balance=Double.parseDouble(total_balance_str);
 		return total_balance;
 	}
 	public void click_recharge(){

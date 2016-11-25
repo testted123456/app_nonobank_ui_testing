@@ -9,24 +9,27 @@ import com.nonobank.apps.page.base.BasePage;
 public class Page_nonopurse extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_nonopurse.class);
 	
-	public String getText_yesterdayEarn(){
+	public double getText_yesterdayEarn(){
 		logger.info("【Page】获取昨日收益。。。。。。");
 		WebElement element = objectRepository.getWebElement("昨日收益");
-		String yesterdayEarn=element.getText();
+		String yesterdayEarn_str=element.getText();
+		double yesterdayEarn=Double.parseDouble(yesterdayEarn_str);
 		return yesterdayEarn;
 	}
 	
-	public String getText_purseAssets(){
+	public double getText_purseAssets(){
 		logger.info("【Page】获取钱包资产。。。。。。");
 		WebElement element = objectRepository.getWebElement("钱包资产");
-		String purseAssets=element.getText();
+		String purseAssets_str=element.getText();
+		double purseAssets=Double.parseDouble(purseAssets_str);
 		return purseAssets;
 	}
 	
-	public String getText_accumulatedIncome(){
+	public double getText_accumulatedIncome(){
 		logger.info("【Page】获取累计收益。。。。。。");
 		WebElement element = objectRepository.getWebElement("累计收益");
-		String accumulatedIncome=element.getText();
+		String accumulatedIncome_str=element.getText();
+		double accumulatedIncome=Double.parseDouble(accumulatedIncome_str);
 		return accumulatedIncome;
 	}
 	

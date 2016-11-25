@@ -11,6 +11,7 @@ public class Biz_realNameAuth {
 	Page_realNameAuth page_realNameAuth=new Page_realNameAuth();
 	
 	public void realNameAuth(Var_realNameAuth var_realNameAuth){
+		logger.info("[Biz_实名认证]");
 		page_realNameAuth.input_realName(var_realNameAuth.getRealName());
 		page_realNameAuth.input_idCard(var_realNameAuth.getIdCard());
 		String prompt=page_realNameAuth.getText_prompt();
