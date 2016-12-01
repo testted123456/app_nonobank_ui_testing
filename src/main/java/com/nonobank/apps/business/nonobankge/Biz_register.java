@@ -16,6 +16,7 @@ public class Biz_register {
 	
 	public void register(Var_register var_register){
 		logger.info("[Biz_注册]");
+		System.out.println("-------------------------------------------------");
 		page_register.input_mobile(var_register.getMobile());
 		page_register.input_pictureVerification(var_register.getPictureVerification());
 		page_register.sleep(1000);
@@ -25,6 +26,7 @@ public class Biz_register {
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();	
+		System.out.println("-------------------------------------------------");
 	}
 	
 	

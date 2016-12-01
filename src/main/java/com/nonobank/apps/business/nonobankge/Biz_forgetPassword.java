@@ -12,10 +12,12 @@ public class Biz_forgetPassword {
 	
 	public void forgetPassword(Var_forgetPassword var_forgetPassword){
 		logger.info("[Biz_忘记密码]");
+		System.out.println("-------------------------------------------------");
 		page_findPassword.input_idCard(var_forgetPassword.getIdCard());
 		page_findPassword.click_getSmsCode();
 		page_findPassword.sleep(1000);
 		page_findPassword.input_smsCode(var_forgetPassword.getVerificationCode());
 		page_findPassword.click_submit();
+		System.out.println("-------------------------------------------------");
 	}
 }

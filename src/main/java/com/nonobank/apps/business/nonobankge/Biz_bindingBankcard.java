@@ -12,6 +12,7 @@ public class Biz_bindingBankcard {
 	
 	public void bindingBankcard(Var_bindingBankcard var_bindingBankcard){
 		logger.info("[Biz_绑定银行卡]");
+		System.out.println("-------------------------------------------------");
 		page_bindingBankcard.click_selectBank();
 		page_bindingBankcard.select_bank(var_bindingBankcard.getBankName());
 		page_bindingBankcard.input_bankCardNum(var_bindingBankcard.getBankCardNum());
@@ -21,6 +22,7 @@ public class Biz_bindingBankcard {
 		String prompt=page_bindingBankcard.getText_prompt();
 		Assert.assertEquals(prompt,var_bindingBankcard.getBankLimitPrompt());
 		page_bindingBankcard.click_enter();
+		System.out.println("-------------------------------------------------");
 	}
 	
 }

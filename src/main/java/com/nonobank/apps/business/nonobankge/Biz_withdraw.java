@@ -12,18 +12,20 @@ public class Biz_withdraw {
 	
 	public void withdraw(Var_withdraw var_withdraw){
 		logger.info("[Biz_提现]");
-		String withdrawal_amount=page_withdrawal.getText_withdrawal_amount();
+		System.out.println("-------------------------------------------------");
+		double withdrawal_amount=page_withdrawal.getText_withdrawal_amount();
 		page_withdrawal.input_withdrawal_amount(var_withdraw.getWithdrawalAmount());
 		page_withdrawal.sleep(1000);
-		int fee=Integer.parseInt(page_withdrawal.getText_poundage());
-		int actual_account=Integer.parseInt(page_withdrawal.getText_actual_account());
-		Assert.assertEquals(fee+actual_account, var_withdraw.getWithdrawalAmount());
+		double fee=page_withdrawal.getText_poundage();
+		double actual_account=page_withdrawal.getText_actual_account();
+		Assert.assertEquals(fee+actual_account, Double.parseDouble(var_withdraw.getWithdrawalAmount()));
 		page_withdrawal.click_withdrawal();
 		page_withdrawal.sleep(2000);
-		String withdrawalMoney=page_withdrawal.getText_CPM_withdrawalMoney();
-		Assert.assertEquals(withdrawalMoney, var_withdraw.getWithdrawalAmount());
+		double withdrawalMoney=page_withdrawal.getText_CPM_withdrawalMoney();
+		Assert.assertEquals(withdrawalMoney,Double.parseDouble(var_withdraw.getWithdrawalAmount()));
 		page_withdrawal.input_CPM_payPassword(var_withdraw.getPayPassword());
 		page_withdrawal.click_CPM_enter();	
+		System.out.println("-------------------------------------------------");
 	}
 	
 }

@@ -47,10 +47,11 @@ public class Page_common extends BasePage{
 		WebElement element = objectRepository.getWebElement("发现");
 		element.click();
 	}
-	public String getText_findNum(){
+	public double getText_findNum(){
 		logger.info("[Page]获取发现消息数量。。。。。。");
 		WebElement element = objectRepository.getWebElement("发现消息数量");
-		String findNum=element.getText();
+		String findNum_str=element.getText();
+		double findNum=Double.parseDouble(findNum_str);
 		return findNum;
 	}
 	public void click_product(){

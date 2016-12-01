@@ -9,7 +9,7 @@ import com.nonobank.apps.page.base.BasePage;
 public class Page_me extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_me.class);
 	
-	public String getText_user_name(){
+	public String getText_userName(){
 		logger.info("[Page]获取用户名。。。。。。");
 		WebElement element = objectRepository.getWebElement("用户名");
 		String user_name=element.getText();

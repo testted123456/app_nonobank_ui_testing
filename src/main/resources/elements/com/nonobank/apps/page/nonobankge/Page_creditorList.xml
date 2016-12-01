@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="小提示">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_prompt']</prop>
+	</element>
+	<element name="债权列表">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ListView[@resource-id='com.nonoapp:id/lv_credit']</prop>
+	</element>
+	
+</elements>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="现金券list">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ListView[@resource-id='android:id/list']</prop>
+	</element>
+	<element name="现金券展示">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/atc_tv_desc']</prop>
+	</element>
+	<element name="现金券金额">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_value']</prop>
+	</element>
+	<element name="现金券类型">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_type']</prop>
+	</element>
+	<element name="现金券叠加">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_superposition']</prop>
+	</element>
+	<element name="现金券限制">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_limit']</prop>
+	</element>
+	<element name="现金券结束日期">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_end']</prop>
+	</element>
+	<element name="现金券状态">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/ict_tv_state']</prop>
+	</element>
+	
+</elements>

@@ -12,6 +12,7 @@ public class Biz_realNameAuth {
 	
 	public void realNameAuth(Var_realNameAuth var_realNameAuth){
 		logger.info("[Biz_实名认证]");
+		System.out.println("-------------------------------------------------");
 		page_realNameAuth.input_realName(var_realNameAuth.getRealName());
 		page_realNameAuth.input_idCard(var_realNameAuth.getIdCard());
 		String prompt=page_realNameAuth.getText_prompt();
@@ -23,6 +24,7 @@ public class Biz_realNameAuth {
 		String idCard=page_realNameAuth.getText_CPM_idCard();
 		Assert.assertEquals(idCard, var_realNameAuth.getIdCard());
 		page_realNameAuth.click_CPM_enter();
+		System.out.println("-------------------------------------------------");
 	}
 	
 	

@@ -18,26 +18,29 @@ public class Biz_recharge {
 	
 	public void recharge_noPayPassword(Var_recharge var_recharge){
 		logger.info("[Biz_充值未设置支付密码]");
+		System.out.println("-------------------------------------------------");
 		String pop_prompt=page_recharge.getText_CPM_popUp();
 		Assert.assertEquals(pop_prompt, "您尚未设置支付密码，请设置支付密码之后再进行交易。");
 		page_recharge.click_CPM_settingIcon();
 		page_recharge.sleep(1000);
+		System.out.println("------------------------");
 		page_setPayPassword.input_password(var_recharge.getPayPassword());
 		page_setPayPassword.input_confirmPassword(var_recharge.getPayPassword_second());
 		page_setPayPassword.click_confirm();
 		page_setPayPassword.sleep(1000);
+		System.out.println("------------------------");
 		page_recharge.input_recharge_sum(var_recharge.getRechargeSum());
 		page_recharge.click_next();
 		page_recharge.sleep(2000);
-		
-		String payMoney=page_cashierDesk.getText_payMoney();
-		Assert.assertEquals(payMoney, var_recharge.getRechargeSum());
+		System.out.println("-------------------------------------------------");
+		double payMoney=page_cashierDesk.getText_payMoney();
+		Assert.assertEquals(payMoney, Double.parseDouble(var_recharge.getRechargeSum()));
 //		Page_cashierDesk.getText_paymentMethod();
 //		String bankLimit=Page_cashierDesk.getText_bankLimit();
 		page_cashierDesk.click_next();
 		page_cashierDesk.sleep(1000);
-		String CMP_rechargeMoney=page_cashierDesk.getText_CMP_rechargeMoney();
-		Assert.assertEquals(CMP_rechargeMoney, var_recharge.getRechargeSum());
+		double CMP_rechargeMoney=page_cashierDesk.getText_CMP_rechargeMoney();
+		Assert.assertEquals(CMP_rechargeMoney, Double.parseDouble(var_recharge.getRechargeSum()));
 		page_cashierDesk.input_CMP_payPassword(var_recharge.getPayPassword());
 		page_cashierDesk.click_CMP_enter();
 		page_cashierDesk.sleep(2000);
@@ -46,10 +49,11 @@ public class Biz_recharge {
 		page_cashierDesk.input_CMP2_smsCode(var_recharge.getBankSmsCode());
 		page_cashierDesk.click_CMP2_enterRecharge();
 		page_cashierDesk.sleep(2000);
-		
-		String rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
+		System.out.println("-------------------------------------------------");
+		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
 		Assert.assertEquals(rechargeMoney, CMP_rechargeMoney);
 		page_rechargeSuccess.click_finish();
+		System.out.println("-------------------------------------------------");
 	}
 	
 	

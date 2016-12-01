@@ -10,11 +10,10 @@ import com.nonobank.apps.utils.variable.StringHandle;
 public class Page_productDetails extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_productDetails.class);
 	
-	public double getText_rate(){
+	public String getText_rate(){
 		logger.info("[Page]获取预期年化收益。。。。。。");
 		WebElement element = objectRepository.getWebElement("预期年化收益");
-		String rate_mix=element.getText();
-		double rate=StringHandle.expectEarnings(rate_mix);
+		String rate=element.getText();
 		return rate;
 	}
 	public double getText_amount(){
@@ -24,11 +23,10 @@ public class Page_productDetails extends BasePage{
 		double amount=Double.parseDouble(amount_str);
 		return amount;
 	}
-	public double getText_expect(){
+	public String getText_expect(){
 		logger.info("[Page]获取项目期限。。。。。。");
 		WebElement element = objectRepository.getWebElement("项目期限");
-		String expect_str=element.getText();
-		double expect=Double.parseDouble(expect_str);
+		String expect=element.getText();
 		return expect;
 	}
 	public double getText_start_money(){
