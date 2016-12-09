@@ -19,7 +19,7 @@ public class Page_setGesturePassword extends BasePage{
 		int width = dimension.getWidth();
 		int each_width = width/3;
 		int each_height = height/3;
-		appActions.swipe(startX, startY, endX, endY, ms);
+//		appActions.swipe(startX, startY, endX, endY, ms);
 		
 	}
 	

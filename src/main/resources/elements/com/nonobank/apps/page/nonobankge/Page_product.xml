@@ -1,59 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <elements>
-	<element name="诺诺钱包">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/ll_nnwallet_entrance']</prop>
-	</element>
-	<element name="诺诺钱包利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_nnmoney_rate']</prop>
-	</element>
 	<element name="新客专区">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_xkzq_entrance']</prop>
-	</element>
-	<element name="新客专区利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_xkzq_rate']</prop>
+		<prop name="android">//android.widget.TextView[@text='新客专区']</prop>
 	</element>
 	<element name="月月升">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_yys_entrance']</prop>
-	</element>
-	<element name="月月升利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_yys_rate']</prop>
-	</element>
-	<element name="短期投资">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_dqtz_entrance']</prop>
-	</element>
-	<element name="短期投资利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_dqtz_rate']</prop>
-	</element>
-	<element name="长期投资">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_cqtz_entrance']</prop>
-	</element>
-	<element name="长期投资利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_cqtz_rate']</prop>
+		<prop name="android">//android.widget.TextView[@text='月月升']</prop>
 	</element>
 	<element name="特色投资">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_tstz_entrance']</prop>
-	</element>
-	<element name="特色投资利息">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_tstz_rate']</prop>
+		<prop name="android">//android.widget.TextView[@text='特色投资']</prop>
 	</element>
 	<element name="债转专区">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_zzzq_entrance']</prop>
+		<prop name="android">//android.widget.TextView[@text='债转专区']</prop>	
 	</element>
-	<element name="债转专区利息">
+	<element name="诺诺盈">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_zzzq_rate']</prop>
+		<prop name="android">//android.widget.TextView[@text='诺诺盈']</prop>
 	</element>
+	<element name="贴心计划">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='贴心计划']</prop>
+	</element>
+	
 </elements>
