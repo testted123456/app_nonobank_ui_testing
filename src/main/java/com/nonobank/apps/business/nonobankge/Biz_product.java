@@ -21,7 +21,7 @@ public class Biz_product {
 		logger.info("[Biz点击月月升]");
 		page_product.click_yys();
 	}
-	public void click_nonoIncrescence(){
+	public void click_nny(){
 		logger.info("[Biz点击诺诺盈]");
 		page_product.click_nny();
 	}

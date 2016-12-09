@@ -13,7 +13,7 @@ public class loginTest {
 	public static List<HashMap<String, String>> params = new ArrayList<HashMap<String, String>>();
 	public static String url = "/msapi/user/login";
 	
-	public static String payRoute(String username,String password,String blackBox){
+	public static String login(String username,String password,String blackBox){
 		HashMap<String, String> requestParams = new HashMap<String, String>();
 		requestParams.put("password", password);
 		requestParams.put("terminal", "5");

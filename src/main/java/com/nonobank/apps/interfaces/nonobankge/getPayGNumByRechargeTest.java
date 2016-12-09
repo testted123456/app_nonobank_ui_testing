@@ -9,12 +9,12 @@ import org.apache.logging.log4j.Logger;
 
 import com.nonobank.apps.interfaces.util.SendRequest;
 
-public class getPayGNumByRechargeTestTest {
-	public static Logger logger = LogManager.getLogger(getPayGNumByRechargeTestTest.class);
+public class getPayGNumByRechargeTest {
+	public static Logger logger = LogManager.getLogger(getPayGNumByRechargeTest.class);
 	public static List<HashMap<String, String>> params = new ArrayList<HashMap<String, String>>();
 	public static String url = "/msapi/quickBill/getPayGNum";
 	
-	public static String degreecard(String rechargeMoney,String newZFPwd,String sessionId,
+	public static String getPayGNumByRecharge(String rechargeMoney,String newZFPwd,String sessionId,
 			String userBankCardId,String orderNum){
 		HashMap<String, String> requestParams = new HashMap<String, String>();
 		requestParams.put("address", "");
