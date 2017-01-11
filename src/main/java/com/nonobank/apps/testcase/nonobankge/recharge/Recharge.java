@@ -25,24 +25,13 @@ public class Recharge extends BaseCase {
 	Biz_recharge biz_recharge;
 	
 	@Test(dataProvider = "dataSource")
-	public void test(Var_register var_register,Var_recharge var_recharge) {
-		String mobile=var_register.getMobile();
-		String username="";
-		String password=var_register.getPassword();
-		String blackBox="";
-		
-		String idCard="";
-		String realName="";
-		
-		String newZFPwd="";
-		String bankCardNo="";
-		String bankCode="";
-		String validCode="0615";
-		
-		String rechargeMoney="";
-		String bankSmsCode="0615";
+	public void test(String mobile,String username,String password,String blackBox,
+			String idCard,String realName,String newZFPwd,String bankCardNo,
+			String bankCode,String validCode,String rechargeMoney,String bankSmsCode,
+			String pictureVerification,String smsCode,String payPassword,
+			String payPassword_second,String rechargeSum) {		
 		// 注册---注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, smsCode, password);
 		// 接口---登录
 		String response_login = loginTest.login(username, password, blackBox);
 		JSONObject jsonObj_login = JSON.parseObject(response_login);
@@ -68,7 +57,7 @@ public class Recharge extends BaseCase {
 		//我的----点击充值
 		biz_me.click_recharge();
 		//充值
-		biz_recharge.recharge_noPayPassword(var_recharge);
+		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode);
 
 	}
 

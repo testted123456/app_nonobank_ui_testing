@@ -19,9 +19,10 @@ public class BankCard extends BaseCase{
 	Biz_setting biz_setting;
 	
 	@Test(dataProvider="dataSource")
-	public void test(Var_register var_register,Var_bindingBankcard var_bindingBankcard){
+	public void test(String mobile,String pictureVerification,String smsCode,String password,
+			String bankName,String bankCardNum,String bankMobile,String bankSmsCode,String bankLimitPrompt){
 		//注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, smsCode, password);
 		//实名认证
 		
 		//点击我的
@@ -29,12 +30,7 @@ public class BankCard extends BaseCase{
 		//点击银行卡管理
 		biz_me.click_bankcard();
 		//绑定银行卡
-		biz_bindingBankcard.bindingBankcard(var_bindingBankcard);
-		
-		
+		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt);		
 	}
-	
-	
-	
-	
+		
 }

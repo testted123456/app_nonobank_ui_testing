@@ -10,20 +10,20 @@ public class Biz_withdraw {
 	public static Logger logger = LogManager.getLogger(Biz_withdraw.class);
 	Page_withdrawal page_withdrawal=new Page_withdrawal(); 
 	
-	public void withdraw(Var_withdraw var_withdraw){
+	public void withdraw(String withdrawalAmount,String payPassword){
 		logger.info("[Biz_提现]");
 		System.out.println("-------------------------------------------------");
 		double withdrawal_amount=page_withdrawal.getText_withdrawal_amount();
-		page_withdrawal.input_withdrawal_amount(var_withdraw.getWithdrawalAmount());
+		page_withdrawal.input_withdrawal_amount(withdrawalAmount);
 		page_withdrawal.sleep(1000);
 		double fee=page_withdrawal.getText_poundage();
 		double actual_account=page_withdrawal.getText_actual_account();
-		Assert.assertEquals(fee+actual_account, Double.parseDouble(var_withdraw.getWithdrawalAmount()));
+		Assert.assertEquals(fee+actual_account, Double.parseDouble(withdrawalAmount));
 		page_withdrawal.click_withdrawal();
 		page_withdrawal.sleep(2000);
 		double withdrawalMoney=page_withdrawal.getText_CPM_withdrawalMoney();
-		Assert.assertEquals(withdrawalMoney,Double.parseDouble(var_withdraw.getWithdrawalAmount()));
-		page_withdrawal.input_CPM_payPassword(var_withdraw.getPayPassword());
+		Assert.assertEquals(withdrawalMoney,Double.parseDouble(withdrawalAmount));
+		page_withdrawal.input_CPM_payPassword(payPassword);
 		page_withdrawal.click_CPM_enter();	
 		System.out.println("-------------------------------------------------");
 	}

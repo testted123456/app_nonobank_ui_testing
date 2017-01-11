@@ -14,15 +14,16 @@ public class Biz_register {
 //		mobile(),pictureVerification(),smsCode(),password();
 //	}
 	
-	public void register(Var_register var_register){
+	public void register(String mobile,String pictureVerification,String smsCode,
+			String password){
 		logger.info("[Biz_注册]");
 		System.out.println("-------------------------------------------------");
-		page_register.input_mobile(var_register.getMobile());
-		page_register.input_pictureVerification(var_register.getPictureVerification());
+		page_register.input_mobile(mobile);
+		page_register.input_pictureVerification(pictureVerification);
 		page_register.sleep(1000);
 		page_register.click_getSmsCode();
-		page_register.input_SmsCode(var_register.getSmsCode());
-		page_register.input_password(var_register.getPassword());
+		page_register.input_SmsCode(smsCode);
+		page_register.input_password(password);
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();	

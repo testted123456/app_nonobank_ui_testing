@@ -10,9 +10,9 @@ public class Biz_productList {
 	
 	Page_productList page_productList=new Page_productList();
 	
-	public void click_byProductName(Var_productList var_productList){
+	public void click_byProductName(String productName){
 		logger.info("[Biz通过产品名点击]");
-		page_productList.click_byProductName(var_productList.getProductName());	
+		page_productList.click_byProductName(productName);	
 	}
 	
 }

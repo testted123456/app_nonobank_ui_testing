@@ -10,19 +10,19 @@ public class Biz_realNameAuth {
 	public static Logger logger = LogManager.getLogger(Biz_realNameAuth.class);
 	Page_realNameAuth page_realNameAuth=new Page_realNameAuth();
 	
-	public void realNameAuth(Var_realNameAuth var_realNameAuth){
+	public void realNameAuth(String realName,String idCard){
 		logger.info("[Biz_实名认证]");
 		System.out.println("-------------------------------------------------");
-		page_realNameAuth.input_realName(var_realNameAuth.getRealName());
-		page_realNameAuth.input_idCard(var_realNameAuth.getIdCard());
+		page_realNameAuth.input_realName(realName);
+		page_realNameAuth.input_idCard(idCard);
 		String prompt=page_realNameAuth.getText_prompt();
 		Assert.assertEquals(prompt, "个人信息一旦确认将不可更改");
 		page_realNameAuth.click_auth();
 		page_realNameAuth.sleep(2000);
-		String realName=page_realNameAuth.getText_CPM_realName();
-		Assert.assertEquals(realName, var_realNameAuth.getRealName());
-		String idCard=page_realNameAuth.getText_CPM_idCard();
-		Assert.assertEquals(idCard, var_realNameAuth.getIdCard());
+		String real_Name=page_realNameAuth.getText_CPM_realName();
+		Assert.assertEquals(real_Name, realName);
+		String id_Card=page_realNameAuth.getText_CPM_idCard();
+		Assert.assertEquals(id_Card, idCard);
 		page_realNameAuth.click_CPM_enter();
 		System.out.println("-------------------------------------------------");
 	}

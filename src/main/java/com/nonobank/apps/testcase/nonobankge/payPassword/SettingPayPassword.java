@@ -21,9 +21,10 @@ public class SettingPayPassword extends BaseCase{
 	Biz_setPayPassword biz_setPayPassword;
 	
 	@Test(dataProvider="dataSource")
-	public void test(Var_register var_register,Var_setPayPassword var_setPayPassword){
+	public void test(String mobile,String pictureVerification,String smsCode,String password,
+			String payPassword,String payPassword_second){
 		//注册---注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, smsCode, password);
 		//点击我
 		biz_common.click_me();
 		//我的---点击设置
@@ -33,7 +34,7 @@ public class SettingPayPassword extends BaseCase{
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword();
 		//设置支付密码----设置支付密码
-		biz_setPayPassword.setPayPassword(var_setPayPassword);
+		biz_setPayPassword.setPayPassword(payPassword, payPassword_second);
 		
 	}
 	

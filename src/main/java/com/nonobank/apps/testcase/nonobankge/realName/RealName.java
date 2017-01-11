@@ -19,9 +19,10 @@ public class RealName extends BaseCase{
 	Biz_realNameAuth biz_realNameAuth;
 	
 	@Test(dataProvider="dataSource")
-	public void test(Var_register var_register,Var_realNameAuth var_realNameAuth){
+	public void test(String mobile,String pictureVerification,String smsCode,String password,
+			String realName,String idCard){
 		//注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, smsCode, password);
 		//点击我的
 		biz_common.click_me();
 		//点击设置
@@ -29,9 +30,8 @@ public class RealName extends BaseCase{
 		//点击实名认证
 		biz_setting.click_realNameAuth();
 		//实名认证
-		biz_realNameAuth.realNameAuth(var_realNameAuth);
+		biz_realNameAuth.realNameAuth(realName, idCard);
 				
 	}
-	
-	
+		
 }

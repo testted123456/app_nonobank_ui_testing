@@ -10,8 +10,8 @@ public class Register extends BaseCase{
 	Biz_register biz_register;
 	
 	@Test(dataProvider="dataSource")
-	public void test(Var_register var_register){
-		biz_register.register(var_register);	
+	public void test(String mobile,String pictureVerification,String smsCode,String password){
+		biz_register.register(mobile, pictureVerification, smsCode, password);	
 	}
 	
 }

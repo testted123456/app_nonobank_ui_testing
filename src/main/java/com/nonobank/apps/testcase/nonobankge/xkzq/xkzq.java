@@ -35,26 +35,13 @@ public class xkzq extends BaseCase{
 	Biz_productInvest biz_productInvest;
 	
 	@Test(dataProvider="dataSource")
-	public void test(Var_register var_register,Var_productList var_productList,
-			Var_productInvest var_productInvest){
-		String mobile=var_register.getMobile();
-		String username="";
-		String password=var_register.getPassword();
-		String blackBox="";
-		
-		String idCard="";
-		String realName="";
-		
-		String newZFPwd="";
-		String bankCardNo="";
-		String bankCode="";
-		String validCode="0615";
-		
-		String rechargeMoney="";
-		String bankSmsCode="0615";
-		
+	public void test(String mobile,String pictureVerification,String smsCode,
+			String username,String password,String blackBox,
+			String idCard,String realName,String newZFPwd,String bankCardNo,String bankCode,
+			String validCode,String rechargeMoney,String bankSmsCode,
+			String productName,String payPassword){
 		//注册---注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword);
 		System.out.println("-----------------------------------------------------------------------------------");	
 		//接口---登录
 		String response_login=loginTest.login(username, password, blackBox);
@@ -96,15 +83,10 @@ public class xkzq extends BaseCase{
 		//产品---点击新客专区
 		biz_product.click_xkzq();
 		//新客专区---根据产品名点击相应计划
-		biz_productList.click_byProductName(var_productList);
+		biz_productList.click_byProductName(productName);
 		//产品购买
-		biz_productInvest.productInvest(var_productInvest);
-		
-		
+		biz_productInvest.productInvest(payPassword);
+			
 	}
-	
-	
-	
-	
-	
+		
 }

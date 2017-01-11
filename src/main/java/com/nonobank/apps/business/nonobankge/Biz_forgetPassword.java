@@ -10,13 +10,13 @@ public class Biz_forgetPassword {
 	public static Logger logger = LogManager.getLogger(Biz_forgetPassword.class);
 	Page_findPassword page_findPassword=new Page_findPassword();
 	
-	public void forgetPassword(Var_forgetPassword var_forgetPassword){
+	public void forgetPassword(String idCard,String verificationCode){
 		logger.info("[Biz_忘记密码]");
 		System.out.println("-------------------------------------------------");
-		page_findPassword.input_idCard(var_forgetPassword.getIdCard());
+		page_findPassword.input_idCard(idCard);
 		page_findPassword.click_getSmsCode();
 		page_findPassword.sleep(1000);
-		page_findPassword.input_smsCode(var_forgetPassword.getVerificationCode());
+		page_findPassword.input_smsCode(verificationCode);
 		page_findPassword.click_submit();
 		System.out.println("-------------------------------------------------");
 	}

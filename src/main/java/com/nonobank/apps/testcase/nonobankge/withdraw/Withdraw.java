@@ -31,24 +31,13 @@ public class Withdraw extends BaseCase {
 	Biz_withdraw biz_withdraw;
 
 	@Test(dataProvider = "dataSource")
-	public void test(Var_register var_register, Var_recharge var_recharge, Var_withdraw var_withdraw) {
-		String mobile = var_register.getMobile();
-		String username = "";
-		String password = var_register.getPassword();
-		String blackBox = "";
-
-		String idCard = "";
-		String realName = "";
-
-		String newZFPwd = "";
-		String bankCardNo = "";
-		String bankCode = "";
-		String validCode = "0615";
-
-		String rechargeMoney = "";
-		String bankSmsCode = "0615";
+	public void test(String mobile,String pictureVerification,String smsCode,
+			String username,String password,String blackBox,
+			String idCard,String realName,String newZFPwd,String bankCardNo,String bankCode,
+			String validCode,String rechargeMoney,String bankSmsCode,
+			String withdrawalAmount,String payPassword) {
 		// 注册---注册
-		biz_register.register(var_register);
+		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword);
 		logger.info("------------------------------------------------------------------------------------");
 		// 接口---登录
 		String response_login = loginTest.login(username, password, blackBox);
@@ -97,7 +86,7 @@ public class Withdraw extends BaseCase {
 		// 我的----提现
 		biz_me.click_takecash();
 		// 提现----提现流程
-		biz_withdraw.withdraw(var_withdraw);
+		biz_withdraw.withdraw(withdrawalAmount, payPassword);
 
 	}
 

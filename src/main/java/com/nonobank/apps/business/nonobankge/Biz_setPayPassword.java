@@ -13,12 +13,12 @@ public class Biz_setPayPassword {
 	Page_setPayPassword page_setPayPassword=new Page_setPayPassword();
 	Page_common page_common=new Page_common();
 	
-	public void setPayPassword(Var_setPayPassword var_setPayPassword){
+	public void setPayPassword(String payPassword,String payPassword_second){
 		logger.info("[Biz]设置支付密码。。。。。。");
 		System.out.println("------------------------------------------------");
-		page_setPayPassword.input_password(var_setPayPassword.getPayPassword());
+		page_setPayPassword.input_password(payPassword);
 		page_setPayPassword.sleep(2000);
-		page_setPayPassword.input_confirmPassword(var_setPayPassword.getPayPassword_second());
+		page_setPayPassword.input_confirmPassword(payPassword_second);
 		page_setPayPassword.sleep(2000);
 		page_setPayPassword.click_confirm();
 		String title=page_common.getText_title();

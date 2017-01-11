@@ -15,7 +15,7 @@ public class Biz_productInvest {
 	Page_purchase page_purchase=new Page_purchase();
 	Page_purchaseSuccess page_purchaseSuccess=new Page_purchaseSuccess();
 	
-	public void productInvest(Var_productInvest var_productInvest){
+	public void productInvest(String payPassword){
 		logger.info("[Biz_产品购买]");
 		System.out.println("--------------------------------------------------------------------");
 		//预期年化收益
@@ -73,7 +73,7 @@ public class Biz_productInvest {
 			double balancePayMoney=page_purchase.getText_CMP_balancePayMoney();
 			Assert.assertEquals(thisInvestMoney, cashCouponPayMoney+balancePayMoney);
 			//弹窗--输入支付密码
-			page_purchase.input_CMP_payPassword(var_productInvest.getPayPassword());
+			page_purchase.input_CMP_payPassword(payPassword);
 			//弹窗--点击确定
 			page_purchase.click_CMP_enter();
 			System.out.println("--------------------------------------------------------------------");
