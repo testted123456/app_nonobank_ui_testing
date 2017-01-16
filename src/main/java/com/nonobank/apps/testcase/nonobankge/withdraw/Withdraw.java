@@ -37,7 +37,7 @@ public class Withdraw extends BaseCase {
 			String validCode,String rechargeMoney,String bankSmsCode,
 			String withdrawalAmount,String payPassword) {
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword);
+		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword,"");
 		logger.info("------------------------------------------------------------------------------------");
 		// 接口---登录
 		String response_login = loginTest.login(username, password, blackBox);
@@ -84,9 +84,9 @@ public class Withdraw extends BaseCase {
 		// 点击我的
 		biz_common.click_me();
 		// 我的----提现
-		biz_me.click_takecash();
+		biz_me.click_takecash("");
 		// 提现----提现流程
-		biz_withdraw.withdraw(withdrawalAmount, payPassword);
+		biz_withdraw.withdraw(withdrawalAmount, payPassword,"");
 
 	}
 

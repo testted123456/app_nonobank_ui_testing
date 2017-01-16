@@ -41,7 +41,7 @@ public class xkzq extends BaseCase{
 			String validCode,String rechargeMoney,String bankSmsCode,
 			String productName,String payPassword){
 		//注册---注册
-		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword);
+		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword,"");
 		System.out.println("-----------------------------------------------------------------------------------");	
 		//接口---登录
 		String response_login=loginTest.login(username, password, blackBox);
@@ -81,11 +81,11 @@ public class xkzq extends BaseCase{
 		//点击产品
 		biz_common.click_product();
 		//产品---点击新客专区
-		biz_product.click_xkzq();
+		biz_product.click_xkzq("");
 		//新客专区---根据产品名点击相应计划
-		biz_productList.click_byProductName(productName);
+		biz_productList.click_byProductName(productName,"");
 		//产品购买
-		biz_productInvest.productInvest(payPassword);
+		biz_productInvest.productInvest(payPassword,"");
 			
 	}
 		

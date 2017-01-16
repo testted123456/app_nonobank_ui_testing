@@ -12,8 +12,8 @@ public class Login {
 	Biz_login biz_login;
 	@Test(dataProvider="dataSource")
 	public void test(String mobile,String pictureVerification,String smsCode,String password){
-		biz_register.register(mobile, pictureVerification, smsCode, password);
-		biz_login.login(mobile, password);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"");
+		biz_login.login(mobile, password,"");
 			
 	}
 }

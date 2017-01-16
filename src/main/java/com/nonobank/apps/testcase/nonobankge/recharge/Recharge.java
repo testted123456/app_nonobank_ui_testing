@@ -31,7 +31,7 @@ public class Recharge extends BaseCase {
 			String pictureVerification,String smsCode,String payPassword,
 			String payPassword_second,String rechargeSum) {		
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, smsCode, password);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"");
 		// 接口---登录
 		String response_login = loginTest.login(username, password, blackBox);
 		JSONObject jsonObj_login = JSON.parseObject(response_login);
@@ -55,9 +55,9 @@ public class Recharge extends BaseCase {
 		//点击我的
 		biz_common.click_me();
 		//我的----点击充值
-		biz_me.click_recharge();
+		biz_me.click_recharge("");
 		//充值
-		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode);
+		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode,"");
 
 	}
 

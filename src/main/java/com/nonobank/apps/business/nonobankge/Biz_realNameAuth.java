@@ -4,13 +4,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
+import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_realNameAuth;
+import com.nonobank.apps.utils.data.Assertion;
 
 public class Biz_realNameAuth {
 	public static Logger logger = LogManager.getLogger(Biz_realNameAuth.class);
 	Page_realNameAuth page_realNameAuth=new Page_realNameAuth();
+	Page_common page_common=new Page_common();
 	
-	public void realNameAuth(String realName,String idCard){
+	public void realNameAuth(String realName,String idCard,String expectMessage){
 		logger.info("[Biz_实名认证]");
 		System.out.println("-------------------------------------------------");
 		page_realNameAuth.input_realName(realName);
@@ -24,9 +27,23 @@ public class Biz_realNameAuth {
 		String id_Card=page_realNameAuth.getText_CPM_idCard();
 		Assert.assertEquals(id_Card, idCard);
 		page_realNameAuth.click_CPM_enter();
+		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
-	
+	private void handleResult(String expectMessage) {
+		switch (expectMessage) {
+		case "我的银行卡":
+			String expect="我的银行卡";
+			String actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+			break;
+		default:
+			expect="设置银行卡";
+			actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+			break;
+		}
+	}
 	
 	
 	

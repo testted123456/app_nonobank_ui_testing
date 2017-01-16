@@ -22,15 +22,15 @@ public class RealName extends BaseCase{
 	public void test(String mobile,String pictureVerification,String smsCode,String password,
 			String realName,String idCard){
 		//注册
-		biz_register.register(mobile, pictureVerification, smsCode, password);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"");
 		//点击我的
 		biz_common.click_me();
 		//点击设置
-		biz_me.click_settingIcon();
+		biz_me.click_settingIcon("");
 		//点击实名认证
-		biz_setting.click_realNameAuth();
+		biz_setting.click_realNameAuth("");
 		//实名认证
-		biz_realNameAuth.realNameAuth(realName, idCard);
+		biz_realNameAuth.realNameAuth(realName, idCard,"");
 				
 	}
 		

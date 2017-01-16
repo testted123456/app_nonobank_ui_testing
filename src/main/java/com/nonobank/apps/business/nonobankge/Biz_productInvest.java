@@ -4,8 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_purchase;
+import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_productDetails;
 import com.nonobank.apps.page.nonobankge.Page_purchaseSuccess;
+import com.nonobank.apps.utils.data.Assertion;
 
 
 
@@ -14,8 +16,9 @@ public class Biz_productInvest {
 	Page_productDetails page_productDetails=new Page_productDetails();
 	Page_purchase page_purchase=new Page_purchase();
 	Page_purchaseSuccess page_purchaseSuccess=new Page_purchaseSuccess();
-	
-	public void productInvest(String payPassword){
+	Page_common page_common=new Page_common();
+
+	public void productInvest(String payPassword,String expectMessage){
 		logger.info("[Biz_产品购买]");
 		System.out.println("--------------------------------------------------------------------");
 		//预期年化收益
@@ -83,10 +86,24 @@ public class Biz_productInvest {
 			//本次投资金额
 			double investMoney2=page_purchaseSuccess.getText_investMoney();
 			Assert.assertEquals(investMoney2, investMoney);
+			 handleResult(expectMessage);
 			System.out.println("--------------------------------------------------------------------");
 		}
 	}
-	
+	private void handleResult(String expectMessage) {
+		switch (expectMessage) {
+		case "":
+			String expect="";
+			String actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "");
+			break;
+		default:
+			expect="";
+			actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "");
+			break;
+		}
+	}
 	
 	
 }

@@ -39,7 +39,7 @@ public class yys extends BaseCase{
 			String idCard,String realName,String newZFPwd,String bankCardNo,String bankCode,
 			String validCode,String rechargeMoney,String bankSmsCode,String payPassword){
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword);
+		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword,"");
 		System.out.println("-----------------------------------------------------------------------------------");	
 		//接口---登录
 		String response_login=loginTest.login(username, password, blackBox);
@@ -79,9 +79,9 @@ public class yys extends BaseCase{
 		// 点击产品
 		biz_common.click_product();
 		// 产品---月月升
-		biz_product.click_yys();
+		biz_product.click_yys("");
 		//产品购买
-		biz_productInvest.productInvest(payPassword);
+		biz_productInvest.productInvest(payPassword,"");
 				
 	}
 		

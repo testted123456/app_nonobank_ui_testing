@@ -22,15 +22,15 @@ public class BankCard extends BaseCase{
 	public void test(String mobile,String pictureVerification,String smsCode,String password,
 			String bankName,String bankCardNum,String bankMobile,String bankSmsCode,String bankLimitPrompt){
 		//注册
-		biz_register.register(mobile, pictureVerification, smsCode, password);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"");
 		//实名认证
 		
 		//点击我的
 		biz_common.click_me();
 		//点击银行卡管理
-		biz_me.click_bankcard();
+		biz_me.click_bankcard("");
 		//绑定银行卡
-		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt);		
+		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt,"");		
 	}
 		
 }

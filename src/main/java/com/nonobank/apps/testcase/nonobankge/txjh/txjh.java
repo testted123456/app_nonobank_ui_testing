@@ -41,7 +41,7 @@ public class txjh extends BaseCase {
 			String validCode,String rechargeMoney,String bankSmsCode,
 			String productName,String payPassword) {		
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, smsCode, password);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"");
 		System.out.println("-----------------------------------------------------------------------------------");	
 		//接口---登录
 		String response_login=loginTest.login(username, password, blackBox);
@@ -83,11 +83,11 @@ public class txjh extends BaseCase {
 		// 点击产品
 		biz_common.click_product();
 		// 产品---贴心计划
-		biz_product.click_txjh();
+		biz_product.click_txjh("");
 		//贴心计划---根据产品名点击相应计划
-		biz_productList.click_byProductName(productName);
+		biz_productList.click_byProductName(productName,"");
 		//产品购买
-		biz_productInvest.productInvest(payPassword);
+		biz_productInvest.productInvest(payPassword,"");
 		
 	}
 

@@ -7,7 +7,9 @@ import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_recharge;
 import com.nonobank.apps.page.nonobankge.Page_rechargeSuccess;
 import com.nonobank.apps.page.nonobankge.Page_setPayPassword;
+import com.nonobank.apps.utils.data.Assertion;
 import com.nonobank.apps.page.nonobankge.Page_cashierDesk;
+import com.nonobank.apps.page.nonobankge.Page_common;
 
 public class Biz_recharge {
 	public static Logger logger = LogManager.getLogger(Biz_recharge.class);
@@ -15,9 +17,10 @@ public class Biz_recharge {
 	Page_setPayPassword page_setPayPassword=new Page_setPayPassword();
 	Page_cashierDesk page_cashierDesk=new Page_cashierDesk();
 	Page_rechargeSuccess page_rechargeSuccess=new Page_rechargeSuccess(); 
+	Page_common page_common=new Page_common();
 	
 	public void recharge_noPayPassword(String payPassword,String payPassword_second,
-			String rechargeSum,String bankSmsCode){
+			String rechargeSum,String bankSmsCode,String expectMessage){
 		logger.info("[Biz_充值未设置支付密码]");
 		System.out.println("-------------------------------------------------");
 		String pop_prompt=page_recharge.getText_CPM_popUp();
@@ -54,9 +57,23 @@ public class Biz_recharge {
 		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
 		Assert.assertEquals(rechargeMoney, CMP_rechargeMoney);
 		page_rechargeSuccess.click_finish();
+		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
-	
+	private void handleResult(String expectMessage) {
+		switch (expectMessage) {
+		case "我的银行卡":
+			String expect="我的银行卡";
+			String actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+			break;
+		default:
+			expect="设置银行卡";
+			actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+			break;
+		}
+	}
 	
 	
 }

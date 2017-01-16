@@ -116,7 +116,5 @@ public class BankCardUtils {
 		}
 	}
 	
-	public static void main(String [] args){
-		System.out.println(getUnUsedBankCard("622202100112"));
-	}
+
 }
