@@ -17,7 +17,8 @@ import com.nonobank.apps.utils.file.ParseProperties;
 
 public class AppiumOperation {
 
-	public static final String APPIUMSERVERSTARTCMD = "/Contents/Resources/node_modules/.bin/appium -a 127.0.0.1 -p 4723  --automation-name 'Appium' --platform-name 'Android'";
+	public static final String APPIUMSERVERSTARTCMD = "/Contents/Resources/node_modules/.bin/appium -a 127.0.0.1 -p ";
+	public static final String AUTOMATIONANDPLATFORM =	"  --automation-name 'Appium' --platform-name 'Android'";
 	public static String WINDOWSAPPIUMSERVERSTART = "C:\\Program Files (x86)\\Appium\\node_modules\\.bin\\appium.cmd -a 127.0.0.1 -p ";
 	public static Boolean flag = false;
 	public static void startServerInMac(String strAppiumPort) {
@@ -26,7 +27,7 @@ public class AppiumOperation {
 		try {
 			Process process = null;
 			String cmdNode = appium_dir + "/Contents/Resources/node/bin/node ";
-			String cmd = cmdNode + appium_dir + APPIUMSERVERSTARTCMD;
+			String cmd = cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
 			String[] cmds = { "/bin/sh", "-c", cmd };
 			process = Runtime.getRuntime().exec(cmds);
 

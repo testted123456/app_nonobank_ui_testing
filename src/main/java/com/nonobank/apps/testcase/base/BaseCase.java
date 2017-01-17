@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
@@ -11,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.TreeMap;
 
 import org.apache.logging.log4j.LogManager;
@@ -27,7 +29,9 @@ import com.csvreader.CsvWriter;
 import com.nonobank.apps.actions.AndroidActions;
 import com.nonobank.apps.actions.AppActions;
 import com.nonobank.apps.actions.IOSActions;
+import com.nonobank.apps.appium.AppiumOperation;
 import com.nonobank.apps.driver.DriverFactory;
+import com.nonobank.apps.utils.file.ParseProperties;
 import com.nonobank.apps.utils.file.ParseXLSX;
 
 import io.appium.java_client.AppiumDriver;
@@ -37,6 +41,8 @@ import io.appium.java_client.ios.IOSDriver;
 public class BaseCase {
 	protected static Logger logger = LogManager.getLogger(BaseCase.class);
 
+	// 配置文件config.xml
+	public static Properties prop = ParseProperties.getInstance();
 	// 测试数据文件，保存在TestData下
 	public String testfile;
 	public static List<List<String>> lst = new ArrayList<List<String>>();
@@ -72,9 +78,43 @@ public class BaseCase {
 
 	@BeforeSuite
 	public void init() {
-//		logger.info("开始执行case: " + this.getClass().getName());
-		logger.info("[BaseCase]启动AppDriver...");
-		DriverFactory.getAppiumDriver();
+		// logger.info("开始执行case: " + this.getClass().getName());
+				logger.info("[BaseCase]启动AppDriver...");
+				String os = System.getProperties().getProperty("os.name");
+				// ChromedriverHandler.chromeDriverHandlerThread().start();
+				if (os.startsWith("Mac")) {
+					AppiumOperation.stopServerInMac("4723");
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					AppiumOperation.startServerInMac("4723");
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else {
+					AppiumOperation.stopWindowsAppiumServer("4723");
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					AppiumOperation.startWindowsServer("4723");
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+
+				DriverFactory.getAppiumDriver();
 	}
 
 	@BeforeClass
@@ -143,7 +183,9 @@ public class BaseCase {
 	public void saveCSV() {
 		try {
 			OutputStream os = new FileOutputStream("./1.csv");
-			CsvWriter writer = new CsvWriter(os, ',', Charset.forName("GBK"));
+			OutputStreamWriter fw = new OutputStreamWriter(os, "GBK");
+			fw.write("sep=;\n");
+			CsvWriter writer = new CsvWriter(fw, ';');
 			String[] contents = { "case名称", "描述", "入参", "结果", "错误日志" };
 			writer.writeRecord(contents);
 			for (List<String> rowsData : lst) {

@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
+import org.apache.commons.exec.OS;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,14 @@ public class DriverFactory {
 	static Properties prop = ParseProperties.getInstance();
 	
 	static DesiredCapabilities initCapabilities(){
+//		String os = System.getProperties().getProperty("os.name");
+//		if(os.startsWith("Mac")){
+//			System.setProperty("ANDROID_HOME", "/Users/user/Library/Android/sdk");
+//		}else{
+//			System.setProperty("ANDROID_HOME", "C:\\Users\\sunyueying\\AppData\\Local\\Android\\sdk");
+//		}
+//		
+		System.out.println("ANDROID_HOME环境变量:"+System.getProperty("ANDROID_HOME"));
 		String app = prop.getProperty("app").trim();
 		
 		String newCommandTimeout = prop.getProperty(app + ".newCommandTimeout");
@@ -58,6 +67,7 @@ public class DriverFactory {
 		capabilities.setCapability("platformVersion", platformVersion);
 		// 设置app路径
 		capabilities.setCapability("app", appDir);
+//		capabilities.setCapability("appWaitActivity", "");
 //		capabilities.setCapability("autoWebview", "true");
 //		capabilities.setCapability("automationName", "selendroid");
 		
