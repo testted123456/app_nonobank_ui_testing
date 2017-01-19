@@ -44,4 +44,12 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_setting_logout']</prop>
 	</element>
+	<element name="安全退出-确认">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='确定']</prop>
+	</element>
+	<element name="安全退出-取消">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.TextView[@text='取消']</prop>
+	</element>
 </elements>

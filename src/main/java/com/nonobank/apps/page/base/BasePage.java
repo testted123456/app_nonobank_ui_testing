@@ -14,6 +14,7 @@ import com.nonobank.apps.objectRepository.AndroidObjectRepository;
 import com.nonobank.apps.objectRepository.IOSObjectRepository;
 import com.nonobank.apps.utils.file.ParseProperties;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
@@ -46,5 +47,18 @@ public class BasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	public void press(WebElement element,int x,int y){
+		TouchAction touchAction = new TouchAction(appiumDriver);
+		touchAction.press(element, x, y);
+	}
+	public void longPress(WebElement element){
+		TouchAction touchAction = new TouchAction(appiumDriver);
+		touchAction.press(element).waitAction(5000);
+		touchAction.perform();
+	}
+	public void tap(WebElement element,int x,int y){
+		TouchAction touchAction = new TouchAction(appiumDriver);
+		touchAction.tap(element, x, y);
 	}
 }

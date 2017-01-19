@@ -9,6 +9,27 @@ import com.nonobank.apps.page.base.BasePage;
 public class Page_common extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_common.class);
 	
+	public boolean isExist_pop(){
+		logger.info("[Page]pop是否存在。。。。。。");
+		boolean isExist_pop=objectRepository.isElementExists("POP关闭按钮", 5);
+		return isExist_pop;
+	}
+	public void press_find(){
+		logger.info("[Page]长按发现。。。。。。");
+		WebElement element = objectRepository.getWebElement("发现");
+		longPress(element);
+	}
+	//environment取值为stb,sit,pre,prd
+	public void select_environment(String environment){
+		logger.info("[Page]选择环境。。。。。。");
+		WebElement element=objectRepository.getWebElementByXpath("//android.widget.TextView[@text='"+environment+"']");
+		element.click();
+	}
+	public void close_pop(){
+		logger.info("[Page]关闭pop。。。。。。");
+		WebElement element = objectRepository.getWebElement("POP关闭按钮");
+		element.click();
+	}
 	public String getText_title(){
 		logger.info("[Page]获取页面标题[title_name]。。。。。。");
 		WebElement element = objectRepository.getWebElement("页面标题");
@@ -41,6 +62,10 @@ public class Page_common extends BasePage{
 		logger.info("[Page]点击我的。。。。。。");
 		WebElement element = objectRepository.getWebElement("我的");
 		element.click();
+	}
+	public boolean isExist_me(){
+		boolean isExist=objectRepository.isElementExists("我的", 5);
+		return isExist;
 	}
 	public void click_find(){
 		logger.info("[Page]点击发现。。。。。。");

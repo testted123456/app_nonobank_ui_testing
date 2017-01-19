@@ -94,15 +94,13 @@ public class Biz_me {
 	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
+		case "设置":
+			String expect="设置";
 			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击设置图标成功");
 			break;
 		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+			
 			break;
 		}
 	}

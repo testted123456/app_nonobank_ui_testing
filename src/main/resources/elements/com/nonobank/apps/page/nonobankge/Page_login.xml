@@ -2,7 +2,7 @@
 <elements>
 	<element name="请输入手机号/麦子通行证">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_telephone']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_username']</prop>
 	</element>
 	<element name="登录密码">
 		<prop name="ios"></prop>
@@ -10,14 +10,14 @@
 	</element>
 	<element name="密码显示键">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/login_password_eye']</prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_password_eye']</prop>
 	</element>
-	<element name="忘记密码">
+	<element name="登录遇到问题">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/tv_find_password']</prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_prompt']</prop>
 	</element>
 	<element name="登录">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/login_btn']</prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_button_login']</prop>
 	</element>
 </elements>

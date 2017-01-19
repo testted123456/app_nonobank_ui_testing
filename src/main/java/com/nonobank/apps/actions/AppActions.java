@@ -71,6 +71,9 @@ public abstract class AppActions {
 		driver.quit();
 	}
 	
+	public void longPress(WebElement element){
+		driver.tap(1, element, 5000);
+	}
 	public void launchApp(){
 		driver.launchApp();
 	}

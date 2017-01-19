@@ -24,9 +24,9 @@ public class Page_login extends BasePage{
 		WebElement element = objectRepository.getWebElement("密码显示键");
 		element.click();
 	}
-	public void click_forget_password(){
-		logger.info("[Page]点击忘记密码。。。。。。");
-		WebElement element = objectRepository.getWebElement("忘记密码");
+	public void click_login_issue(){
+		logger.info("[Page]点击登录遇到问题。。。。。。");
+		WebElement element = objectRepository.getWebElement("登录遇到问题");
 		element.click();
 	}
 	public void click_login(){

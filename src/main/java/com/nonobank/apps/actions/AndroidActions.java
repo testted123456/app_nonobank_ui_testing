@@ -42,6 +42,7 @@ public class AndroidActions extends AppActions {
 				System.out.println("移动的Y坐标为："+offsetY);
 				touchAction = touchAction.moveTo(offsetX, offsetY);
 			}
+		
 		}
 		touchAction.release().perform();
 	}

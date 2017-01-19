@@ -34,13 +34,14 @@ public class nny extends BaseCase{
 	Biz_productInvest biz_productInvest;
 	
 	@Test(dataProvider = "dataSource")
-	public void test(String mobile,String pictureVerification,String smsCode,String username,
+	public void test(String environment,String mobile,String pictureVerification,
+			String smsCode,String username,
 			String password,String blackBox,
 			String idCard,String realName,String newZFPwd,String bankCardNo,
 			String bankCode,String validCode,String rechargeMoney,String bankSmsCode,
 			String productName,String payPassword) {				
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, smsCode, password,"");
+		biz_register.register(mobile, pictureVerification, smsCode, password,"",environment);
 		System.out.println("-----------------------------------------------------------------------------------");	
 		//接口---登录
 		String response_login=loginTest.login(username, password, blackBox);

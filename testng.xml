@@ -8,22 +8,11 @@
 		<listener class-name="org.testng.reporters.FailedReporter" /> 
 		<listener class-name="com.nonobank.apps.listener.TestngRetryListener" /> 
 	</listeners>
- 	<test name="user">
+ 	<test name="registerLogin">
 		<classes>
-			<!-- <class name="com.nonobank.apps.testcase.mxd.user.Login"></class>
-			<class name="com.nonobank.apps.testcase.mxd.user.EmergencyBorrow"></class>
-			<class name="com.nonobank.apps.testcase.mxd.user.Register"></class> -->
-			<class name="com.nonobank.apps.testcase.mxd.user.LargeBorrow"></class>  
-			<!-- <class name="com.nonobank.apps.testcase.mxd.user.Register"></class> -->
+			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Login"></class>  
+			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Register"></class> 
 		</classes>
 	</test>  
-<!-- 	<test name="loginRegister">
-		<classes>
-			<class name="com.nonobank.apps.testcase.mxd.loginRegister.ForgetGesturePassword"></class>
- 			<class name="com.nonobank.apps.testcase.mxd.loginRegister.LoginByErrorPassword"></class>
-			<class name="com.nonobank.apps.testcase.mxd.loginRegister.NoLoginState"></class>
-			<class name="com.nonobank.apps.testcase.mxd.loginRegister.RegisterByException"></class>
-			<class name="com.nonobank.apps.testcase.mxd.loginRegister.RegisterProtocol"></class> 
-		</classes>
-	</test> -->
+
 </suite> 

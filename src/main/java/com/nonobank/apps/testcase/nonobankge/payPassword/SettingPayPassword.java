@@ -21,10 +21,11 @@ public class SettingPayPassword extends BaseCase{
 	Biz_setPayPassword biz_setPayPassword;
 	
 	@Test(dataProvider="dataSource")
-	public void test(String mobile,String pictureVerification,String smsCode,String password,
+	public void test(String environment,String mobile,String pictureVerification,
+			String smsCode,String password,
 			String payPassword,String payPassword_second){
 		//注册---注册
-		biz_register.register(mobile, pictureVerification, smsCode, password,"");
+		biz_register.register(mobile, pictureVerification, smsCode, password,"",environment);
 		//点击我
 		biz_common.click_me();
 		//我的---点击设置

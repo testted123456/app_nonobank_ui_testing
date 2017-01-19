@@ -23,11 +23,11 @@ public class BankCard extends BaseCase {
 	Biz_setting biz_setting;
 
 	@Test(dataProvider = "dataSource")
-	public void test(String mobile, String pictureVerification, String smsCode, String password, String bankName,
+	public void test(String environment,String mobile, String pictureVerification, String smsCode, String password, String bankName,
 			String bankCardNum, String bankMobile, String bankSmsCode, String bankLimitPrompt, String username,
 			String blackBox, String idCard, String realName) {
 		// 注册
-		biz_register.register(mobile, pictureVerification, smsCode, password, "");
+		biz_register.register(mobile, pictureVerification, smsCode, password, "",environment);
 		// 实名认证--接口
 		// 接口---登录
 		String response_login = loginTest.login(username, password, blackBox);

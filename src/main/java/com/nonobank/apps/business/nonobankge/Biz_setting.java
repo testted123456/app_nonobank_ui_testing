@@ -66,20 +66,24 @@ public class Biz_setting {
 	public void click_logout(String expectMessage){
 		logger.info("[Biz]点击安全退出。。。。。。");
 		page_setting.click_logout();
+		page_setting.sleep(1000);
+		page_setting.click_logout_enter();
 		handleResult(expectMessage);
 	}
 	
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
-			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+		case "退出":
+			boolean isExist_me=page_common.isExist_me();
+			Assertion.assertEquals(true, isExist_me, Biz_bindingBankcard.class, "退出登录成功");
+			break;
+		case "实名认证":
+			String except="实名认证";
+			String acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "实名认证页面");
 			break;
 		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+		
 			break;
 		}
 	}

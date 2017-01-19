@@ -68,5 +68,16 @@ public class Page_setting extends BasePage{
 		WebElement element = objectRepository.getWebElement("安全退出");
 		element.click();
 	}
+	public void click_logout_enter(){
+		logger.info("[Page]点击安全退出enter。。。。。。");
+		WebElement element = objectRepository.getWebElement("安全退出-确认");
+		element.click();
+	}
+	public void click_logout_cancel(){
+		logger.info("[Page]点击安全退出cancel。。。。。。");
+		WebElement element = objectRepository.getWebElement("安全退出-取消");
+		element.click();
+	}
+	
 	
 }
