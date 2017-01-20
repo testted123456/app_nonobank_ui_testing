@@ -17,8 +17,14 @@ public class Biz_bindingBankcard {
 		logger.info("[Biz_绑定银行卡]");
 		System.out.println("-------------------------------------------------");
 		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
 		page_bindingBankcard.input_bankMobile(bankMobile);
 		page_bindingBankcard.click_getSmsCode();
 		page_bindingBankcard.input_bankSmsCode(bankSmsCode);

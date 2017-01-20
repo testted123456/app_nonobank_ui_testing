@@ -45,6 +45,11 @@ public class Page_bindingBankcard extends BasePage{
 		WebElement element = objectRepository.getWebElement("预留手机号");
 		element.sendKeys(bankMobile);
 	}
+	public void click_nextStep(){
+		logger.info("[Page]点击下一步。。。。。。");
+		WebElement element = objectRepository.getWebElement("下一步");
+		element.click();
+	}
 	public void click_getSmsCode(){
 		logger.info("[Page]点击获取验证码。。。。。。");
 		WebElement element = objectRepository.getWebElement("获取验证码");

@@ -99,6 +99,11 @@ public class Biz_me {
 			String actual=page_common.getText_title();
 			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击设置图标成功");
 			break;
+		case "银行卡管理":
+			expect="输入银行卡号";
+			actual=page_common.getText_title();
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击银行卡管理");
+			break;
 		default:
 			
 			break;

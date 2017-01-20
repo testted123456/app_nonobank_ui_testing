@@ -10,11 +10,15 @@
 	</element>
 	<element name="请选择你的银行">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.RelativeLayout[@resource-id='com.nonoapp:id/rl_select_bank']</prop>
+		<prop name="android">//android.widget.LinearLayout[@resource-id='com.nonoapp:id/ll_bindcard_select_bank']</prop>
 	</element>
 	<element name="银行卡号">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bankcard_id']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_bankcard_no']</prop>
+	</element>
+	<element name="下一步">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_bindcard_next']</prop>
 	</element>
 	<element name="预留手机号">
 		<prop name="ios"></prop>

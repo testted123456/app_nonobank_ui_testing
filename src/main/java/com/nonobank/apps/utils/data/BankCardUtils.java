@@ -6,7 +6,7 @@ import com.nonobank.apps.utils.db.DBUtils;
 
 public class BankCardUtils {
 	
-	private static String [] prefix = {"622202100112","436742121737"};
+	private static String [] prefix = {"622202100112","436742121737","621226100102"};
 	
 	public static int getOSum(int oSum){
 		oSum = oSum * 2;

@@ -7,7 +7,10 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.interfaces.util.SendRequest;
+import com.nonobank.apps.utils.data.Assertion;
 
 public class saveBankCardTest {
 	public static Logger logger = LogManager.getLogger(saveBankCardTest.class);
@@ -29,6 +32,9 @@ public class saveBankCardTest {
 		requestParams.put("sessionId", sessionId);
 		requestParams.put("realname", realname);
 		String response = SendRequest.httpCommonPost(url, requestParams);
+		JSONObject jsonObj2 = JSON.parseObject(response);
+		String flag = jsonObj2.get("flag").toString();
+		Assertion.assertEquals("1", flag, saveBankCardTest.class, "绑卡");		
 		return response;
 	}
 	

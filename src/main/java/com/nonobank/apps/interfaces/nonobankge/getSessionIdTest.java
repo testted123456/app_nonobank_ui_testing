@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.interfaces.util.SendRequest;
+import com.nonobank.apps.utils.data.Assertion;
 
 
 
@@ -25,6 +26,8 @@ public class getSessionIdTest {
 		String data = jsonObj.get("data").toString();
 		JSONObject jsonObj2 = JSON.parseObject(data);
 		String imgSessionId=jsonObj2.get("session_id").toString();
+		String flag = jsonObj.get("flag").toString();
+		Assertion.assertEquals("1", flag, getSessionIdTest.class, "获取图片sessionId");
 		return imgSessionId;
 	}
 	
