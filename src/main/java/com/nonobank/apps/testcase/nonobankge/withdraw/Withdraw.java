@@ -22,6 +22,7 @@ import com.nonobank.apps.interfaces.nonobankge.payRouteTest;
 import com.nonobank.apps.interfaces.nonobankge.qucikDynPayTest;
 import com.nonobank.apps.interfaces.nonobankge.saveBankCardTest;
 import com.nonobank.apps.testcase.base.BaseCase;
+import com.nonobank.apps.utils.data.UserInfoUtils;
 
 public class Withdraw extends BaseCase {
 	Biz_register biz_register;
@@ -32,18 +33,21 @@ public class Withdraw extends BaseCase {
 
 	@Test(dataProvider = "dataSource")
 	public void test(String environment,String mobile,String pictureVerification,String smsCode,
-			String username,String password,String blackBox,
-			String idCard,String realName,String newZFPwd,String bankCardNo,String bankCode,
-			String validCode,String rechargeMoney,String bankSmsCode,
-			String withdrawalAmount,String payPassword) {
+			String password,String blackBox,String idCard,String realName,
+			String bankCardNo,String bankCode,String bank_validCode,
+			String rechargeMoney,String bank_mobile,String payPassword,String payPassword_second,
+			String rechargeSum,String recharge_SmsCode,String withdrawalAmount) {
 		// 注册---注册
-		biz_register.register(mobile, pictureVerification, bankSmsCode, payPassword,"",environment);
+		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);
 		logger.info("------------------------------------------------------------------------------------");
 		// 接口---登录
-		String response_login = loginTest.login(username, password, blackBox);
+		String username=UserInfoUtils.getUsername(mobile);
+		String response_login = loginTest.login(username, "d051d170235c6682e334e6a5abd8ebdb", blackBox);
 		JSONObject jsonObj_login = JSON.parseObject(response_login);
-		String sessionId = jsonObj_login.get("session_id").toString();
-		String userId = jsonObj_login.get("m_id").toString();
+		String data_login=jsonObj_login.getString("data").toString();
+		JSONObject jsonObj_login_data = JSON.parseObject(data_login);
+		String sessionId = jsonObj_login_data.get("session_id").toString();
+		String userId = jsonObj_login_data.get("m_id").toString();
 		// 接口---实名认证
 		degreecardTest.degreecard(idCard, realName, sessionId);
 		// 接口---设置支付密码
@@ -57,7 +61,7 @@ public class Withdraw extends BaseCase {
 		String externalRefNumber = jsonObj_getDynByBind.get("externalRefNumber").toString();
 		String token_bankcard = jsonObj_getDynByBind.get("token").toString();
 		// 接口---绑卡
-		saveBankCardTest.saveBankCard(bankCardNo, idCard, bankCode, token_bankcard, mobile, validCode, userId,
+		saveBankCardTest.saveBankCard(bankCardNo, idCard, bankCode, token_bankcard, mobile, bank_validCode, userId,
 				externalRefNumber, sessionId, realName);
 		// 接口---支付路由
 		String response_payRoute = payRouteTest.payRoute(rechargeMoney, bankCode, sessionId);
@@ -74,19 +78,19 @@ public class Withdraw extends BaseCase {
 				.parseObject(data_generateKQMobileOrderNoByRecharge);
 		String orderNum = jsonObj_data_generateKQMobileOrderNoByRecharge.get("orderNum").toString();
 		// 快速支付发送验证码--账号余额充值
-		String response_getPayGNumByRecharge = getPayGNumByRechargeTest.getPayGNumByRecharge(rechargeMoney, newZFPwd,
+		String response_getPayGNumByRecharge = getPayGNumByRechargeTest.getPayGNumByRecharge(rechargeMoney, payPassword,
 				sessionId, userBankCardId, orderNum);
 		JSONObject jsonObj_getPayGNumByRecharge = JSON.parseObject(response_getPayGNumByRecharge);
 		String token_recharge = jsonObj_getPayGNumByRecharge.get("token").toString();
 		// 快速支付--账号余额充值
-		qucikDynPayTest.qucikDynPay(rechargeMoney, token_recharge, userBankCardId, bankSmsCode, orderNum, sessionId);
+		qucikDynPayTest.qucikDynPay(rechargeMoney, token_recharge, userBankCardId, recharge_SmsCode, orderNum, sessionId);
 		logger.info("------------------------------------------------------------------------------------");
 		// 点击我的
 		biz_common.click_me();
 		// 我的----提现
-		biz_me.click_takecash("");
+		biz_me.click_takecash("提现");
 		// 提现----提现流程
-		biz_withdraw.withdraw(withdrawalAmount, payPassword,"");
+		biz_withdraw.withdraw(withdrawalAmount, payPassword,"提现");
 
 	}
 

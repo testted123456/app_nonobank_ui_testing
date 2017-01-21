@@ -25,7 +25,7 @@ public class degreecardTest {
 		String response = SendRequest.httpCommonPost(url, requestParams);
 		JSONObject jsonObj2 = JSON.parseObject(response);
 		String flag = jsonObj2.get("flag").toString();
-		Assertion.assertEquals("1", flag, degreecardTest.class, "实名认证");
+		Assertion.assertEquals("8", flag, degreecardTest.class, "实名认证");
 		return response;
 	}
 	

@@ -13,6 +13,32 @@
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Login"></class>  
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Register"></class> 
 		</classes>
-	</test>  
+	</test> 
+	<test name="realName">
+		<classes>
+			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealName"></class>   
+		</classes>
+	</test> 
+	<test name="payPassword">
+		<classes>
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.settingPayPassword"></class>   
+		</classes>
+	</test> 
+	<test name="modifyMobile">
+		<classes>
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.modifyMobile"></class>   
+		</classes>
+	</test> 
+	<test name="modifyLoginPassword">
+		<classes>
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.modifyLoginPassword"></class>   
+		</classes>
+	</test> 
+	<test name="bankCard">
+		<classes>
+			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class>   
+		</classes>
+	</test> 
+	 
 
 </suite> 

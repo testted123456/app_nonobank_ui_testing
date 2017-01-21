@@ -10,14 +10,14 @@
 	</element>
 	<element name="账户余额">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_balance']</prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_recharge_balance']</prop>
 	</element>
 	<element name="充值金额">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_amount']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_recharge_money']</prop>
 	</element>
-	<element name="下一步">
+	<element name="立即充值">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_next']</prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_recharge_next']</prop>
 	</element>
 </elements>

@@ -23,41 +23,23 @@ public class Biz_recharge {
 			String rechargeSum,String bankSmsCode,String expectMessage){
 		logger.info("[Biz_充值未设置支付密码]");
 		System.out.println("-------------------------------------------------");
-		String pop_prompt=page_recharge.getText_CPM_popUp();
-		Assert.assertEquals(pop_prompt, "您尚未设置支付密码，请设置支付密码之后再进行交易。");
-		page_recharge.click_CPM_settingIcon();
+		double balance=page_recharge.getText_balance();
+		page_recharge.input_recharge_sum(rechargeSum);
 		page_recharge.sleep(1000);
-		System.out.println("------------------------");
-		page_setPayPassword.input_password(payPassword);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		String cpm_text=page_recharge.getText_CPM_popUp();
+		Assert.assertEquals(cpm_text, "您尚未设置支付密码，请设置支付密码之后再进行交易。");
+		page_recharge.click_CPM_settingIcon();
+		page_recharge.sleep(2000);
+		page_setPayPassword.input_password(payPassword_second);
+		page_setPayPassword.sleep(1000);
 		page_setPayPassword.input_confirmPassword(payPassword_second);
+		page_setPayPassword.sleep(1000);
 		page_setPayPassword.click_confirm();
 		page_setPayPassword.sleep(1000);
-		System.out.println("------------------------");
-		page_recharge.input_recharge_sum(rechargeSum);
-		page_recharge.click_next();
-		page_recharge.sleep(2000);
-		System.out.println("-------------------------------------------------");
-		double payMoney=page_cashierDesk.getText_payMoney();
-		Assert.assertEquals(payMoney, Double.parseDouble(rechargeSum));
-//		Page_cashierDesk.getText_paymentMethod();
-//		String bankLimit=Page_cashierDesk.getText_bankLimit();
-		page_cashierDesk.click_next();
-		page_cashierDesk.sleep(1000);
-		double CMP_rechargeMoney=page_cashierDesk.getText_CMP_rechargeMoney();
-		Assert.assertEquals(CMP_rechargeMoney, Double.parseDouble(rechargeSum));
-		page_cashierDesk.input_CMP_payPassword(payPassword);
-		page_cashierDesk.click_CMP_enter();
-		page_cashierDesk.sleep(2000);
-		String CMP2_prompt=page_cashierDesk.getText_CMP2_prompt();
-//		Assert.assertEquals(CMP2_prompt, "");
-		page_cashierDesk.input_CMP2_smsCode(bankSmsCode);
-		page_cashierDesk.click_CMP2_enterRecharge();
-		page_cashierDesk.sleep(2000);
-		System.out.println("-------------------------------------------------");
-		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
-		Assert.assertEquals(rechargeMoney, CMP_rechargeMoney);
-		page_rechargeSuccess.click_finish();
-		handleResult(expectMessage);
+		page_recharge.click_ImmediatelyRecharge();
+		
 		System.out.println("-------------------------------------------------");
 	}
 	private void handleResult(String expectMessage) {
@@ -68,9 +50,6 @@ public class Biz_recharge {
 			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
 			break;
 		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
 			break;
 		}
 	}

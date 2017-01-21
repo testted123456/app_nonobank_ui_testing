@@ -22,22 +22,18 @@ public class Biz_setPayPassword {
 		page_setPayPassword.input_confirmPassword(payPassword_second);
 		page_setPayPassword.sleep(2000);
 		page_setPayPassword.click_confirm();
-		String title=page_common.getText_title();
-		Assert.assertEquals(title, "账户安全");
 		handleResult(expectMessage);
 		System.out.println("------------------------------------------------");
 	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
+		case "账户安全":
+			String expect="账户安全";
 			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "设置支付密码成功");
 			break;
 		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+		
 			break;
 		}
 	}

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import com.nonobank.apps.page.base.BasePage;
+import com.nonobank.apps.utils.variable.StringHandle;
 
 public class Page_recharge extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_recharge.class);
@@ -26,7 +27,7 @@ public class Page_recharge extends BasePage{
 		logger.info("[Page]获取账户余额。。。。。。");
 		WebElement element = objectRepository.getWebElement("账户余额");
 		String balance_str=element.getText();
-		double balance=Double.parseDouble(balance_str);
+		double balance=StringHandle.numFromString(balance_str);
 		return balance;
 	}
 	
@@ -36,9 +37,9 @@ public class Page_recharge extends BasePage{
 		element.sendKeys(rechargeSum);
 	}
 	
-	public void click_next(){
-		logger.info("[Page]点击下一步。。。。。。");
-		WebElement element = objectRepository.getWebElement("下一步");
+	public void click_ImmediatelyRecharge(){
+		logger.info("[Page]点击立即充值。。。。。。");
+		WebElement element = objectRepository.getWebElement("立即充值");
 		element.click();
 	}
 }

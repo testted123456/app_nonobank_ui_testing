@@ -82,6 +82,26 @@ public class Biz_setting {
 			String acturl=page_common.getText_title();
 			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "实名认证页面");
 			break;
+		case "绑定手机":
+			except="绑定手机";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "绑定手机页面");
+			break;
+		case "设置收货地址":
+			except="设置收货地址";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "设置收货地址页面");
+			break;
+		case "账户安全":
+			except="账户安全";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "账户安全页面");
+			break;
+		case "我要反馈":
+			except="我要反馈";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "我要反馈页面");
+			break;
 		default:
 		
 			break;

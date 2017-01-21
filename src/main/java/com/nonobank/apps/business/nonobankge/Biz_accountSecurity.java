@@ -30,15 +30,18 @@ public class Biz_accountSecurity {
 	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
-			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
+		case "设置支付密码":
+			String except="设置支付密码";
+			String acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "设置支付密码页面");
+			break;
+		case "修改登录密码":
+			except="修改登录密码";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "修改登录密码页面");
 			break;
 		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
+			
 			break;
 		}
 	}
