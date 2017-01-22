@@ -81,7 +81,7 @@ public class xkzq extends BaseCase{
 		//点击产品
 		biz_common.click_product();
 		//产品---点击新客专区
-		biz_product.click_xkzq("");
+
 		//新客专区---根据产品名点击相应计划
 		biz_productList.click_byProductName(productName,"");
 		//产品购买

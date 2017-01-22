@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_purchase;
 import com.nonobank.apps.page.nonobankge.Page_common;
+import com.nonobank.apps.page.nonobankge.Page_invest;
 import com.nonobank.apps.page.nonobankge.Page_productDetails;
 import com.nonobank.apps.page.nonobankge.Page_purchaseSuccess;
 import com.nonobank.apps.utils.data.Assertion;
@@ -17,90 +18,56 @@ public class Biz_productInvest {
 	Page_purchase page_purchase=new Page_purchase();
 	Page_purchaseSuccess page_purchaseSuccess=new Page_purchaseSuccess();
 	Page_common page_common=new Page_common();
+	Page_invest page_invest=new Page_invest();
 
-	public void productInvest(String payPassword,String expectMessage){
+	public void productInvest(String investMoney,String payPwd,String bankSmsCode,String expectMessage){
 		logger.info("[Biz_产品购买]");
 		System.out.println("--------------------------------------------------------------------");
 		//预期年化收益
 		String rate=page_productDetails.getText_rate();
-		//项目金额
-		double amount=page_productDetails.getText_amount();
 		//项目期限
 		String expect=page_productDetails.getText_expect();
 		//起投金额
 		double start_money=page_productDetails.getText_start_money();
-		//完成进度
-		double schedule=page_productDetails.getText_schedule();
-		//收益说明
-		String earnings_intro=page_productDetails.getText_earnings_intro();
-		//保障方式
-		String security_mode=page_productDetails.getText_security_mode();
-		//剩余可投
-		double residue_invest_amount=page_productDetails.getText_residue_invest_amount();
-		//获取每份投资金额
-		double eachInvestMoney=page_productDetails.getText_eachInvestMoney();
-		//投资金额
-		String investMoney=Var_productInvest.getInvest_count();
-		double double_investMoney=Double.parseDouble(investMoney);
-		
-		if(residue_invest_amount>double_investMoney&&double_investMoney%eachInvestMoney==0){
-			page_productDetails.input_invest_count(Var_productInvest.getInvest_count());
-			//预期收益
-			double expect_earning=page_productDetails.getText_expect_earning();
-			//点击马上投资
-			page_productDetails.click_invest();
-			System.out.println("--------------------------------------------------------------------");
-			//获取购买金额
-			double purchaseMoney=page_purchase.getText_purchaseMoney();
-			Assert.assertEquals(purchaseMoney, double_investMoney);
-			//获取预期年化
-			String exceptYield=page_purchase.getText_exceptYield();
-			Assert.assertEquals(exceptYield, rate);
-			//获取投资期限
-			String investDeadline=page_purchase.getText_investDeadline();
-			Assert.assertEquals(investDeadline, expect);
-			//获取预期收益
-			double exceptEarnings=page_purchase.getText_exceptEarnings();
-			Assert.assertEquals(exceptEarnings, expect_earning);
-			//获取待支付金额
-			double stayPaymentMoney=page_purchase.getText_stayPaymentMoney();
-			Assert.assertEquals(stayPaymentMoney, purchaseMoney);
-			//点击确认支付
-			page_purchase.click_confirmPay();
-			//获取弹窗-本次投资金额
-			double thisInvestMoney=page_purchase.getText_CMP_thisInvestMoney();
-			Assert.assertEquals(thisInvestMoney, stayPaymentMoney);
-			//获取弹窗-现金券支付金额
-			double cashCouponPayMoney=page_purchase.getText_CMP_cashCouponPayMoney();
-			//获取弹窗-账号余额支付金额
-			double balancePayMoney=page_purchase.getText_CMP_balancePayMoney();
-			Assert.assertEquals(thisInvestMoney, cashCouponPayMoney+balancePayMoney);
-			//弹窗--输入支付密码
-			page_purchase.input_CMP_payPassword(payPassword);
-			//弹窗--点击确定
-			page_purchase.click_CMP_enter();
-			System.out.println("--------------------------------------------------------------------");
-			//本次预计收益
-			double thisInvestEarning=page_purchaseSuccess.getText_thisInvestEarning();
-			Assert.assertEquals(thisInvestEarning, exceptEarnings);
-			//本次投资金额
-			double investMoney2=page_purchaseSuccess.getText_investMoney();
-			Assert.assertEquals(investMoney2, investMoney);
-			 handleResult(expectMessage);
-			System.out.println("--------------------------------------------------------------------");
+		//获取累计投资人次
+		double allInvestPerson=page_productDetails.getText_allInvestPerson();
+		//判断按钮为已售罄还是下一步
+		String content=page_productDetails.getText_next();
+		if(content.equals("已售罄")){
+			
 		}
+		if(content.equals("立即投资")){
+			page_productDetails.click_nextORsoldout();
+			page_productDetails.sleep(2000);
+			String rate2=page_invest.getText_rate();
+			Assert.assertEquals(rate, rate2);
+			String expect2=page_invest.getText_expect();
+			Assert.assertEquals(expect, expect2);
+			page_invest.input_investMoney(investMoney);
+			page_invest.sleep(1000);
+			page_invest.click_pay();
+			page_invest.sleep(1000);
+			page_invest.click_CPM_nextStep();
+			page_invest.sleep(1000);
+			page_invest.input_CPM_payPwd(payPwd);
+			page_invest.sleep(1000);
+			page_invest.click_CPM_payPwd_next();
+			page_invest.sleep(1000);
+			page_invest.input_CPM_smsCode(bankSmsCode);
+			page_invest.sleep(1000);
+		}	
+		handleResult(expectMessage);
+		System.out.println("--------------------------------------------------------------------");
 	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
-		case "":
-			String expect="";
+		case "投资":
+			String expect="投资";
 			String actual=page_common.getText_title();
 			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "");
 			break;
 		default:
-			expect="";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "");
+			
 			break;
 		}
 	}

@@ -21,7 +21,7 @@
 	</test> 
 	<test name="payPassword">
 		<classes>
-			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.settingPayPassword"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.SettingPayPassword"></class>   
 		</classes>
 	</test> 
 	<test name="modifyMobile">

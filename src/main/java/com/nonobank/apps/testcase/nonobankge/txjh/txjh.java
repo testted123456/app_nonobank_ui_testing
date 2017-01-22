@@ -83,7 +83,7 @@ public class txjh extends BaseCase {
 		// 点击产品
 		biz_common.click_product();
 		// 产品---贴心计划
-		biz_product.click_txjh("");
+
 		//贴心计划---根据产品名点击相应计划
 		biz_productList.click_byProductName(productName,"");
 		//产品购买

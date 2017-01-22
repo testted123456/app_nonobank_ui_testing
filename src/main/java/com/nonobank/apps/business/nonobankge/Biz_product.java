@@ -12,49 +12,24 @@ public class Biz_product {
 	Page_product page_product=new Page_product();
 	Page_common page_common=new Page_common();
 	
-	public void click_xkzq(String expectMessage){
-		logger.info("[Biz点击新客专区]");
-		page_product.click_xkzq();
-		handleResult(expectMessage);
+	
+	public void click_productName(String productName){
+		logger.info("[Biz根据productName，点击相应产品]");
+		page_product.click_product(productName);
 	}
-	public void click_txjh(String expectMessage){
-		logger.info("[Biz点击贴心计划]");
-		page_product.click_txjh();
-		handleResult(expectMessage);
+	public void click_regularInvest(){
+		logger.info("[Biz点击定投]");
+		page_product.click_directInvest();
 	}
-	public void click_yys(String expectMessage){
-		logger.info("[Biz点击月月升]");
-		page_product.click_yys();
-		handleResult(expectMessage);
+	public void click_directInvest(){
+		logger.info("[Biz点击直投]");
+		page_product.click_directInvest();
 	}
-	public void click_nny(String expectMessage){
-		logger.info("[Biz点击诺诺盈]");
-		page_product.click_nny();
-		handleResult(expectMessage);
+	public void click_debtEquity(){
+		logger.info("[Biz点击债转]");
+		page_product.click_debtEquity();
 	}
-	public void click_tstz(String expectMessage){
-		logger.info("[Biz点击特色投资]");
-		page_product.click_tstz();
-		handleResult(expectMessage);
-	}
-	public void click_zzzq(String expectMessage){
-		logger.info("[Biz点击债转专区]");
-		page_product.click_zzzq();
-		handleResult(expectMessage);
-	}
-	private void handleResult(String expectMessage) {
-		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
-			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
-			break;
-		default:
-			expect="设置银行卡";
-			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡失败");
-			break;
-		}
-	}
+
+
 	
 }

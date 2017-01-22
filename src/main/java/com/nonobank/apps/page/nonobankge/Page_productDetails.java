@@ -16,13 +16,6 @@ public class Page_productDetails extends BasePage{
 		String rate=element.getText();
 		return rate;
 	}
-	public double getText_amount(){
-		logger.info("[Page]获取项目金额。。。。。。");
-		WebElement element = objectRepository.getWebElement("项目金额");
-		String amount_str=element.getText();
-		double amount=Double.parseDouble(amount_str);
-		return amount;
-	}
 	public String getText_expect(){
 		logger.info("[Page]获取项目期限。。。。。。");
 		WebElement element = objectRepository.getWebElement("项目期限");
@@ -36,72 +29,24 @@ public class Page_productDetails extends BasePage{
 		double start_money=Double.parseDouble(start_money_str);
 		return start_money;
 	}
-	public double getText_schedule(){
-		logger.info("[Page]获取项目进度。。。。。。");
-		WebElement element = objectRepository.getWebElement("项目进度");
-		String schedule_str=element.getText();
-		double schedule=StringHandle.expectEarnings(schedule_str);
-		return schedule;
+	public double getText_allInvestPerson(){
+		logger.info("[Page]获取累计投资人次。。。。。。");
+		WebElement element = objectRepository.getWebElement("累计投资人次");
+		String allInvestPerson_str=element.getText();
+		double allInvestPerson=StringHandle.expectEarnings(allInvestPerson_str);
+		return allInvestPerson;
 	}
-	public String getText_earnings_intro(){
-		logger.info("[Page]获取收益说明。。。。。。");
-		WebElement element = objectRepository.getWebElement("收益说明");
-		String earnings_intro=element.getText();
-		return earnings_intro;
+	public String getText_next(){
+		logger.info("[Page]获取按钮内容。。。。。。");
+		WebElement element = objectRepository.getWebElement("下一步或者已售罄");
+		String text=element.getText();
+		return text;
 	}
-	public String getText_security_mode(){
-		logger.info("[Page]获取保障方式。。。。。。");
-		WebElement element = objectRepository.getWebElement("保障方式");
-		String security_mode=element.getText();
-		return security_mode;
-	}
-	public void click_product_intro(){
-		logger.info("[Page]点击产品介绍。。。。。。");
-		WebElement element = objectRepository.getWebElement("产品介绍");
+	public void click_nextORsoldout(){
+		logger.info("[Page]点击下一步。。。。。。");
+		WebElement element = objectRepository.getWebElement("下一步或者已售罄");
 		element.click();
 	}
-	public double getText_eachInvestMoney(){
-		logger.info("[Page]获取每份投资金额。。。。。。");
-		WebElement element = objectRepository.getWebElement("投资金额");
-		String eachInvestMoney_str=element.getText();
-		double eachInvestMoney=Double.parseDouble(eachInvestMoney_str);
-		return eachInvestMoney;
-	}
-	public void input_invest_count(String invest_count){
-		logger.info("[Page]输入投资金额。。。。。。");
-		WebElement element = objectRepository.getWebElement("投资金额");
-		element.sendKeys(invest_count);	
-	}
-	public void click_product_cut(){
-		logger.info("[Page]点击投资金额减号。。。。。。");
-		WebElement element = objectRepository.getWebElement("投资金额减号");
-		element.click();
-	}
-	public void click_product_add(){
-		logger.info("[Page]点击投资金额加号。。。。。。");
-		WebElement element = objectRepository.getWebElement("投资金额加号");
-		element.click();
-	}
-	public double getText_expect_earning(){
-		logger.info("[Page]获取预期收益。。。。。。");
-		WebElement element = objectRepository.getWebElement("预期收益");
-		String expect_earning_str=element.getText();
-		double expect_earning=Double.parseDouble(expect_earning_str);
-		return expect_earning;
-	}
-	public double getText_residue_invest_amount(){
-		logger.info("[Page]获取剩余可投。。。。。。");
-		WebElement element = objectRepository.getWebElement("剩余可投");
-		String residue_invest_amount_str=element.getText();
-		double residue_invest_amount=Double.parseDouble(residue_invest_amount_str);
-		return residue_invest_amount;
-	}
-	public void click_invest(){
-		logger.info("[Page]点击马上投资。。。。。。");
-		WebElement element = objectRepository.getWebElement("马上投资");
-		element.click();
-	}
-	
 	
 	
 	

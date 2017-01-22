@@ -79,7 +79,7 @@ public class yys extends BaseCase{
 		// 点击产品
 		biz_common.click_product();
 		// 产品---月月升
-		biz_product.click_yys("");
+
 		//产品购买
 		biz_productInvest.productInvest(payPassword,"");
 				

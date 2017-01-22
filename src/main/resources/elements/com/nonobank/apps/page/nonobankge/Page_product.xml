@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <elements>
-	<element name="新客专区">
+	<element name="定投">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='新客专区']</prop>
+		<prop name="android">//android.widget.TextView[@text='定投']</prop>
 	</element>
-	<element name="月月升">
+	<element name="直投">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='月月升']</prop>
+		<prop name="android">//android.widget.TextView[@text='直投']</prop>
 	</element>
-	<element name="特色投资">
+	<element name="债转">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='特色投资']</prop>
+		<prop name="android">//android.widget.TextView[@text='债转']</prop>
 	</element>
-	<element name="债转专区">
+	<element name="横幅标题">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='债转专区']</prop>	
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tag']</prop>
 	</element>
-	<element name="诺诺盈">
+	<element name="横幅内容">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='诺诺盈']</prop>
+		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_prompt_content']</prop>
 	</element>
-	<element name="贴心计划">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@text='贴心计划']</prop>
-	</element>
+	
 	
 </elements>

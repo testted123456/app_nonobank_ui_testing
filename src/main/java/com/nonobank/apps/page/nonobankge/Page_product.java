@@ -9,36 +9,37 @@ import com.nonobank.apps.page.base.BasePage;
 public class Page_product extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_product.class);
 	
-	public void click_xkzq(){
-		logger.info("[Page]点击新客专区。。。。。。");
-		WebElement element = objectRepository.getWebElement("新客专区");
+	public void click_regularInvest(){
+		logger.info("[Page]点击定投。。。。。。");
+		WebElement element = objectRepository.getWebElement("定投");
 		element.click();
 	}
-	public void click_txjh(){
-		logger.info("[Page]点击贴心计划。。。。。。");
-		WebElement element = objectRepository.getWebElement("贴心计划");
+	public void click_directInvest(){
+		logger.info("[Page]点击直投。。。。。。");
+		WebElement element = objectRepository.getWebElement("直投");
 		element.click();
 	}
-	public void click_yys(){
-		logger.info("[Page]点击月月升。。。。。。");
-		WebElement element = objectRepository.getWebElement("月月升");
+	public void click_debtEquity(){
+		logger.info("[Page]点击债转。。。。。。");
+		WebElement element = objectRepository.getWebElement("债转");
 		element.click();
 	}
-	public void click_tstz(){
-		logger.info("[Page]点击特色投资。。。。。。");
-		WebElement element = objectRepository.getWebElement("特色投资");
+	public String getText_bannerTag(){
+		logger.info("[Page]获取横幅标题。。。。。。");
+		WebElement element = objectRepository.getWebElement("横幅标题");
+		String bannerTag=element.getText();
+		return bannerTag;
+	}
+	public String getText_bannerContent(){
+		logger.info("[Page]获取横幅标题。。。。。。");
+		WebElement element = objectRepository.getWebElement("横幅内容");
+		String bannerContent=element.getText();
+		return bannerContent;
+	}
+	public void click_product(String productName){
+		logger.info("[Page]点击相应产品。。。。。。");
+		WebElement element = objectRepository.getWebElementByXpath("//android.widget.TextView[@text='"+productName+"']");
 		element.click();
 	}
-	public void click_zzzq(){
-		logger.info("[Page]点击债转专区。。。。。。");
-		WebElement element = objectRepository.getWebElement("债转专区");
-		element.click();
-	}
-	public void click_nny(){
-		logger.info("[Page]点击诺诺盈。。。。。。");
-		WebElement element = objectRepository.getWebElement("诺诺盈");
-		element.click();	
-	}
-	
 	
 }
