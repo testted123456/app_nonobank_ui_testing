@@ -28,11 +28,15 @@ public class Recharge extends BaseCase {
 	Biz_gesturePwd biz_gesturePwd;
 	
 	@Test(dataProvider = "dataSource")
-	public void test(String environment,String mobile,String pictureVerification,String smsCode,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,String smsCode,
 			String password,String blackBox,String idCard,String realName,
 			String bankCardNo,String bankCode,String bank_validCode,
 			String rechargeMoney,String bank_mobile,
-			String payPassword,String payPassword_second,String rechargeSum,String recharge_SmsCode) {		
+			String payPassword,String payPassword_second,String rechargeSum,String recharge_SmsCode) {	
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册---注册
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);
 		// 接口---登录

@@ -25,7 +25,13 @@ public class Invest extends BaseCase {
 	Biz_productInvest biz_productInvest;
 
 	@Test(dataProvider = "dataSource")
-	public void test() {
+	public void test(String testcaseName,String testcaseDescription,String environment,
+			String mobile,String pictureVerification,
+			String smsCode,String password,String blackBox,String idCard,String realName,
+			String productName,String investMoney,String payPwd,String bankSmsCode) {
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册
 		biz_register.register(mobile, pictureVerification, smsCode, password, "注册成功", environment);
 		// 接口---登录
@@ -49,7 +55,7 @@ public class Invest extends BaseCase {
 		biz_product.click_regularInvest();
 		//点击产品名称
 		biz_product.click_productName(productName);
-		biz_productInvest.productInvest(investMoney, expectMessage);
+		biz_productInvest.productInvest(investMoney,payPwd,bankSmsCode,"");
 		
 
 	}

@@ -17,9 +17,13 @@ public class Register extends BaseCase{
 	Biz_setting biz_setting;
 	
 	@Test(dataProvider="dataSource")
-	public void test(String environment,String mobile,String pictureVerification,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,
 			String gesturePwd,String gesturePwd_again){
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);
 //		biz_gesturePwd.set_gesturePwd(gesturePwd,gesturePwd_again,"success");
 		biz_gesturePwd.click_judge();

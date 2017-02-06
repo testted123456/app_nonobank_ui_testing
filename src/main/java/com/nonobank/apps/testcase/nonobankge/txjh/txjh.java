@@ -35,11 +35,15 @@ public class txjh extends BaseCase {
 	Biz_productInvest biz_productInvest;
 	
 	@Test(dataProvider = "dataSource")
-	public void test(String environment,String mobile,String pictureVerification,String smsCode,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,String smsCode,
 			String username,String password,String blackBox,
 			String idCard,String realName,String newZFPwd,String bankCardNo,String bankCode,
 			String validCode,String rechargeMoney,String bankSmsCode,
-			String productName,String payPassword) {		
+			String productName,String payPassword,String investMoney,String payPwd) {		
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册---注册
 		biz_register.register(mobile, pictureVerification, smsCode, password,"",environment);
 		System.out.println("-----------------------------------------------------------------------------------");	
@@ -87,7 +91,7 @@ public class txjh extends BaseCase {
 		//贴心计划---根据产品名点击相应计划
 		biz_productList.click_byProductName(productName,"");
 		//产品购买
-		biz_productInvest.productInvest(payPassword,"");
+		biz_productInvest.productInvest(investMoney, payPwd, bankSmsCode, "");
 		
 	}
 

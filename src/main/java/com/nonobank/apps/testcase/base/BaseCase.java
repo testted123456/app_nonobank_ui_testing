@@ -66,61 +66,60 @@ public class BaseCase {
 	}
 
 	// 测试数据保存到二维数组testdata，sheet的名字必须和testng的测试方法相同都为test
-	@DataProvider(name = "dataSource")
-	public Object[][] dataSource(Method method) {
-		logger.info("[BaseCase]开始准备测试数据...");
-
-		Object[][] testdata = null;
-		// 测试方法默认为test
-		testdata = ParseXLSX.getDataValue(testfile, "test");
-		return testdata;
-	}
+		@DataProvider(name = "dataSource")
+		public Object[][] dataSource(Method method) {
+			logger.info("[BaseCase]开始准备测试数据...");
+			Object[][] testdata = null;
+			// 测试方法默认为test
+			testdata = ParseXLSX.getDataValue(testfile, "test");		
+			return testdata;
+		}
 
 	@BeforeSuite
 	public void init() {
 		// logger.info("开始执行case: " + this.getClass().getName());
-				logger.info("[BaseCase]启动AppDriver...");
-				String os = System.getProperties().getProperty("os.name");
-				// ChromedriverHandler.chromeDriverHandlerThread().start();
-				if (os.startsWith("Mac")) {
-					AppiumOperation.stopServerInMac("4723");
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					AppiumOperation.startServerInMac("4723");
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} else {
-					AppiumOperation.stopWindowsAppiumServer("4723");
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					AppiumOperation.startWindowsServer("4723");
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+		logger.info("[BaseCase]启动AppDriver...");
+		String os = System.getProperties().getProperty("os.name");
+		// ChromedriverHandler.chromeDriverHandlerThread().start();
+		if (os.startsWith("Mac")) {
+			AppiumOperation.stopServerInMac("4723");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			AppiumOperation.startServerInMac("4723");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			AppiumOperation.stopWindowsAppiumServer("4723");
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			AppiumOperation.startWindowsServer("4723");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
-				DriverFactory.getAppiumDriver();
+		DriverFactory.getAppiumDriver();
 	}
 
 	@BeforeClass
 	public void init_fields() {
 		logger.info("================================================================");
-		
+
 		logger.info("[BaseCase]开始执行case: " + this.getClass().getName());
 		logger.info("[BaseCase]初始化business...");
 		Class clazz = this.getClass();
@@ -148,8 +147,9 @@ public class BaseCase {
 			}
 		}
 	}
+
 	@AfterMethod
-	public void addData() {	
+	public void addData() {
 		if (actualResult.equals("成功")) {
 			passCount++;
 		} else {
@@ -164,21 +164,22 @@ public class BaseCase {
 		lst.add(newLst);
 
 	}
+
 	@AfterClass
-	public void after_class(){
+	public void after_class() {
 		AppiumDriver<WebElement> appiumDriver = DriverFactory.getAppiumDriver();
 		AppActions appActions = null;
-		
-		if(appiumDriver instanceof AndroidDriver<?>){
-			appActions = new AndroidActions((AndroidDriver<WebElement>)appiumDriver);
-		}else{
-			appActions = new IOSActions((IOSDriver<WebElement>)appiumDriver);
+
+		if (appiumDriver instanceof AndroidDriver<?>) {
+			appActions = new AndroidActions((AndroidDriver<WebElement>) appiumDriver);
+		} else {
+			appActions = new IOSActions((IOSDriver<WebElement>) appiumDriver);
 		}
-		
+
 		logger.info("[BaseCase]重置App...");
 		appActions.resetApp();
 	}
-	
+
 	@AfterSuite
 	public void saveCSV() {
 		try {

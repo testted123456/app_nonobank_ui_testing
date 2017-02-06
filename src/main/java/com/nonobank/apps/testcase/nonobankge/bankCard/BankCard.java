@@ -27,9 +27,13 @@ public class BankCard extends BaseCase {
 	Biz_gesturePwd biz_gesturePwd;
 
 	@Test(dataProvider = "dataSource")
-	public void test(String environment,String mobile, String pictureVerification, String smsCode,
+	public void test(String testcaseName,String testcaseDescription,String environment,String mobile,
+			String pictureVerification, String smsCode,
 			String password, String bankName,String bankCardNum, String bankMobile, String bankSmsCode, 
 			String bankLimitPrompt,String blackBox,String idCard,String realName) {
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);		
 		// 接口---登录
@@ -49,7 +53,7 @@ public class BankCard extends BaseCase {
 		// 点击银行卡管理
 		biz_me.click_bankcard("银行卡管理");
 		// 绑定银行卡
-//		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt, "");
+		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt, "");
 		String bankCode="1";
 		bankCard.bindingBankCard(userId, bankCardNum, bankCode);
 	}

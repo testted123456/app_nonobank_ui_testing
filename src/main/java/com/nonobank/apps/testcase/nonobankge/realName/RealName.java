@@ -21,8 +21,12 @@ public class RealName extends BaseCase{
 	Biz_realNameAuth biz_realNameAuth;
 	
 	@Test(dataProvider="dataSource")
-	public void test(String environment,String mobile,String pictureVerification,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,String realName,String idCard){
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);
 		biz_gesturePwd.click_judge();
 		//点击我的

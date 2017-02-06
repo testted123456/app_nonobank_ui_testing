@@ -23,8 +23,12 @@ public class modifyMobile extends BaseCase {
 	Biz_modifyMobile biz_modifyMobile;
 
 	@Test(dataProvider = "dataSource")
-	public void test(String environment,String mobile,String pictureVerification,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,String newMobile,String smsCode2) {
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册---注册
 		biz_register.register(mobile, pictureVerification, smsCode, password, "注册成功", environment);
 		// 点击跳过

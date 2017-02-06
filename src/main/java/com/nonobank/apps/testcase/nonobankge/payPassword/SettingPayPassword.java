@@ -23,9 +23,13 @@ public class SettingPayPassword extends BaseCase{
 	Biz_gesturePwd biz_gesturePwd;
 	
 	@Test(dataProvider="dataSource")
-	public void test(String environment,String mobile,String pictureVerification,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,
 			String payPassword,String payPassword_second){
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		//注册---注册
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);
 		// 点击跳过

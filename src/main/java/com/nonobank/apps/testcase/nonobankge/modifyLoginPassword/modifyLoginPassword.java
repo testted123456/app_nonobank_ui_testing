@@ -22,9 +22,13 @@ public class modifyLoginPassword extends BaseCase {
 	Biz_modifyLoginPassword biz_modifyLoginPassword;
 
 	@Test(dataProvider = "dataSource")
-	public void test(String environment,String mobile,String pictureVerification,
+	public void test(String testcaseName,String testcaseDescription,
+			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,String oldPassword,String newPassword,
 			String ensurePassword) {
+		caseName = testcaseName;
+		caseDescription = testcaseDescription;
+		inputParams = mobile;
 		// 注册---注册
 		biz_register.register(mobile, pictureVerification, smsCode, password, "注册成功", environment);
 		// 点击跳过
