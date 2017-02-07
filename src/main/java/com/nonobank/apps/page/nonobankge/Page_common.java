@@ -19,6 +19,16 @@ public class Page_common extends BasePage{
 		WebElement element = objectRepository.getWebElement("发现");
 		longPress(element);
 	}
+	public boolean isExist_update(){
+		logger.info("[Page]立即更新是否存在。。。。。。");
+		boolean isExist_update=objectRepository.isElementExists("立即更新", 5);
+		return isExist_update;
+	}
+	public void close_update(){
+		logger.info("[Page]点击立即更新关闭按钮。。。。。。");
+		WebElement element = objectRepository.getWebElement("立即更新关闭按钮");
+		element.click();
+	}	
 	//environment取值为stb,sit,pre,prd
 	public void select_environment(String environment){
 		logger.info("[Page]选择环境。。。。。。");
@@ -89,5 +99,6 @@ public class Page_common extends BasePage{
 		WebElement element = objectRepository.getWebElement("首页");
 		element.click();
 	}
+	
 	
 }

@@ -10,8 +10,10 @@ import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_product;
 import com.nonobank.apps.business.nonobankge.Biz_productInvest;
 import com.nonobank.apps.business.nonobankge.Biz_register;
+import com.nonobank.apps.interfaces.nonobankge.bankCard;
 import com.nonobank.apps.interfaces.nonobankge.degreecardTest;
 import com.nonobank.apps.interfaces.nonobankge.loginTest;
+import com.nonobank.apps.interfaces.nonobankge.savePayPasswordTest;
 import com.nonobank.apps.testcase.base.BaseCase;
 import com.nonobank.apps.utils.data.UserInfoUtils;
 
@@ -28,6 +30,7 @@ public class Invest extends BaseCase {
 	public void test(String testcaseName,String testcaseDescription,String environment,
 			String mobile,String pictureVerification,
 			String smsCode,String password,String blackBox,String idCard,String realName,
+			String bankCardNo,String bankCode,
 			String productName,String investMoney,String payPwd,String bankSmsCode) {
 		caseName = testcaseName;
 		caseDescription = testcaseDescription;
@@ -44,9 +47,10 @@ public class Invest extends BaseCase {
 		String userId = jsonObj_login_data.get("m_id").toString();
 		// 接口---实名认证
 		degreecardTest.degreecard(idCard, realName, sessionId);
+		//接口---设置支付密码
+//		savePayPasswordTest.savePayPassword(payPwd, sessionId);
 		//接口----绑卡
-		
-		
+		bankCard.bindingBankCard(userId, bankCardNo, bankCode);		
 		// 点击跳过
 		biz_gesturePwd.click_judge();
 		//点击投资
@@ -55,7 +59,7 @@ public class Invest extends BaseCase {
 		biz_product.click_regularInvest();
 		//点击产品名称
 		biz_product.click_productName(productName);
-		biz_productInvest.productInvest(investMoney,payPwd,bankSmsCode,"");
+		biz_productInvest.productInvest(investMoney,payPwd,bankSmsCode,productName);
 		
 
 	}

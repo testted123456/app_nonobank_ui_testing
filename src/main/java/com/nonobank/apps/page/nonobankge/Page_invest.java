@@ -34,6 +34,7 @@ public class Page_invest extends BasePage{
 		String invest=element.getText();
 		return invest;
 	}
+
 	public void input_investMoney(String investMoney){
 		logger.info("[Page]输入投资金额。。。。。。");
 		WebElement element = objectRepository.getWebElement("投资金额");
@@ -55,6 +56,11 @@ public class Page_invest extends BasePage{
 		String balance_str=element.getText();
 		double balance=StringHandle.numFromString(balance_str);
 		return balance;
+	}
+	public void click_balance(){
+		logger.info("[Page]点击余额。。。。。。");
+		WebElement element = objectRepository.getWebElement("余额");
+		element.click();
 	}
 	public double getText_balancePayMoney(){
 		logger.info("[Page]获取余额支付金额。。。。。。");
@@ -103,9 +109,14 @@ public class Page_invest extends BasePage{
 		element.click();
 	}
 	public void input_CPM_smsCode(String bankSmsCode){
-		logger.info("[Page]输入短信验证码。。。。。。");
+		logger.info("[Page]POP-输入短信验证码。。。。。。");
 		WebElement element = objectRepository.getWebElement("POP-短信验证码");
 		element.sendKeys(bankSmsCode);	
+	}
+	public void click_CPM_setting(){
+		logger.info("[Page]POP-点击立即设置。。。。。。");
+		WebElement element = objectRepository.getWebElement("POP-立即设置");
+		element.click();
 	}
 	
 }

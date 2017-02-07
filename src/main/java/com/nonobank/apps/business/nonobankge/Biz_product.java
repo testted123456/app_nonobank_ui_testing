@@ -19,7 +19,7 @@ public class Biz_product {
 	}
 	public void click_regularInvest(){
 		logger.info("[Biz点击定投]");
-		page_product.click_directInvest();
+		page_product.click_regularInvest();
 	}
 	public void click_directInvest(){
 		logger.info("[Biz点击直投]");

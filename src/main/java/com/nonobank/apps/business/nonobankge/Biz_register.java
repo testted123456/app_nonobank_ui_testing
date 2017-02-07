@@ -34,6 +34,9 @@ public class Biz_register {
 			page_guide_portal.sleep(1000);
 			page_guide_portal.click_partake();
 		}
+		if(page_common.isExist_update()){
+			page_common.close_update();
+		}
 		if(page_common.isExist_pop()){
 			page_common.close_pop();
 		}

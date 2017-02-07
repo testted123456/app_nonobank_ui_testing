@@ -40,5 +40,13 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.RadioButton[@resource-id='com.nonoapp:id/rBtn_home']</prop>
 	</element>
+	<element name="立即更新">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_update']</prop>
+	</element>
+	<element name="立即更新关闭按钮">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageView[@resource-id='com.nonoapp:id/iv_dialog_update_del']</prop>
+	</element>
 	
 </elements>
