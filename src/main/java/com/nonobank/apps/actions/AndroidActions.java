@@ -1,5 +1,6 @@
 package com.nonobank.apps.actions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.openqa.selenium.Point;
@@ -47,4 +48,7 @@ public class AndroidActions extends AppActions {
 		touchAction.release().perform();
 	}
 
+	
+  
+  
 }

@@ -10,35 +10,59 @@
 	</listeners>
  	<test name="registerLogin">
 		<classes>
+			<!-- 登录 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Login"></class>  
+			<!-- 注册 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Register"></class> 
 		</classes>
 	</test> 
 	<test name="realName">
 		<classes>
+			<!-- 实名认证 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealName"></class>   
 		</classes>
 	</test> 
 	<test name="payPassword">
 		<classes>
+			<!-- 设置支付密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.SettingPayPassword"></class>   
 		</classes>
 	</test> 
 	<test name="modifyMobile">
 		<classes>
+			<!-- 修改手机号码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.modifyMobile"></class>   
 		</classes>
 	</test> 
 	<test name="modifyLoginPassword">
 		<classes>
+			<!-- 修改登录密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.modifyLoginPassword"></class>   
 		</classes>
 	</test> 
 	<test name="bankCard">
 		<classes>
+			<!-- 绑卡 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class>   
 		</classes>
 	</test> 
-	 
+	<test name="invest">
+		<classes>
+			<!-- 投资 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.invest.Invest"></class>   
+		</classes>
+	</test>  
+	<test name="recharge">
+		<classes>
+			<!-- 充值 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.recharge.Recharge"></class>   
+		</classes>
+	</test> 
+	<test name="withdraw">
+		<classes>
+			<!-- 提现 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.withdraw.Withdraw"></class>   
+		</classes>
+	</test> 
 
 </suite> 

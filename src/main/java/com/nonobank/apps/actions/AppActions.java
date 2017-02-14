@@ -1,11 +1,19 @@
 package com.nonobank.apps.actions;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
+
+import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
+
 import io.appium.java_client.AppiumDriver;
+import junit.framework.Assert;
 
 public abstract class AppActions {
-
+	public static Logger logger = LogManager.getLogger(AppActions.class);
     AppiumDriver<WebElement> driver;
     
     public AppActions(AppiumDriver<WebElement> driver){
@@ -86,4 +94,64 @@ public abstract class AppActions {
 			e.printStackTrace();
 		}
 	}
+	public void inputComsumeInfo(WebElement element, String cardnum) throws Exception{
+		String actual = "";  
+        int i = 0;  
+        do  
+        {  
+            element.click();  
+            String[] str = cardnum.split("");  
+            for (int j = 0; j < str.length; j++)  
+            {  
+                pressKeyCode(Integer.parseInt(str[j]) + 7);  
+                // 如果当前长度超过预期的值说明多输入了一个数字，需要回删一个字符  
+                if (element.getText().replace(" ", "").length() > (j + 1))  
+                {  
+                    logger.info("长度输入超过预期，需要回删一个字符");
+                    pressKeyCode(67);  
+                }  
+  
+                if (j == str.length / 2)  
+                {  
+                    element.click(); // 点击元素，确保与Appium有交互，否则会超时自动关闭session  
+                    pressKeyCode(123); // 将光标移动到末尾  
+                }  
+            }  
+            actual = element.getText().replace(" ", "");  
+            logger.info("第 " + (i + 1) + " 次输入,期望值为: " + cardnum + " 实际值为：" + actual + " " + cardnum.equals(actual));  
+            i++;  
+            if (!actual.equals(cardnum))  
+            {  
+                element.clear();  
+            }  
+        } while (!actual.equals(cardnum));  
+        Assert.assertEquals(actual, cardnum);
+			
+	}
+	/** 
+     * 模拟键盘输入 
+     *  
+     * @param keyCode 
+     */  
+    private  void pressKeyCode(int keyCode)  
+    {  
+        try  
+        {  
+        	String os = System.getProperties().getProperty("os.name");
+        	if (os.startsWith("Mac")) {
+        		 String cmdStr = "export ANDROID_HOME=/Users/user/Library/Android/sdk;export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/platform-tools;"+"adb shell input keyevent " + keyCode; 
+                 String[] cmds = { "/bin/sh", "-c", cmdStr};
+        		 Runtime.getRuntime().exec(cmds).waitFor(); 
+        	}else{
+       		     String cmdStr2 = "adb shell input keyevent " + keyCode; 
+        		 Runtime.getRuntime().exec(cmdStr2); 
+        	}           
+			Thread.sleep(800);
+        } catch (Exception e)  
+        {  
+            e.printStackTrace();  
+        }  
+    }  
+	
+	
 }

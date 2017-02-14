@@ -8,8 +8,10 @@ import com.nonobank.apps.page.nonobankge.Page_recharge;
 import com.nonobank.apps.page.nonobankge.Page_rechargeSuccess;
 import com.nonobank.apps.page.nonobankge.Page_setPayPassword;
 import com.nonobank.apps.utils.data.Assertion;
+import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
 import com.nonobank.apps.page.nonobankge.Page_cashierDesk;
 import com.nonobank.apps.page.nonobankge.Page_common;
+import com.nonobank.apps.page.nonobankge.Page_me;
 
 public class Biz_recharge {
 	public static Logger logger = LogManager.getLogger(Biz_recharge.class);
@@ -18,12 +20,15 @@ public class Biz_recharge {
 	Page_cashierDesk page_cashierDesk=new Page_cashierDesk();
 	Page_rechargeSuccess page_rechargeSuccess=new Page_rechargeSuccess(); 
 	Page_common page_common=new Page_common();
+	Page_me page_me=new Page_me();
+	Page_bindingBankcard page_bindingBankcard=new Page_bindingBankcard();
 	
 	public void recharge_noPayPassword(String payPassword,String payPassword_second,
-			String rechargeSum,String bankSmsCode,String expectMessage){
+			String rechargeSum,String bankSmsCode,String bankName,String bankCardNum,
+			String bankMobile,String realName,String idCard,
+			String smsCode_recharge,String expectMessage){
 		logger.info("[Biz_充值未设置支付密码]");
 		System.out.println("-------------------------------------------------");
-		double balance=page_recharge.getText_balance();
 		page_recharge.input_recharge_sum(rechargeSum);
 		page_recharge.sleep(1000);
 		page_recharge.click_ImmediatelyRecharge();
@@ -39,14 +44,66 @@ public class Biz_recharge {
 		page_setPayPassword.click_confirm();
 		page_setPayPassword.sleep(1000);
 		page_recharge.click_ImmediatelyRecharge();
+		page_setPayPassword.sleep(1000);
 		
+		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		page_bindingBankcard.input_userRealName(realName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_userIdCard(idCard);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		
+		String cpm_title=page_recharge.getText_CPM_title();
+		Assert.assertEquals(cpm_title, "付款详情");
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_nextStep();
+		page_recharge.sleep(1000);
+		cpm_title=page_recharge.getText_CPM_title();
+		Assert.assertEquals(cpm_title, "输入支付密码");
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_payPwd(payPassword);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		cpm_title=page_recharge.getText_CPM_title();
+		Assert.assertEquals(cpm_title, "输入验证码");
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_smsCode(smsCode_recharge);
+		page_recharge.sleep(1000);
+		
+		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
+		Assert.assertEquals(rechargeMoney, rechargeSum);
+		page_rechargeSuccess.click_finish();
+		page_rechargeSuccess.sleep(1000);
+		
+		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
-	private void handleResult(String expectMessage) {
+	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {
-		case "我的银行卡":
-			String expect="我的银行卡";
-			String actual=page_common.getText_title();
+		case "充值":
+			String expect="您好，"+realName;
+			String actual=page_me.getText_userName();
 			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
 			break;
 		default:

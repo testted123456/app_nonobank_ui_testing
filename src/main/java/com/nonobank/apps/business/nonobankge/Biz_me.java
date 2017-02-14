@@ -97,62 +97,62 @@ public class Biz_me {
 		case "设置":
 			String expect="设置";
 			String actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击设置图标成功");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击设置图标成功");
 			break;
 		case "银行卡管理":
 			expect="输入银行卡号";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击银行卡管理");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击银行卡管理");
 			break;		
 		case "充值":
 			expect="充值";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击充值");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击充值");
 			break;
 		case "提现":
 			expect="提现";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击提现");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击提现");
 			break;
 		case "回款计划":
 			expect="回款计划";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击回款计划");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击回款计划");
 			break;
 		case "投资记录":
 			expect="投资记录";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击投资记录");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击投资记录");
 			break;
 		case "我的福利":
 			expect="我的福利";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击我的福利");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击我的福利");
 			break;
 		case "我的债权":
 			expect="我的债权";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击我的债权");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击我的债权");
 			break;
 		case "总资产":
 			expect="总资产";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击总资产");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击总资产");
 			break;
 		case "可用余额":
 			expect="可用余额";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击可用余额");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击可用余额");
 			break;
 		case "累计收益":
 			expect="累计收益";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击累计收益");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击累计收益");
 			break;
 		case "消息中心":
 			expect="消息中心";
 			actual=page_common.getText_title();
-			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "点击消息中心");
+			Assertion.assertEquals(expect, actual, Biz_me.class, "点击消息中心");
 			break;
 		default:
 			

@@ -2,11 +2,11 @@
 <elements>
 	<element name="姓名">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_name']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_user_name']</prop>
 	</element>
 	<element name="身份证号">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_idcard']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_user_idcard']</prop>
 	</element>
 	<element name="请选择你的银行">
 		<prop name="ios"></prop>
@@ -16,29 +16,21 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_bankcard_no']</prop>
 	</element>
-	<element name="下一步">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_bindcard_next']</prop>
-	</element>
 	<element name="预留手机号">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_phone']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_phone_num']</prop>
 	</element>
 	<element name="获取验证码">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_get_verify_code']</prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_bindcard_ver_code']</prop>
 	</element>
 	<element name="请输入验证码">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_verify_code']</prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_bindcard_ver_code']</prop>
 	</element>
-	<element name="小提示">
+		<element name="下一步">
 		<prop name="ios"></prop>
-		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/tv_bank_quota_prompt']</prop>
-	</element>
-	<element name="确定">
-		<prop name="ios"></prop>
-		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_confirm']</prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_bindcard_next']</prop>
 	</element>
 	
 </elements>

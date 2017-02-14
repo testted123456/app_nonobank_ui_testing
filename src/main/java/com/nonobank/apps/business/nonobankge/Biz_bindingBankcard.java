@@ -5,15 +5,18 @@ import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
 import com.nonobank.apps.page.nonobankge.Page_common;
+import com.nonobank.apps.page.nonobankge.Page_me;
 import com.nonobank.apps.utils.data.Assertion;
 
 public class Biz_bindingBankcard {
 	public static Logger logger = LogManager.getLogger(Biz_bindingBankcard.class);
 	Page_bindingBankcard page_bindingBankcard=new Page_bindingBankcard();
 	Page_common page_common=new Page_common();
+	Page_me page_me=new Page_me();
 	
-	public void bindingBankcard(String bankName,String bankCardNum,String bankMobile,
-			String bankSmsCode,String bankLimitPrompt,String expectMessage){
+	public void bindingBankcard(String bankName,String bankCardNum,
+			String realName,String idCard,String bankMobile,
+			String bankSmsCode,String expectMessage){
 		logger.info("[Biz_绑定银行卡]");
 		System.out.println("-------------------------------------------------");
 		page_bindingBankcard.click_selectBank();
@@ -24,21 +27,29 @@ public class Biz_bindingBankcard {
 		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.click_nextStep();
 		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
 		
+		page_bindingBankcard.input_userRealName(realName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_userIdCard(idCard);
+		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
-		String prompt=page_bindingBankcard.getText_prompt();
-		Assert.assertEquals(prompt,bankLimitPrompt);
-		page_bindingBankcard.click_enter();
-		handleResult(expectMessage);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+
+		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
-	private void handleResult(String expectMessage) {
+	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {
 		case "我的银行卡":
-			String expect="我的银行卡";
-			String actual=page_common.getText_title();
+			String expect="您好，"+realName;
+			String actual=page_me.getText_userName();
 			Assertion.assertEquals(expect, actual, Biz_bindingBankcard.class, "绑卡成功");
 			break;
 		default:

@@ -61,4 +61,5 @@ public class BasePage {
 		TouchAction touchAction = new TouchAction(appiumDriver);
 		touchAction.tap(element, x, y);
 	}
+	
 }

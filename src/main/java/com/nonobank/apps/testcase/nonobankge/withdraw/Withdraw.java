@@ -35,9 +35,9 @@ public class Withdraw extends BaseCase {
 	public void test(String testcaseName,String testcaseDescription,
 			String environment,String mobile,String pictureVerification,String smsCode,
 			String password,String blackBox,String idCard,String realName,
-			String bankCardNo,String bankCode,String bank_validCode,
-			String rechargeMoney,String bank_mobile,String payPassword,String payPassword_second,
-			String rechargeSum,String recharge_SmsCode,String withdrawalAmount) {
+			String bankCardNo,String bankCode,String bank_validCode,String bankMobile,
+			String rechargeMoney,String payPassword,String payPassword_second,
+			String recharge_SmsCode,String withdrawalAmount) {
 		caseName = testcaseName;
 		caseDescription = testcaseDescription;
 		inputParams = mobile;
@@ -60,12 +60,12 @@ public class Withdraw extends BaseCase {
 		checkBankCardBinTest.checkBankCardBin(bankCardNo, bankCode);
 		// 接口---绑卡获取动态码
 		String response_getDynByBind = getDynByBindTest.degreecard(bankCardNo, bankCode, idCard, userId, sessionId,
-				mobile, realName);
+				bankMobile, realName);
 		JSONObject jsonObj_getDynByBind = JSON.parseObject(response_getDynByBind);
 		String externalRefNumber = jsonObj_getDynByBind.get("externalRefNumber").toString();
 		String token_bankcard = jsonObj_getDynByBind.get("token").toString();
 		// 接口---绑卡
-		saveBankCardTest.saveBankCard(bankCardNo, idCard, bankCode, token_bankcard, mobile, bank_validCode, userId,
+		saveBankCardTest.saveBankCard(bankCardNo, idCard, bankCode, token_bankcard, bankMobile, bank_validCode, userId,
 				externalRefNumber, sessionId, realName);
 		// 接口---支付路由
 		String response_payRoute = payRouteTest.payRoute(rechargeMoney, bankCode, sessionId);

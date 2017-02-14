@@ -9,17 +9,15 @@ import com.nonobank.apps.page.base.BasePage;
 public class Page_bindingBankcard extends BasePage{
 	public static Logger logger = LogManager.getLogger(Page_bindingBankcard.class);
 
-	public String getText_userRealName(){
-		logger.info("[Page]获取用户姓名。。。。。。");
+	public void input_userRealName(String realName){
+		logger.info("[Page]输入姓名。。。。。。");
 		WebElement element = objectRepository.getWebElement("姓名");
-		String userRealName=element.getText();
-		return userRealName;
+		element.sendKeys(realName);
 	}
-	public String getText_userIdCard(){
-		logger.info("[Page]获取用户身份证号。。。。。。");
+	public void input_userIdCard(String idCard){
+		logger.info("[Page]输入身份证号。。。。。。");
 		WebElement element = objectRepository.getWebElement("身份证号");
-		String userIdCard=element.getText();
-		return userIdCard;
+		element.sendKeys(idCard);
 	}
 	public void click_selectBank(){
 		logger.info("[Page]点击请选择你的银行。。。。。。");
@@ -37,8 +35,25 @@ public class Page_bindingBankcard extends BasePage{
 	}
 	public void input_bankCardNum(String bankCardNum){
 		logger.info("[Page]输入银行卡号码。。。。。。");
+		String a=bankCardNum.substring(0, 4);
+		String b=bankCardNum.substring(4, 8);
+		String c=bankCardNum.substring(8, 12);
+		String d=bankCardNum.substring(12, 16);
+		String f=bankCardNum.substring(16, 19);
+		String bankCardNum_str=a+" "+b+" "+c+" "+d+" "+f;	
 		WebElement element = objectRepository.getWebElement("银行卡号");
-		element.sendKeys(bankCardNum);
+//		element.sendKeys(a);
+//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+"']").sendKeys(b);
+//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+"']").sendKeys(c);
+//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+c+"']").sendKeys(d);
+//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+c+d+"']").sendKeys(f);
+		try {
+			appActions.inputComsumeInfo(element, bankCardNum);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	public void input_bankMobile(String bankMobile){
 		logger.info("[Page]输入预留手机号。。。。。。");

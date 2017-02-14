@@ -42,4 +42,45 @@ public class Page_recharge extends BasePage{
 		WebElement element = objectRepository.getWebElement("立即充值");
 		element.click();
 	}
+	
+	public String getText_CPM_title(){
+		logger.info("[Page]获取弹窗title。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-标题");
+		String title=element.getText();
+		return title;
+	}
+	
+	public String getText_CPM_needPayMoney(){
+		logger.info("[Page]获取需付款金额。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-需付款金额");
+		String needPayMoney=element.getText();
+		return needPayMoney;
+	}
+	
+	public void click_CPM_nextStep(){
+		logger.info("[Page]点击弹窗下一步。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-下一步");
+		element.click();
+	}
+	
+	public void input_CPM_payPwd(String payPwd){
+		logger.info("[Page]输入弹窗-支付密码。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-支付密码");
+		element.sendKeys(payPwd);
+	}
+	
+	public void click_CPM_payPwd_nextStep(){
+		logger.info("[Page]点击弹窗-支付密码-下一步。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-支付密码-下一步");
+		element.click();
+	}
+	
+	public void input_CPM_smsCode(String smsCode){
+		logger.info("[Page]输入弹窗-验证码。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-验证码");
+		element.sendKeys(smsCode);
+	}
+	
+	
+	
 }

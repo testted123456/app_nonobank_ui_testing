@@ -24,13 +24,24 @@ public class AppiumOperation {
 	public static void startServerInMac(String strAppiumPort) {
 		String appium_dir = ParseProperties.getInstance().getProperty("appium_dir");
 		
-		try {
+		try {		
+			String os = System.getProperties().getProperty("os.name");
 			Process process = null;
+//			process = Runtime.getRuntime().exec("env");
+//			BufferedReader reader =  new BufferedReader(new InputStreamReader(process.getInputStream()));
+//			System.out.println(reader.readLine() + "=====");
+//			Thread.sleep(5000);
 			String cmdNode = appium_dir + "/Contents/Resources/node/bin/node ";
-			String cmd = cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
-			String[] cmds = { "/bin/sh", "-c", cmd };
-			process = Runtime.getRuntime().exec(cmds);
-
+			if(os.startsWith("Mac")){
+				String cmd = "export ANDROID_HOME=/Users/user/Library/Android/sdk;export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/platform-tools;" + cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
+				String[] cmds = { "/bin/sh", "-c", cmd };
+				process = Runtime.getRuntime().exec(cmds);
+			}else{
+				String cmd = cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
+				String[] cmds = { "/bin/sh", "-c", cmd };
+				process = Runtime.getRuntime().exec(cmds);
+			}
+			
 			ErrorReaderThread errThread = new ErrorReaderThread();
 			errThread.setProcess(process);
 			Thread thread = new Thread(errThread);
@@ -43,7 +54,7 @@ public class AppiumOperation {
 			readerThread.start();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 
 	public static void stopServerInMac(String strAppiumPort) {

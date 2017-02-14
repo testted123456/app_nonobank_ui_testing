@@ -36,16 +36,6 @@ public class BankCard extends BaseCase {
 		inputParams = mobile;
 		// 注册
 		biz_register.register(mobile, pictureVerification, smsCode, password,"注册成功",environment);		
-		// 接口---登录
-		String username=UserInfoUtils.getUsername(mobile);
-		String response_login = loginTest.login(username, "d051d170235c6682e334e6a5abd8ebdb", blackBox);
-		JSONObject jsonObj_login = JSON.parseObject(response_login);
-		String data_login=jsonObj_login.getString("data").toString();
-		JSONObject jsonObj_login_data = JSON.parseObject(data_login);
-		String sessionId = jsonObj_login_data.get("session_id").toString();
-		String userId = jsonObj_login_data.get("m_id").toString();
-		// 接口---实名认证
-		degreecardTest.degreecard(idCard, realName, sessionId);
 		// 点击跳过
 		biz_gesturePwd.click_judge();
 		// 点击我的
@@ -53,9 +43,10 @@ public class BankCard extends BaseCase {
 		// 点击银行卡管理
 		biz_me.click_bankcard("银行卡管理");
 		// 绑定银行卡
-		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, bankMobile, bankSmsCode, bankLimitPrompt, "");
-		String bankCode="1";
-		bankCard.bindingBankCard(userId, bankCardNum, bankCode);
+		biz_bindingBankcard.bindingBankcard(bankName,bankCardNum,realName,idCard,bankMobile,bankSmsCode,"我的银行卡");
+		//退出
+		biz_me.click_settingIcon("设置");
+		biz_setting.click_logout("退出");
 	}
 
 }
