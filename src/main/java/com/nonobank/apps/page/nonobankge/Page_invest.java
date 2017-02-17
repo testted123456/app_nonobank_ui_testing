@@ -38,7 +38,12 @@ public class Page_invest extends BasePage{
 	public void input_investMoney(String investMoney){
 		logger.info("[Page]输入投资金额。。。。。。");
 		WebElement element = objectRepository.getWebElement("投资金额");
-		element.sendKeys(investMoney);
+		try {
+			appActions.inputComsumeInfo(element, investMoney);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void click_cashTicket(){
 		logger.info("[Page]点击现金券。。。。。。");

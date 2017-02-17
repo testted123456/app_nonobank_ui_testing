@@ -44,6 +44,9 @@ public class SettingPayPassword extends BaseCase{
 		biz_accountSecurity.click_payPassword("设置支付密码");
 		//设置支付密码----设置支付密码
 		biz_setPayPassword.setPayPassword(payPassword, payPassword_second,"账户安全");
+		//点击返回
+		biz_common.click_backBtn();
+		biz_setting.click_logout("退出");
 		
 	}
 	

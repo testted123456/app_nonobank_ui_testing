@@ -2,24 +2,13 @@ package com.nonobank.apps.testcase.nonobankge.recharge;
 
 import org.testng.annotations.Test;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.business.nonobankge.Biz_common;
 import com.nonobank.apps.business.nonobankge.Biz_gesturePwd;
 import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_recharge;
 import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
-import com.nonobank.apps.business.nonobankge.Var_recharge;
-import com.nonobank.apps.business.nonobankge.Var_register;
-import com.nonobank.apps.interfaces.nonobankge.checkBankCardBinTest;
-import com.nonobank.apps.interfaces.nonobankge.degreecardTest;
-import com.nonobank.apps.interfaces.nonobankge.getDynByBindTest;
-import com.nonobank.apps.interfaces.nonobankge.loginTest;
-import com.nonobank.apps.interfaces.nonobankge.saveBankCardTest;
-import com.nonobank.apps.interfaces.nonobankge.savePayPasswordTest;
 import com.nonobank.apps.testcase.base.BaseCase;
-import com.nonobank.apps.utils.data.UserInfoUtils;
 
 public class Recharge extends BaseCase {
 	Biz_register biz_register;
@@ -47,7 +36,7 @@ public class Recharge extends BaseCase {
 		biz_me.click_recharge("充值");
 		// 充值
 		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode, bankName,
-				bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "");
+				bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值");
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

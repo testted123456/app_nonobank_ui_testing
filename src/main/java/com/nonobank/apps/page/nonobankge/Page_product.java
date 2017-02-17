@@ -2,6 +2,8 @@ package com.nonobank.apps.page.nonobankge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 import com.nonobank.apps.page.base.BasePage;
@@ -40,6 +42,22 @@ public class Page_product extends BasePage{
 		logger.info("[Page]点击相应产品。。。。。。");
 		WebElement element = objectRepository.getWebElementByXpath("//android.widget.TextView[@text='"+productName+"']");
 		element.click();
+	}
+	public boolean isExist_productName(String productName){
+		logger.info("[Page]产品是否存在。。。。。。");
+		boolean  isExist_productName=objectRepository.isElementExistsByXpath("//android.widget.TextView[@text='"+productName+"']", 5);
+		return isExist_productName;
+	}
+	public void swipe_productList(){
+		logger.info("[Page]滑动产品列表。。。。。。");
+		WebElement element = objectRepository.getWebElement("产品当前list");
+		Point init_point = element.getLocation();
+		int x = init_point.getX();
+		int y = init_point.getY();
+		Dimension dimension = element.getSize();
+		int height = dimension.getHeight();
+		int width = dimension.getWidth();		
+		appActions.swipe(x+width/2, y+height/2, x+width/2, y+height/4, 500);		
 	}
 	
 }

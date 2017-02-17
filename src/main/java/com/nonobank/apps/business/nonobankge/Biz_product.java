@@ -12,11 +12,16 @@ public class Biz_product {
 	Page_product page_product=new Page_product();
 	Page_common page_common=new Page_common();
 	
-	
 	public void click_productName(String productName){
 		logger.info("[Biz根据productName，点击相应产品]");
+	
+		while(!page_product.isExist_productName(productName)){
+			page_product.swipe_productList();
+		}
 		page_product.click_product(productName);
 	}
+	
+	
 	public void click_regularInvest(){
 		logger.info("[Biz点击定投]");
 		page_product.click_regularInvest();

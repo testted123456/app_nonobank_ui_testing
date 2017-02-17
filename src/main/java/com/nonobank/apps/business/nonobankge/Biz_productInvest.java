@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_purchase;
+import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_invest;
 import com.nonobank.apps.page.nonobankge.Page_productDetails;
@@ -21,8 +22,11 @@ public class Biz_productInvest {
 	Page_common page_common=new Page_common();
 	Page_invest page_invest=new Page_invest();
 	Page_setPayPassword page_setPayPassword=new Page_setPayPassword();
+	Page_bindingBankcard page_bindingBankcard=new Page_bindingBankcard();
 
-	public void productInvest(String investMoney,String payPwd,String bankSmsCode,String expectMessage){
+	public void productInvest(String investMoney,String payPwd,String bankSmsCode,
+			String bankName,String bankCardNum,String realName,String idCard,
+			String bankMobile,String expectMessage){
 		logger.info("[Biz_产品购买]");
 		System.out.println("--------------------------------------------------------------------");
 		//预期年化收益
@@ -66,6 +70,32 @@ public class Biz_productInvest {
 			page_setPayPassword.click_confirm();
 			page_setPayPassword.sleep(1000);
 			page_invest.click_pay();
+			
+			page_bindingBankcard.click_selectBank();
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.select_bank(bankName);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.input_bankCardNum(bankCardNum);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.click_nextStep();
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.click_nextStep();
+			page_bindingBankcard.sleep(1000);
+			
+			page_bindingBankcard.input_userRealName(realName);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.input_userIdCard(idCard);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.input_bankMobile(bankMobile);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.click_getSmsCode();
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+			page_bindingBankcard.sleep(1000);
+			page_bindingBankcard.click_nextStep();
+			page_setPayPassword.sleep(1000);
+			page_invest.click_pay();
+			
 			page_invest.click_CPM_nextStep();
 			page_invest.sleep(1000);
 			page_invest.input_CPM_payPwd(payPwd);

@@ -73,20 +73,20 @@ public class Biz_recharge {
 		page_recharge.click_ImmediatelyRecharge();
 		page_recharge.sleep(1000);
 		
-		String cpm_title=page_recharge.getText_CPM_title();
-		Assert.assertEquals(cpm_title, "付款详情");
+//		String cpm_title=page_recharge.getText_CPM_title();
+//		Assert.assertEquals(cpm_title, "付款详情");
 		page_recharge.sleep(1000);
 		page_recharge.click_CPM_nextStep();
 		page_recharge.sleep(1000);
-		cpm_title=page_recharge.getText_CPM_title();
-		Assert.assertEquals(cpm_title, "输入支付密码");
+//		cpm_title=page_recharge.getText_CPM_title();
+//		Assert.assertEquals(cpm_title, "输入支付密码");
 		page_recharge.sleep(1000);
 		page_recharge.input_CPM_payPwd(payPassword);
 		page_recharge.sleep(1000);
 		page_recharge.click_CPM_payPwd_nextStep();
 		page_recharge.sleep(1000);
-		cpm_title=page_recharge.getText_CPM_title();
-		Assert.assertEquals(cpm_title, "输入验证码");
+//		cpm_title=page_recharge.getText_CPM_title();
+//		Assert.assertEquals(cpm_title, "输入验证码");
 		page_recharge.sleep(1000);
 		page_recharge.input_CPM_smsCode(smsCode_recharge);
 		page_recharge.sleep(1000);

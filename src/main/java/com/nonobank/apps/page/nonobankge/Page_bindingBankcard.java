@@ -35,18 +35,7 @@ public class Page_bindingBankcard extends BasePage{
 	}
 	public void input_bankCardNum(String bankCardNum){
 		logger.info("[Page]输入银行卡号码。。。。。。");
-		String a=bankCardNum.substring(0, 4);
-		String b=bankCardNum.substring(4, 8);
-		String c=bankCardNum.substring(8, 12);
-		String d=bankCardNum.substring(12, 16);
-		String f=bankCardNum.substring(16, 19);
-		String bankCardNum_str=a+" "+b+" "+c+" "+d+" "+f;	
 		WebElement element = objectRepository.getWebElement("银行卡号");
-//		element.sendKeys(a);
-//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+"']").sendKeys(b);
-//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+"']").sendKeys(c);
-//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+c+"']").sendKeys(d);
-//		objectRepository.getWebElementByXpath("//android.widget.EditText[@text='"+a+b+c+d+"']").sendKeys(f);
 		try {
 			appActions.inputComsumeInfo(element, bankCardNum);
 		} catch (Exception e) {
