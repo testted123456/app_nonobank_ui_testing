@@ -96,6 +96,16 @@ public class Page_register extends BasePage{
 		WebElement element = objectRepository.getWebElement("完成");
 		element.click();
 	}
-
+	public String getText_CPM_prompt(){
+		logger.info("[Page]获取提示信息。。。。。");
+		WebElement element = objectRepository.getWebElement("CPM_提示信息");
+		String cpm_prompt=element.getText();
+		return cpm_prompt;
+	}
+	public void click_CPM_enter(){
+		logger.info("[Page]点击提示信息确定。。。。。");
+		WebElement element = objectRepository.getWebElement("CPM_确定");
+		element.click();
+	}
 
 }

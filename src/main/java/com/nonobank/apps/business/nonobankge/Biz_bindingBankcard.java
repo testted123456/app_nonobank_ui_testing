@@ -21,6 +21,9 @@ public class Biz_bindingBankcard {
 		System.out.println("-------------------------------------------------");
 		page_bindingBankcard.click_selectBank();
 		page_bindingBankcard.sleep(1000);
+		while(!page_bindingBankcard.isExist_bankName(bankName)){
+			page_bindingBankcard.swipe_bankSelect();
+		}
 		page_bindingBankcard.select_bank(bankName);
 		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.input_bankCardNum(bankCardNum);

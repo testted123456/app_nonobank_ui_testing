@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import com.nonobank.apps.page.nonobankge.Page_purchase;
+import com.nonobank.apps.interfaces.mock.KuaiqianPay;
 import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_invest;
@@ -71,6 +72,7 @@ public class Biz_productInvest {
 			page_setPayPassword.sleep(1000);
 			page_invest.click_pay();
 			
+			KuaiqianPay.bindingBankcard();
 			page_bindingBankcard.click_selectBank();
 			page_bindingBankcard.sleep(1000);
 			page_bindingBankcard.select_bank(bankName);
@@ -98,6 +100,7 @@ public class Biz_productInvest {
 			
 			page_invest.click_CPM_nextStep();
 			page_invest.sleep(1000);
+			KuaiqianPay.pay();
 			page_invest.input_CPM_payPwd(payPwd);
 			page_invest.sleep(1000);
 			page_invest.click_CPM_payPwd_next();

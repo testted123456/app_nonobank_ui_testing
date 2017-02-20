@@ -11,6 +11,7 @@ import com.nonobank.apps.business.nonobankge.Biz_product;
 import com.nonobank.apps.business.nonobankge.Biz_productInvest;
 import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
+import com.nonobank.apps.interfaces.nonobankge.FinancePlan;
 import com.nonobank.apps.interfaces.nonobankge.getProductIndexListTest;
 import com.nonobank.apps.interfaces.nonobankge.loginTest;
 import com.nonobank.apps.testcase.base.BaseCase;
@@ -39,14 +40,47 @@ public class Invest extends BaseCase {
 		biz_register.register(mobile, pictureVerification, smsCode, password, "注册成功", environment);
 		// 点击跳过
 		biz_gesturePwd.click_judge();
-//		// 点击我的
-//		biz_common.click_me();
-//		// 点击银行卡管理
-//		biz_me.click_bankcard("银行卡管理");
-//		// 绑定银行卡
-//		biz_bindingBankcard.bindingBankcard(bankName, bankCardNum, realName, idCard, bankMobile, bankSmsCode, "我的银行卡");
-		// 点击投资
-		biz_common.click_product();
+		
+		switch (productName) {
+		case "月月升":
+			FinancePlan.monthRise();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_regularInvest();
+			break;
+		case "新客计划":
+			FinancePlan.newPlan();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_regularInvest();
+			break;
+		case "贴心计划":
+			FinancePlan.caringPlan();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_regularInvest();
+			break;
+		case "精选计划":
+			FinancePlan.featuredPlan();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_regularInvest();
+			break;
+		case "诺诺盈":
+			FinancePlan.nonoying();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_directInvest();
+			break;
+		case "债转计划":
+			FinancePlan.debtPlan();
+			// 点击投资
+			biz_common.click_product();
+			biz_product.click_debtEquity();
+			break;
+		default:
+			break;
+		}
 		// 接口---登录
 		String username = UserInfoUtils.getUsername(mobile);
 		String response_login = loginTest.login(username, "d051d170235c6682e334e6a5abd8ebdb", blackBox);
@@ -64,8 +98,8 @@ public class Invest extends BaseCase {
 		String pageSize="20";
 		String productTitle=getProductIndexListTest.getProductName(productType,max_expect,min_expect,pageNo,sessionId,type,pageSize,productName);
 		System.out.println(productTitle);
-		// 点击定投
-		biz_product.click_regularInvest();
+		
+		
 		// 点击产品名称
 		biz_product.click_productName(productTitle);
 		biz_productInvest.productInvest(investMoney, payPwd, bankSmsCode,bankName, bankCardNum, realName, idCard, bankMobile, productTitle);

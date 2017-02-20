@@ -24,6 +24,24 @@ public class Biz_login extends BaseCase {
 		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
+	public void loginExc(String mobile_error,String mobile,String password_error,
+			String mobile_new,String password){
+		logger.info("[Biz_登录异常情况]");
+		page_login.input_mobile(mobile_error);
+		page_login.click_login();
+		page_login.sleep(1000);
+		page_login.input_mobile(mobile);
+		page_login.sleep(1000);
+		page_login.input_password(password_error);
+		page_login.sleep(1000);
+		page_login.click_login();
+		page_login.sleep(1000);
+		page_login.input_mobile(mobile_new);
+		page_login.sleep(1000);
+		page_login.input_password(password);
+		page_login.sleep(1000);
+		page_login.click_login();	
+	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
 		case "注册":

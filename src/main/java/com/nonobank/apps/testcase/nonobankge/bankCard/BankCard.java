@@ -12,6 +12,7 @@ import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
 import com.nonobank.apps.business.nonobankge.Var_bindingBankcard;
 import com.nonobank.apps.business.nonobankge.Var_register;
+import com.nonobank.apps.interfaces.mock.KuaiqianPay;
 import com.nonobank.apps.interfaces.nonobankge.bankCard;
 import com.nonobank.apps.interfaces.nonobankge.degreecardTest;
 import com.nonobank.apps.interfaces.nonobankge.loginTest;
@@ -42,6 +43,7 @@ public class BankCard extends BaseCase {
 		biz_common.click_me();
 		// 点击银行卡管理
 		biz_me.click_bankcard("银行卡管理");
+		KuaiqianPay.bindingBankcard();
 		// 绑定银行卡
 		biz_bindingBankcard.bindingBankcard(bankName,bankCardNum,realName,idCard,bankMobile,bankSmsCode,"我的银行卡");
 		//退出

@@ -84,6 +84,91 @@ public class Biz_register {
 		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
+	public void registerExc(String environment,String mobile_error,String mobile,
+			String pngCode_error,String pngCode,String smsCode_error,String smsCode,
+			String password_error,String password,String expectMessage){
+		logger.info("[Biz_注册异常情况]");
+		System.out.println("-------------------------------------------------");
+		if(page_guide_portal.isExist_bottomArea()){
+			page_guide_portal.swipe_page();
+			page_guide_portal.sleep(1000);
+			page_guide_portal.swipe_page();
+			page_guide_portal.sleep(1000);
+			page_guide_portal.swipe_page();
+			page_guide_portal.sleep(1000);
+			page_guide_portal.click_partake();
+		}
+		if(page_common.isExist_update()){
+			page_common.close_update();
+		}
+		if(page_common.isExist_pop()){
+			page_common.close_pop();
+		}
+		if(page_common.isExist_me()){
+			page_common.press_find();
+			page_common.sleep(2000);
+			page_common.select_environment(environment);
+			page_common.sleep(3000);
+		}
+		if(page_common.isExist_pop()){
+			page_common.close_pop();
+		}
+		if(page_common.isExist_me()){
+			page_common.click_me();
+			page_common.sleep(1000);
+			page_common.click_rightTitle();
+		}
+		page_register.input_mobile(mobile_error);
+		page_register.sleep(1000);
+		page_register.click_nextStep();
+		page_register.sleep(1000);
+		page_register.input_mobile(mobile);
+		page_register.sleep(1000);
+		page_register.click_control();
+		page_register.sleep(1000);
+		page_register.click_nextStep();
+		page_register.sleep(1000);
+		page_register.click_control();
+		page_register.sleep(1000);
+		page_register.click_nextStep();
+		page_register.sleep(1000);
+		page_register.click_getSmsCode();
+		page_register.sleep(1000);
+		page_register.input_pictureVerification(pngCode_error);
+		page_register.sleep(1000);
+		page_register.click_enter();
+		page_register.sleep(1000);
+		page_register.input_pictureVerification(pngCode);
+		page_register.sleep(1000);
+		page_register.click_enter();
+		page_register.sleep(1000);
+		page_register.input_SmsCode(smsCode_error);
+		page_register.sleep(1000);
+		page_register.click_nextStep();
+		page_register.sleep(1000);
+		page_register.input_password(password);
+		page_register.sleep(1000);
+		page_register.click_register();
+		page_register.sleep(1000);
+		page_register.input_SmsCode(smsCode);
+		page_register.sleep(1000);
+		page_register.click_nextStep();
+		page_register.sleep(1000);
+		page_register.input_password(password_error);
+		page_register.sleep(1000);
+		page_register.click_register();
+		page_register.sleep(1000);
+		String cpm_prompt=page_register.getText_CPM_prompt();
+		Assert.assertEquals("密码为6-16位字母和数字组合", cpm_prompt);
+		page_register.click_CPM_enter();
+		page_register.sleep(1000);
+		page_register.input_password(password);
+		page_register.sleep(1000);
+		page_register.click_passwordByLock();
+		page_register.sleep(1000);
+		page_register.click_register();
+		handleResult(expectMessage);
+	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
 		case "注册成功":

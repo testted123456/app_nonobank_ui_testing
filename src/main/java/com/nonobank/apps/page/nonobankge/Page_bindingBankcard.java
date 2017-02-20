@@ -2,6 +2,8 @@ package com.nonobank.apps.page.nonobankge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 import com.nonobank.apps.page.base.BasePage;
@@ -33,6 +35,22 @@ public class Page_bindingBankcard extends BasePage{
 		WebElement element = objectRepository.getWebElementByXpath("//android.widget.TextView[@text='"+bankName+"']");
 		element.click();
 	}
+	public boolean isExist_bankName(String bankName){
+		logger.info("[Page]银行是否存在。。。。。。");
+		return objectRepository.isElementExistsByXpath("//android.widget.TextView[@text='"+bankName+"']", 3);
+	}
+	public void swipe_bankSelect(){
+		logger.info("[Page]滑动银行选择框。。。。。。");
+		WebElement element = objectRepository.getWebElementByXpath("//android.support.v7.widget.RecyclerView[@resource-id='com.nonoapp:id/rv_bank_list']");
+		Point init_point = element.getLocation();
+		Dimension dimension = element.getSize();
+		int x = init_point.getX();
+		int y = init_point.getY();
+		int height = dimension.getHeight();
+		int width = dimension.getWidth();
+		appActions.swipe(x+width/2, y+height*6/7, x+width/2, y+height*5/7, 3000);
+	}
+	
 	public void input_bankCardNum(String bankCardNum){
 		logger.info("[Page]输入银行卡号码。。。。。。");
 		WebElement element = objectRepository.getWebElement("银行卡号");

@@ -12,8 +12,12 @@
 		<classes>
 			<!-- 登录 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Login"></class>  
+			<!-- 登录 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.LoginExc"></class>  
 			<!-- 注册 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Register"></class> 
+			<!-- 注册 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.RegisterExc"></class> 
 		</classes>
 	</test> 
 	<test name="realName">
@@ -32,12 +36,16 @@
 		<classes>
 			<!-- 修改手机号码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.modifyMobile"></class>   
+			<!-- 修改手机号码（已实名）-->
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobileByRealName"></class> 
 		</classes>
 	</test> 
 	<test name="modifyLoginPassword">
 		<classes>
 			<!-- 修改登录密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.modifyLoginPassword"></class>   
+			<!-- 修改登录密码（已实名） -->
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.ModifyLoginPwdByRealName"></class>
 		</classes>
 	</test> 
 	<test name="bankCard">
