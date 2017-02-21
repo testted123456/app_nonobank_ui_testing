@@ -10,9 +10,9 @@ public class FinancePlan {
 		String sql="insert into finance_plan(title,scope,price,price_increment,price_min,"
 				+ "price_max,rate_min,rate_max,stop_bidding_days,auto_bid,earnings_intro,"
 				+ "publish_date,finish_date,slogan,expect,start_date,STATUS,protect_plan,"
-				+ "show_scope,recommend_scope,rate_show,user_level) values('精选计划','11',"
+				+ "show_scope,recommend_scope,rate_show,user_level,rate_desc) values('精选计划','11',"
 				+ "'1000000','100','100','10000','8','12','5','1','精选计划',DATE(NOW()),"
-				+ "'2018-01-01','精选计划','1',DATE(NOW()),'3','质量保障服务计划','6','3','12%','0,1,2,3')";
+				+ "'2018-01-01','精选计划','1',DATE(NOW()),'3','质量保障服务计划','6','3','12%','0,1,2,3','精选计划')";
 		DBUtils.insertOneObject(con, sql);
 	}
 	public static void monthRise(){		

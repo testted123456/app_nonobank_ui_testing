@@ -107,6 +107,8 @@ public class Biz_productInvest {
 			page_invest.sleep(1000);
 			page_invest.input_CPM_smsCode(bankSmsCode);
 			page_invest.sleep(1000);
+			page_invest.click_investFinish();
+			
 		}	
 		handleResult(expectMessage);
 		System.out.println("--------------------------------------------------------------------");

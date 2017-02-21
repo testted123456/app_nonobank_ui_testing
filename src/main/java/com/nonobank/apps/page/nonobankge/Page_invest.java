@@ -123,5 +123,10 @@ public class Page_invest extends BasePage{
 		WebElement element = objectRepository.getWebElement("POP-立即设置");
 		element.click();
 	}
+	public void click_investFinish(){
+		logger.info("[Page]点击投资成功--完成。。。。。。");
+		WebElement element = objectRepository.getWebElement("投资完成-完成");
+		element.click();
+	}
 	
 }

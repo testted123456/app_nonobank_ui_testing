@@ -72,6 +72,8 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.TextView[@resource-id='com.nonoapp:id/buttonDefaultPositive']</prop>
 	</element>
-	
-	
+	<element name="投资完成-完成">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/btn_complete']</prop>
+	</element>
 </elements>

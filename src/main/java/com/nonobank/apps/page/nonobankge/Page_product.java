@@ -38,6 +38,17 @@ public class Page_product extends BasePage{
 		String bannerContent=element.getText();
 		return bannerContent;
 	}
+	public String getText_progress(){
+		logger.info("[Page]获取当前产品进度。。。。。。");
+		WebElement element = objectRepository.getWebElement("当前产品进度");
+		String progress=element.getText();
+		return progress;
+	}
+	public void click_product(){
+		logger.info("[Page]点击相应产品。。。。。。");
+		WebElement element = objectRepository.getWebElement("当前产品进度");
+		element.click();
+	}
 	public void click_product(String productName){
 		logger.info("[Page]点击相应产品。。。。。。");
 		WebElement element = objectRepository.getWebElementByXpath("//android.widget.TextView[@text='"+productName+"']");

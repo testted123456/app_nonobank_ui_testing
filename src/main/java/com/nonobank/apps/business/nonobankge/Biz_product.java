@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_product;
 import com.nonobank.apps.utils.data.Assertion;
+import com.nonobank.apps.utils.variable.StringHandle;
 
 public class Biz_product {
 	public static Logger logger = LogManager.getLogger(Biz_product.class);
@@ -33,6 +34,12 @@ public class Biz_product {
 	public void click_debtEquity(){
 		logger.info("[Biz点击债转]");
 		page_product.click_debtEquity();
+		String progress_str=page_product.getText_progress();
+		double progress=StringHandle.numFromString(progress_str);
+		if(progress<100){
+			page_product.click_product();
+		}
+		
 	}
 
 

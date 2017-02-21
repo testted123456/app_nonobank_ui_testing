@@ -72,12 +72,6 @@ public class Invest extends BaseCase {
 			biz_common.click_product();
 			biz_product.click_directInvest();
 			break;
-		case "债转计划":
-			FinancePlan.debtPlan();
-			// 点击投资
-			biz_common.click_product();
-			biz_product.click_debtEquity();
-			break;
 		default:
 			break;
 		}
@@ -104,6 +98,7 @@ public class Invest extends BaseCase {
 		biz_product.click_productName(productTitle);
 		biz_productInvest.productInvest(investMoney, payPwd, bankSmsCode,bankName, bankCardNum, realName, idCard, bankMobile, productTitle);
 		//退出
+		biz_common.click_me();
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");
 	}
