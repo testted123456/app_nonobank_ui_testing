@@ -54,8 +54,10 @@ public class Biz_recharge {
 		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.click_nextStep();
 		page_bindingBankcard.sleep(1000);
-		page_bindingBankcard.click_nextStep();
-		page_bindingBankcard.sleep(1000);
+		if(page_bindingBankcard.isExist_nextStep()){
+			page_bindingBankcard.click_nextStep();
+			page_bindingBankcard.sleep(1000);
+		}
 		
 		page_bindingBankcard.input_userRealName(realName);
 		page_bindingBankcard.sleep(1000);
@@ -91,8 +93,79 @@ public class Biz_recharge {
 		page_recharge.input_CPM_smsCode(smsCode_recharge);
 		page_recharge.sleep(1000);
 		
-		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
-		Assert.assertEquals(rechargeMoney, rechargeSum);
+//		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
+		page_rechargeSuccess.click_finish();
+		page_rechargeSuccess.sleep(1000);
+		
+		handleResult(expectMessage,realName);
+		System.out.println("-------------------------------------------------");
+	}
+	public void recharge_firstPayPassword(String payPassword,String rechargeSum,String bankSmsCode,
+			String bankName,String bankCardNum,
+			String bankMobile,String realName,String idCard,
+			String smsCode_recharge,String expectMessage){
+		logger.info("[Biz_充值已设置支付密码]");
+		System.out.println("-------------------------------------------------");
+		page_recharge.input_recharge_sum(rechargeSum);
+		page_recharge.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		
+		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		page_bindingBankcard.input_userRealName(realName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_userIdCard(idCard);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);	
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_payPwd(payPassword);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_smsCode(smsCode_recharge);
+		page_recharge.sleep(1000);
+		page_rechargeSuccess.click_finish();
+		page_rechargeSuccess.sleep(1000);
+		
+		handleResult(expectMessage,realName);
+		System.out.println("-------------------------------------------------");
+	}
+	public void recharge_firstBankCard(String payPassword,String rechargeSum,
+			String realName,String smsCode_recharge,String expectMessage){
+		logger.info("[Biz_充值已绑卡]");
+		System.out.println("-------------------------------------------------");
+		page_recharge.input_recharge_sum(rechargeSum);
+		page_recharge.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_payPwd(payPassword);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_smsCode(smsCode_recharge);
+		page_recharge.sleep(1000);
 		page_rechargeSuccess.click_finish();
 		page_rechargeSuccess.sleep(1000);
 		

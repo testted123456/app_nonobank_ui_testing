@@ -2,21 +2,25 @@ package com.nonobank.apps.testcase.nonobankge.recharge;
 
 import org.testng.annotations.Test;
 
+import com.nonobank.apps.business.nonobankge.Biz_accountSecurity;
 import com.nonobank.apps.business.nonobankge.Biz_common;
 import com.nonobank.apps.business.nonobankge.Biz_gesturePwd;
 import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_recharge;
 import com.nonobank.apps.business.nonobankge.Biz_register;
+import com.nonobank.apps.business.nonobankge.Biz_setPayPassword;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
 import com.nonobank.apps.testcase.base.BaseCase;
 
-public class Recharge extends BaseCase {
+public class RechargeFirstPayPwd extends BaseCase {
 	Biz_register biz_register;
 	Biz_common biz_common;
 	Biz_me biz_me;
 	Biz_recharge biz_recharge;
 	Biz_gesturePwd biz_gesturePwd;
 	Biz_setting biz_setting;
+	Biz_accountSecurity biz_accountSecurity;
+	Biz_setPayPassword biz_setPayPassword;
 
 	@Test(dataProvider = "dataSource")
 	public void test(String testcaseName, String testcaseDescription, String environment, String mobile,
@@ -32,14 +36,25 @@ public class Recharge extends BaseCase {
 		biz_gesturePwd.click_judge();
 		// 点击我的
 		biz_common.click_me();
+		// 我的---点击设置
+		biz_me.click_settingIcon("设置");
+		// 设置---点击账户安全
+		biz_setting.click_securityAccount("账户安全");
+		// 账户安全---点击支付密码
+		biz_accountSecurity.click_payPassword("设置支付密码");
+		// 设置支付密码----设置支付密码
+		biz_setPayPassword.setPayPassword(payPassword, payPassword_second, "账户安全");
+		// 点击返回
+		biz_common.click_backBtn();
+		// 点击返回
+		biz_common.click_backBtn();
 		// 我的---点击充值
 		biz_me.click_recharge("充值");
 		// 充值
-		biz_recharge.recharge_firstPayPassword(payPassword,rechargeSum,bankSmsCode,bankName, 
-				bankCardNum,bankMobile,realName,idCard,smsCode_recharge, "充值");
+		biz_recharge.recharge_firstPayPassword(payPassword, rechargeSum, bankSmsCode,
+				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值");
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");
 	}
-
 }

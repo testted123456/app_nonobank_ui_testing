@@ -51,7 +51,9 @@
 	<test name="bankCard">
 		<classes>
 			<!-- 绑卡 -->
-			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class> 
+			<!-- 先实名后绑卡 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardFirstRealName"></class>   
 		</classes>
 	</test> 
 	<test name="invest">
@@ -64,6 +66,10 @@
 		<classes>
 			<!-- 充值 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.recharge.Recharge"></class>   
+			<!-- 先绑卡后充值 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.recharge.RechargeFirstBankCard"></class>  
+			<!-- 先设置支付密码后充值 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.recharge.RechargeFirstPayPwd"></class>  
 		</classes>
 	</test> 
 	<test name="withdraw">

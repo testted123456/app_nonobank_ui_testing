@@ -48,6 +48,35 @@ public class Biz_bindingBankcard {
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
+	public void bindingBankcardFirstRealName(String bankName,String bankCardNum,String realName,
+			String bankMobile,String bankSmsCode,String expectMessage){
+		logger.info("[Biz_绑定银行卡]");
+		System.out.println("-------------------------------------------------");
+		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
+		while(!page_bindingBankcard.isExist_bankName(bankName)){
+			page_bindingBankcard.swipe_bankSelect();
+		}
+		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+
+		handleResult(expectMessage,realName);
+		System.out.println("-------------------------------------------------");
+	}
 	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {
 		case "我的银行卡":

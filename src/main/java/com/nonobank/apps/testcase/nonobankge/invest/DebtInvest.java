@@ -32,8 +32,7 @@ public class DebtInvest extends BaseCase {
 	@Test(dataProvider = "dataSource")
 	public void test(String testcaseName, String testcaseDescription, String environment, String mobile,
 			String pictureVerification, String smsCode, String password, String idCard, String realName,
-			String bankName, String bankCardNum, String bankMobile, String bankSmsCode,String payPwd
-			) {
+			String bankName, String bankCardNum, String bankMobile, String bankSmsCode,String payPwd) {
 		caseName = testcaseName;
 		caseDescription = testcaseDescription;
 		inputParams = mobile;

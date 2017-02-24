@@ -67,6 +67,11 @@ public class Page_bindingBankcard extends BasePage{
 		WebElement element = objectRepository.getWebElement("预留手机号");
 		element.sendKeys(bankMobile);
 	}
+	public boolean isExist_nextStep(){
+		logger.info("[Page]下一步是否存在。。。。。。");
+		boolean b=objectRepository.isElementExists("下一步", 3);
+		return b;
+	}
 	public void click_nextStep(){
 		logger.info("[Page]点击下一步。。。。。。");
 		WebElement element = objectRepository.getWebElement("下一步");
