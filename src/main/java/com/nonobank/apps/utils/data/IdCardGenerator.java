@@ -3546,8 +3546,9 @@ public class IdCardGenerator {
 		generater.append(this.randomCode());
 		generater.append(this.calcTrailingNumber(generater.toString().toCharArray()));
 		return generater.toString();
-	}
-
+	}	
+	
+	//生成随机地区
 	public int randomAreaCode() {
 		int index = (int) (Math.random() * IdCardGenerator.areaCode.size());
 		Collection<Integer> values = IdCardGenerator.areaCode.values();
@@ -3560,7 +3561,7 @@ public class IdCardGenerator {
 		}
 		return code;
 	}
-
+	
 	public String randomBirthday(int age) {
 
 		StringBuilder builder = new StringBuilder();
@@ -3670,6 +3671,7 @@ public class IdCardGenerator {
         return generator.generate(age);
     }
 
+
 	public int generateAge() { //more thank 18 and less than 40
 		Random random = new Random();
         int age =18;
@@ -3681,9 +3683,21 @@ public class IdCardGenerator {
         IdCardGenerator generator = new IdCardGenerator();
         return generator.generate(generateAge());
     }
+    public String generateUnUsedIdCardNumberByAgeArea(String age,String areaCode){
+    	Connection con = DBUtils.getConnection("nono", "nono");
+    	while(true){
+    		String idCard = generateIdCardNumberByAge(Integer.parseInt(age));
+    		String sql = "select count(*) from user_info WHERE id_num='" + idCard + "'";
+    		String count = DBUtils.getOneObject(con, sql).toString();
+    		
+    		if(count.equals("0")){
+				return idCard;
+			}
+    	}
+    	
+    }
     public String generateUnUsedIdCardNumberByAge(String age){
     	Connection con = DBUtils.getConnection("nono", "nono");
-    	
     	while(true){
     		String idCard = generateIdCardNumberByAge(Integer.parseInt(age));
     		String sql = "select count(*) from user_info WHERE id_num='" + idCard + "'";
@@ -3694,4 +3708,6 @@ public class IdCardGenerator {
 			}
     	}
     }
+
+
 }

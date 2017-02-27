@@ -15,7 +15,7 @@ import com.nonobank.apps.interfaces.nonobankge.FinancePlan;
 import com.nonobank.apps.interfaces.nonobankge.getProductIndexListTest;
 import com.nonobank.apps.interfaces.nonobankge.loginTest;
 import com.nonobank.apps.testcase.base.BaseCase;
-import com.nonobank.apps.utils.data.UserInfoUtils;
+import com.nonobank.apps.utils.data.MobileUtil;
 
 public class Invest extends BaseCase {
 
@@ -76,7 +76,7 @@ public class Invest extends BaseCase {
 			break;
 		}
 		// 接口---登录
-		String username = UserInfoUtils.getUsername(mobile);
+		String username = MobileUtil.getUserName(mobile);
 		String response_login = loginTest.login(username, "d051d170235c6682e334e6a5abd8ebdb", blackBox);
 		JSONObject jsonObj_login = JSON.parseObject(response_login);
 		String data_login = jsonObj_login.getString("data").toString();

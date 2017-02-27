@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.interfaces.util.SendRequest;
 import com.nonobank.apps.utils.data.IdCardGenerator;
-import com.nonobank.apps.utils.data.UserInfoUtils;
+import com.nonobank.apps.utils.data.MobileUtil;
 
 
 public class authenticateSchoolRollTest {
@@ -23,7 +23,7 @@ public class authenticateSchoolRollTest {
 	IdCardGenerator IdCardGenerator=new IdCardGenerator();
 	
 	public void dataProvider(){
-		String phone=UserInfoUtils.getUnregisterMobile();
+		String phone=MobileUtil.getUnRegisterMobile();
 		String imgSessionId=getSessionIdTest.getImgSessionId();
 		String smscodeSessionId=sendMessageByValidateCodeTest.getSmscodeSessionId(imgSessionId, phone);
 		String smsCode=sendMessageByValidateCodeTest.getSmsCode(imgSessionId, phone);

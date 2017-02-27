@@ -3,17 +3,14 @@ package com.nonobank.apps.interfaces.mxd;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.interfaces.util.SendRequest;
-import com.nonobank.apps.utils.data.UserInfoUtils;
+import com.nonobank.apps.utils.data.MobileUtil;
 
 
 
@@ -24,7 +21,7 @@ public class sendMessageByValidateCodeTest {
 	
 	public void dataProvider(){
 		String sessionId=getSessionIdTest.getImgSessionId();
-		String phone=UserInfoUtils.getUnregisterMobile();
+		String phone=MobileUtil.getUnRegisterMobile();
 		String sms_type="4";
 		String black_box="";
 		String validateCode="0615";

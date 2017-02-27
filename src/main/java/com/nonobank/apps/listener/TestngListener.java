@@ -55,7 +55,6 @@ public class TestngListener extends TestListenerAdapter {
 		}
 		
 		appActions.resetApp();
-//		appActions.quit();
 		String os = System.getProperties().getProperty("os.name");
 		if (os.startsWith("Mac")){
 			//zanshibuzuo
@@ -63,8 +62,6 @@ public class TestngListener extends TestListenerAdapter {
 			AppiumOperation.stopWindowsAppiumServer("4723");
 			AppiumOperation.startWindowsServer("4723");
 		}
-		
-		//AppiumOperation.stopWindowsAppiumServer(appiumServicePort);
 	}
 
 	@Override
@@ -93,7 +90,6 @@ public class TestngListener extends TestListenerAdapter {
 		}
 		
 		appActions.resetApp();
-//		appActions.quit();
 	}
 
 	@Override

@@ -1,9 +1,6 @@
 package com.nonobank.apps.testcase.nonobankge.invest;
 
 import org.testng.annotations.Test;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.business.nonobankge.Biz_bindingBankcard;
 import com.nonobank.apps.business.nonobankge.Biz_common;
 import com.nonobank.apps.business.nonobankge.Biz_debt;
@@ -13,10 +10,7 @@ import com.nonobank.apps.business.nonobankge.Biz_product;
 import com.nonobank.apps.business.nonobankge.Biz_productInvest;
 import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
-import com.nonobank.apps.interfaces.nonobankge.getProductIndexListTest;
-import com.nonobank.apps.interfaces.nonobankge.loginTest;
 import com.nonobank.apps.testcase.base.BaseCase;
-import com.nonobank.apps.utils.data.UserInfoUtils;
 
 public class DebtInvest extends BaseCase {
 	Biz_register biz_register;

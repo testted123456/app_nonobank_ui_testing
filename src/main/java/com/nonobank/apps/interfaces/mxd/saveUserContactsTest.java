@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.interfaces.util.SendRequest;
-import com.nonobank.apps.utils.data.UserInfoUtils;
+import com.nonobank.apps.utils.data.MobileUtil;
 
 
 public class saveUserContactsTest {
@@ -21,7 +21,7 @@ public class saveUserContactsTest {
 	public static String url = "/msapi/rebuild/userinfo/saveUserContacts";
 	
 	public void dataProvider(){
-		String phone=UserInfoUtils.getUnregisterMobile();
+		String phone=MobileUtil.getUnRegisterMobile();
 		String imgSessionId=getSessionIdTest.getImgSessionId();
 		String smsCode=sendMessageByValidateCodeTest.getSmsCode(imgSessionId, phone);
 		String smscodeSessionId=sendMessageByValidateCodeTest.getSmscodeSessionId(imgSessionId, phone);

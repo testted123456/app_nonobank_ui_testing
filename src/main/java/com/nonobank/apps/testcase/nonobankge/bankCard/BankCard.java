@@ -1,23 +1,15 @@
 package com.nonobank.apps.testcase.nonobankge.bankCard;
 
 import org.testng.annotations.Test;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.business.nonobankge.Biz_bindingBankcard;
 import com.nonobank.apps.business.nonobankge.Biz_common;
 import com.nonobank.apps.business.nonobankge.Biz_gesturePwd;
 import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
-import com.nonobank.apps.business.nonobankge.Var_bindingBankcard;
-import com.nonobank.apps.business.nonobankge.Var_register;
 import com.nonobank.apps.interfaces.mock.KuaiqianPay;
-import com.nonobank.apps.interfaces.nonobankge.bankCard;
-import com.nonobank.apps.interfaces.nonobankge.degreecardTest;
-import com.nonobank.apps.interfaces.nonobankge.loginTest;
 import com.nonobank.apps.testcase.base.BaseCase;
-import com.nonobank.apps.utils.data.UserInfoUtils;
+
 
 public class BankCard extends BaseCase {
 	Biz_register biz_register;
