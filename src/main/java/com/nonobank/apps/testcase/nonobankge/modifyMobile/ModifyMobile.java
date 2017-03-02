@@ -12,7 +12,7 @@ import com.nonobank.apps.business.nonobankge.Biz_setPayPassword;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
 import com.nonobank.apps.testcase.base.BaseCase;
 
-public class modifyMobile extends BaseCase {
+public class ModifyMobile extends BaseCase {
 	Biz_register biz_register;
 	Biz_common biz_common;
 	Biz_me biz_me;
@@ -41,6 +41,8 @@ public class modifyMobile extends BaseCase {
 		biz_setting.click_bindingMobile("设置");
 		//更换绑定手机号码
 		biz_modifyMobile.modifyMobile(mobile, password, newMobile, smsCode2, "设置");
+		//退出
+		biz_setting.click_logout("退出");
 	}
 
 }

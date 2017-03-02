@@ -73,9 +73,88 @@ public class Biz_bindingBankcard {
 		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
 		page_bindingBankcard.sleep(1000);
 		page_bindingBankcard.click_nextStep();
-
+		page_bindingBankcard.sleep(5000);
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
+	}
+	public void bankCardExc(String bankName_notBank,String bankCardNum_notBank,
+			String bankCardNum_error,String bankName,String bankCardNum,
+			String realName,String idCard,String bankMobile,
+			String bankSmsCode,String expectMessage){
+		logger.info("[Biz_绑定银行卡]");
+		System.out.println("-------------------------------------------------");
+		//只输入银行卡号码
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_common.click_backBtn();
+		page_me.click_bankcard();
+		page_bindingBankcard.sleep(1000);
+		//银行卡与银行不是一个
+//		page_bindingBankcard.click_selectBank();
+//		page_bindingBankcard.sleep(1000);
+//		while(!page_bindingBankcard.isExist_bankName(bankName_notBank)){
+//			page_bindingBankcard.swipe_bankSelect();
+//		}
+//		page_bindingBankcard.select_bank(bankName_notBank);
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.input_bankCardNum(bankCardNum_notBank);
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.click_nextStep();
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.click_nextStep();
+//		page_bindingBankcard.sleep(1000);
+//		page_common.click_backBtn();
+//		page_me.click_bankcard();
+		//银行卡号码不准确
+//		page_bindingBankcard.click_selectBank();
+//		page_bindingBankcard.sleep(1000);
+//		while(!page_bindingBankcard.isExist_bankName(bankName_notBank)){
+//			page_bindingBankcard.swipe_bankSelect();
+//		}
+//		page_bindingBankcard.select_bank(bankName_notBank);
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.input_bankCardNum(bankCardNum_error);
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.click_nextStep();
+//		page_bindingBankcard.sleep(1000);
+//		page_bindingBankcard.click_nextStep();
+//		page_bindingBankcard.sleep(1000);
+//		page_common.click_backBtn();
+//		page_me.click_bankcard();
+//		page_bindingBankcard.sleep(1000);
+		//正确的情况
+		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
+		while(!page_bindingBankcard.isExist_bankName(bankName)){
+			page_bindingBankcard.swipe_bankSelect();
+		}
+		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		
+		page_bindingBankcard.input_userRealName(realName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_userIdCard(idCard);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+
+		handleResult(expectMessage,realName);
 	}
 	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {

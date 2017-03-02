@@ -35,6 +35,11 @@ public class Biz_accountSecurity {
 			String acturl=page_common.getText_title();
 			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "设置支付密码页面");
 			break;
+		case "修改支付密码":
+			except="修改支付密码";
+			acturl=page_common.getText_title();
+			Assertion.assertEquals(except, acturl, Biz_bindingBankcard.class, "修改支付密码页面");
+			break;
 		case "修改登录密码":
 			except="修改登录密码";
 			acturl=page_common.getText_title();

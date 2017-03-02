@@ -11,7 +11,7 @@ import com.nonobank.apps.business.nonobankge.Biz_register;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
 import com.nonobank.apps.testcase.base.BaseCase;
 
-public class modifyLoginPassword extends BaseCase {
+public class ModifyLoginPassword extends BaseCase {
 
 	Biz_register biz_register;
 	Biz_common biz_common;

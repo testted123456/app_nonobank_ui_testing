@@ -24,18 +24,26 @@
 		<classes>
 			<!-- 实名认证 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealName"></class>   
+			<!-- 实名认证 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealNameExc"></class> 
 		</classes>
 	</test> 
 	<test name="payPassword">
 		<classes>
 			<!-- 设置支付密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.SettingPayPassword"></class>   
+			<!-- 设置支付密码异常 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.SettingPayPwdExc"></class>  
+			<!-- 找回支付密码 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.FindPayPwd"></class>  
+			<!-- 修改支付密码 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.ModifyPayPwd"></class> 
 		</classes>
 	</test> 
 	<test name="modifyMobile">
 		<classes>
 			<!-- 修改手机号码 -->
-			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.modifyMobile"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobile"></class>   
 			<!-- 修改手机号码（已实名）-->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobileByRealName"></class> 
 		</classes>
@@ -43,9 +51,11 @@
 	<test name="modifyLoginPassword">
 		<classes>
 			<!-- 修改登录密码 -->
-			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.modifyLoginPassword"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.ModifyLoginPassword"></class>   
 			<!-- 修改登录密码（已实名） -->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.ModifyLoginPwdByRealName"></class>
+			<!-- 修改登录密码（异常） -->
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyLoginPassword.ModifyLoginPwdExc"></class>
 		</classes>
 	</test> 
 	<test name="bankCard">
@@ -53,7 +63,9 @@
 			<!-- 绑卡 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class> 
 			<!-- 先实名后绑卡 -->
-			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardFirstRealName"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardFirstRealName"></class>  
+			<!-- 绑卡异常情况 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardExc"></class>  
 		</classes>
 	</test> 
 	<test name="invest">

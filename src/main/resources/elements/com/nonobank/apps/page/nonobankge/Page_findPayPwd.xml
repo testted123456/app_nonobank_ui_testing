@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="获取验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/bt_get_paypwd_code']</prop>
+	</element>
+	<element name="请输入验证码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_paypwd_code']</prop>
+	</element>
+	<element name="新支付密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_new_pay_pwd']</prop>
+	</element>
+	<element name="确认支付密码">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/et_ensure_pay_pwd']</prop>
+	</element>
+	<element name="提交">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.Button[@resource-id='com.nonoapp:id/br_find_pay_pwd']</prop>
+	</element>
+</elements>

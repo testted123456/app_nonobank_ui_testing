@@ -26,6 +26,55 @@ public class Biz_modifyLoginPassword {
 		page_modifyLoginPassword.click_enter();
 		handleResult(expectMessage);
 	}
+	public void modifyLoginPwdExc(String oldPassword_error,String oldPassword,
+			String newPassword_error,String newPassword,
+			String ensurePassword_error,String ensurePassword,String ensurePassword_exc,
+			String expectMessage){
+		//原密码错误
+		page_modifyLoginPassword.input_oldPassword(oldPassword_error);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_newPassword(newPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_ensurePassword(ensurePassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.click_enter();
+		//新密码错误
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_oldPassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_newPassword(newPassword_error);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_ensurePassword(ensurePassword_error);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.click_enter();
+		//新密码与原密码一样
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_oldPassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_newPassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_ensurePassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.click_enter();
+		//两次密码不一致
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_oldPassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_newPassword(newPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_ensurePassword(ensurePassword_exc);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.click_enter();
+		//正确
+		page_modifyLoginPassword.input_oldPassword(oldPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_newPassword(newPassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.input_ensurePassword(ensurePassword);
+		page_modifyLoginPassword.sleep(1000);
+		page_modifyLoginPassword.click_enter();
+		handleResult(expectMessage);
+	}
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
 		case "账户安全":

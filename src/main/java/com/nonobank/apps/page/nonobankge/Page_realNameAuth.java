@@ -54,6 +54,11 @@ public class Page_realNameAuth extends BasePage{
 		WebElement element = objectRepository.getWebElement("弹窗-返回修改");
 		element.click();
 	}
+	public void click_CPM_gotoModify(){
+		logger.info("[Page]点击弹窗-去修改。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-去修改");
+		element.click();
+	}
 	public void click_CPM_enter(){
 		logger.info("[Page]点击弹窗-确定。。。。。。");
 		WebElement element = objectRepository.getWebElement("弹窗-确定");

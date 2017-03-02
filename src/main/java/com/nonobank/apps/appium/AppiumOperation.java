@@ -23,17 +23,14 @@ public class AppiumOperation {
 	public static Boolean flag = false;
 	public static void startServerInMac(String strAppiumPort) {
 		String appium_dir = ParseProperties.getInstance().getProperty("appium_dir");
+		String andriod_home=ParseProperties.getInstance().getProperty("ANDROID_HOME");
 		
 		try {		
 			String os = System.getProperties().getProperty("os.name");
 			Process process = null;
-//			process = Runtime.getRuntime().exec("env");
-//			BufferedReader reader =  new BufferedReader(new InputStreamReader(process.getInputStream()));
-//			System.out.println(reader.readLine() + "=====");
-//			Thread.sleep(5000);
 			String cmdNode = appium_dir + "/Contents/Resources/node/bin/node ";
 			if(os.startsWith("Mac")){
-				String cmd = "export ANDROID_HOME=/Users/user/Library/Android/sdk;export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/platform-tools;" + cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
+				String cmd = "export ANDROID_HOME="+andriod_home+";export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/platform-tools;" + cmdNode + appium_dir + APPIUMSERVERSTARTCMD + strAppiumPort + AUTOMATIONANDPLATFORM;
 				String[] cmds = { "/bin/sh", "-c", cmd };
 				process = Runtime.getRuntime().exec(cmds);
 			}else{

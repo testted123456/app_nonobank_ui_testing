@@ -36,6 +36,7 @@ public class Biz_modifyMobile {
 		page_changeBindingMobile.input_smsCode(smsCode);
 		page_changeBindingMobile.sleep(1000);
 		page_changeBindingMobile.click_auth();	
+		page_changeBindingMobile.sleep(5000);
 		handleResult(expectMessage);
 	}
 	private void handleResult(String expectMessage) {
