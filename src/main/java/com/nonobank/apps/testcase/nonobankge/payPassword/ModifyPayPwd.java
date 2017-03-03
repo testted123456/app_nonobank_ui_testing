@@ -48,16 +48,11 @@ public class ModifyPayPwd extends BaseCase{
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("修改支付密码");
 		//修改支付密码
-		biz_modifyPayPwd.modifyPayPwd(payPassword, newPayPwd, secondPayPwd);
+		biz_modifyPayPwd.modifyPayPwd(payPassword, newPayPwd, secondPayPwd,"账户安全");
 		//点击返回
 		biz_common.click_backBtn();
 		biz_setting.click_logout("退出");
 		
 	}
-	
-	
-	
-	
-	
 	
 }

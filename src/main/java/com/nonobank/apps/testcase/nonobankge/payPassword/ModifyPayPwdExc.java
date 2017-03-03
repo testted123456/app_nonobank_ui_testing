@@ -1,9 +1,9 @@
 package com.nonobank.apps.testcase.nonobankge.payPassword;
 
 import org.testng.annotations.Test;
+
 import com.nonobank.apps.business.nonobankge.Biz_accountSecurity;
 import com.nonobank.apps.business.nonobankge.Biz_common;
-import com.nonobank.apps.business.nonobankge.Biz_findPayPwd;
 import com.nonobank.apps.business.nonobankge.Biz_gesturePwd;
 import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_modifyPayPwd;
@@ -12,7 +12,7 @@ import com.nonobank.apps.business.nonobankge.Biz_setPayPassword;
 import com.nonobank.apps.business.nonobankge.Biz_setting;
 import com.nonobank.apps.testcase.base.BaseCase;
 
-public class FindPayPwd extends BaseCase{
+public class ModifyPayPwdExc extends BaseCase{
 
 	Biz_register biz_register;
 	Biz_common biz_common;
@@ -21,14 +21,16 @@ public class FindPayPwd extends BaseCase{
 	Biz_accountSecurity biz_accountSecurity;
 	Biz_setPayPassword biz_setPayPassword;
 	Biz_gesturePwd biz_gesturePwd;
-	Biz_findPayPwd biz_findPayPwd;
+	Biz_modifyPayPwd biz_modifyPayPwd;
 	
 	@Test(dataProvider="dataSource")
 	public void test(String testcaseName,String testcaseDescription,
 			String environment,String mobile,String pictureVerification,
 			String smsCode,String password,String payPassword,
 			String payPassword_second,String newPayPwd,String secondPayPwd,
-			String findPayPwdSmsCode){
+			String oldPayPwd_error,String newPayPwd_num,String secondPayPwd_num,
+			String newPayPwd_letter,String secondPayPwd_letter,
+			String newPayPwd_one,String secondPayPwd_two){
 		caseName = testcaseName;
 		caseDescription = testcaseDescription;
 		inputParams = mobile;
@@ -49,11 +51,13 @@ public class FindPayPwd extends BaseCase{
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("修改支付密码");
 		//修改支付密码
-		biz_findPayPwd.findPayPwd(findPayPwdSmsCode, newPayPwd, secondPayPwd,"账户安全");
+		biz_modifyPayPwd.modifyPayPwdExc(payPassword, newPayPwd, secondPayPwd, 
+				oldPayPwd_error, newPayPwd_num, secondPayPwd_num,
+				newPayPwd_letter, secondPayPwd_letter, newPayPwd_one, secondPayPwd_two, "账户安全");
 		//点击返回
 		biz_common.click_backBtn();
 		biz_setting.click_logout("退出");
 		
 	}
-		
+	
 }
