@@ -12,11 +12,11 @@
 		<classes>
 			<!-- 登录 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Login"></class>  
-			<!-- 登录 -->
+			<!-- 登录异常 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.LoginExc"></class>  
 			<!-- 注册 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.Register"></class> 
-			<!-- 注册 -->
+			<!-- 注册异常 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.registerLogin.RegisterExc"></class> 
 		</classes>
 	</test> 
@@ -36,8 +36,12 @@
 			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.SettingPayPwdExc"></class>  
 			<!-- 找回支付密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.FindPayPwd"></class>  
+			<!-- 找回支付密码异常 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.FindPayPwdExc"></class> 
 			<!-- 修改支付密码 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.ModifyPayPwd"></class> 
+			<!-- 修改支付密码异常 -->
+			<class name="com.nonobank.apps.testcase.nonobankge.payPassword.ModifyPayPwdExc"></class> 
 		</classes>
 	</test> 
 	<test name="modifyMobile">
@@ -46,6 +50,8 @@
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobile"></class>   
 			<!-- 修改手机号码（已实名）-->
 			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobileByRealName"></class> 
+			<!-- 修改手机号码异常-->
+			<class name="com.nonobank.apps.testcase.nonobankge.modifyMobile.ModifyMobileExc"></class> 
 		</classes>
 	</test> 
 	<test name="modifyLoginPassword">
@@ -64,7 +70,7 @@
 			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCard"></class> 
 			<!-- 先实名后绑卡 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardFirstRealName"></class>  
-			<!-- 绑卡异常情况 -->
+			<!-- 绑卡（异常） -->
 			<class name="com.nonobank.apps.testcase.nonobankge.bankCard.BankCardExc"></class>  
 		</classes>
 	</test> 

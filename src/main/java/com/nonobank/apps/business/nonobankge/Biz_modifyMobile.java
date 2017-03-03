@@ -39,6 +39,58 @@ public class Biz_modifyMobile {
 		page_changeBindingMobile.sleep(5000);
 		handleResult(expectMessage);
 	}
+	
+	public void modifyMobileExc(String mobile,String loginPwd,String newMobile,
+			String loginPwd_error,String newMobile_error,String smsCode_error,
+			String smsCode,String expectMessage){
+		//输入错误的登录密码
+		page_bindingMobile.input_loginPassword(loginPwd_error);
+		page_bindingMobile.sleep(1000);
+		page_bindingMobile.click_replaceBinding();
+		page_bindingMobile.sleep(1000);
+		//输入错误的手机号码
+		page_bindingMobile.input_loginPassword(loginPwd);
+		page_bindingMobile.sleep(1000);
+		page_bindingMobile.click_replaceBinding();
+		page_bindingMobile.sleep(1000);
+		page_changeBindingMobile.input_mobile(newMobile_error);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_getSmsCode();
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.input_smsCode(smsCode);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_auth();
+		page_changeBindingMobile.sleep(1000);
+		page_common.click_backBtn();
+		page_bindingMobile.sleep(1000);
+		page_bindingMobile.click_replaceBinding();
+		page_bindingMobile.sleep(1000);
+		//输入错误的验证码
+		page_changeBindingMobile.input_mobile(newMobile);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_getSmsCode();
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.input_smsCode(smsCode_error);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_auth();
+		page_common.click_backBtn();
+		page_bindingMobile.sleep(1000);
+		page_bindingMobile.click_replaceBinding();
+		page_bindingMobile.sleep(1000);
+		//正确的情况
+		page_changeBindingMobile.input_mobile(newMobile);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_getSmsCode();
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.input_smsCode(smsCode);
+		page_changeBindingMobile.sleep(1000);
+		page_changeBindingMobile.click_auth();
+		page_changeBindingMobile.sleep(5000);
+		handleResult(expectMessage);
+		
+	}
+	
+	
 	private void handleResult(String expectMessage) {
 		switch (expectMessage) {
 		case "设置":
