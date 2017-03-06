@@ -81,6 +81,11 @@ public class Page_recharge extends BasePage{
 		element.sendKeys(smsCode);
 	}
 	
+	public void click_CPM_back(){
+		logger.info("[Page]点击弹窗-返回。。。。。。");
+		WebElement element = objectRepository.getWebElement("弹窗-返回");
+		element.click();
+	}
 	
 	
 }

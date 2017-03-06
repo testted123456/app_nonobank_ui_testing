@@ -44,6 +44,10 @@
 		<prop name="ios"></prop>
 		<prop name="android">//android.widget.EditText[@resource-id='com.nonoapp:id/inputView']</prop>
 	</element>
+	<element name="弹窗-返回">
+		<prop name="ios"></prop>
+		<prop name="android">//android.widget.ImageButton[@resource-id='com.nonoapp:id/btn_titlebar_back']</prop>
+	</element>
 	
 	
 </elements>

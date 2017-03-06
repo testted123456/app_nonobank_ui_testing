@@ -172,6 +172,99 @@ public class Biz_recharge {
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
+	public void rechargeExc(String payPassword,String payPassword_second,
+			String rechargeSum,String bankSmsCode,String bankName,String bankCardNum,
+			String bankMobile,String realName,String idCard,
+			String smsCode_recharge,String rechargeSum_zero,String expectMessage){
+		logger.info("[Biz_充值未设置支付密码]");
+		System.out.println("-------------------------------------------------");
+		page_recharge.input_recharge_sum(rechargeSum_zero);
+		page_recharge.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		String cpm_text=page_recharge.getText_CPM_popUp();
+		Assert.assertEquals(cpm_text, "您尚未设置支付密码，请设置支付密码之后再进行交易。");
+		page_recharge.click_CPM_settingIcon();
+		page_recharge.sleep(2000);
+		page_setPayPassword.input_password(payPassword_second);
+		page_setPayPassword.sleep(1000);
+		page_setPayPassword.input_confirmPassword(payPassword_second);
+		page_setPayPassword.sleep(1000);
+		page_setPayPassword.click_confirm();
+		page_setPayPassword.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_setPayPassword.sleep(1000);
+		
+		page_bindingBankcard.click_selectBank();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.select_bank(bankName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankCardNum(bankCardNum);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		if(page_bindingBankcard.isExist_nextStep()){
+			page_bindingBankcard.click_nextStep();
+			page_bindingBankcard.sleep(1000);
+		}
+		
+		page_bindingBankcard.input_userRealName(realName);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_userIdCard(idCard);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankMobile(bankMobile);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_getSmsCode();
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.input_bankSmsCode(bankSmsCode);
+		page_bindingBankcard.sleep(1000);
+		page_bindingBankcard.click_nextStep();
+		page_bindingBankcard.sleep(1000);
+		
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_payPwd(payPassword);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		//支付金额为0的情况
+		page_recharge.click_CPM_back();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_back();
+		page_recharge.sleep(1000);
+		//充值金额2000000元，大于银行限额
+		page_recharge.input_recharge_sum("2000000");
+		page_recharge.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(3000);
+		String title=page_common.getText_title();
+		Assert.assertEquals(title, "输入银行卡号");
+		page_common.click_backBtn();
+		//正确的情况
+		page_recharge.input_recharge_sum(rechargeSum);
+		page_recharge.sleep(1000);
+		page_recharge.click_ImmediatelyRecharge();
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_payPwd(payPassword);
+		page_recharge.sleep(1000);
+		page_recharge.click_CPM_payPwd_nextStep();
+		page_recharge.sleep(1000);
+		page_recharge.input_CPM_smsCode(smsCode_recharge);
+		page_recharge.sleep(1000);
+		page_rechargeSuccess.click_finish();
+		page_rechargeSuccess.sleep(1000);
+		handleResult(expectMessage,realName);
+	}
 	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {
 		case "充值":

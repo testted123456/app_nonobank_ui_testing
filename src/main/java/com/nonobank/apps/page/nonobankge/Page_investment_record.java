@@ -27,6 +27,19 @@ public class Page_investment_record extends BasePage{
 		WebElement element = objectRepository.getWebElement("债转类");
 		element.click();
 	}
+	public String getText_investPlanName(){
+		logger.info("【Page】获取投资计划名称。。。。。。");
+		WebElement element = objectRepository.getWebElement("投资计划名称");
+		String investPlanName=element.getText();
+		return investPlanName;
+	}
+	public String getText_investPlanMoney(){
+		logger.info("【Page】获取投资计划金额。。。。。。");
+		WebElement element = objectRepository.getWebElement("投资金额");
+		String investPlanMoney=element.getText();
+		return investPlanMoney;	
+	}
+	
 	
 
 }

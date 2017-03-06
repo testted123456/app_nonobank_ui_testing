@@ -24,7 +24,7 @@
 		<classes>
 			<!-- 实名认证 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealName"></class>   
-			<!-- 实名认证 -->
+			<!-- 实名认证异常 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.realName.RealNameExc"></class> 
 		</classes>
 	</test> 
@@ -83,7 +83,9 @@
 	<test name="recharge">
 		<classes>
 			<!-- 充值 -->
-			<class name="com.nonobank.apps.testcase.nonobankge.recharge.Recharge"></class>   
+			<class name="com.nonobank.apps.testcase.nonobankge.recharge.Recharge"></class>  
+			<!-- 充值(异常) -->
+			<class name="com.nonobank.apps.testcase.nonobankge.recharge.RechargeExc"></class> 
 			<!-- 先绑卡后充值 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.recharge.RechargeFirstBankCard"></class>  
 			<!-- 先设置支付密码后充值 -->
@@ -94,6 +96,8 @@
 		<classes>
 			<!-- 提现 -->
 			<class name="com.nonobank.apps.testcase.nonobankge.withdraw.Withdraw"></class>   
+			<!-- 提现(异常) -->
+			<class name="com.nonobank.apps.testcase.nonobankge.withdraw.WithdrawExc"></class>   
 		</classes>
 	</test> 
 

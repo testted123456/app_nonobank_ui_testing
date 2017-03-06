@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.nonobank.apps.business.nonobankge.Biz_bindingBankcard;
 import com.nonobank.apps.business.nonobankge.Biz_common;
 import com.nonobank.apps.business.nonobankge.Biz_gesturePwd;
+import com.nonobank.apps.business.nonobankge.Biz_investRecord;
 import com.nonobank.apps.business.nonobankge.Biz_me;
 import com.nonobank.apps.business.nonobankge.Biz_product;
 import com.nonobank.apps.business.nonobankge.Biz_productInvest;
@@ -27,7 +28,8 @@ public class Invest extends BaseCase {
 	Biz_productInvest biz_productInvest;
 	Biz_bindingBankcard biz_bindingBankcard;
 	Biz_setting biz_setting;
-
+	Biz_investRecord biz_investRecord;
+	
 	@Test(dataProvider = "dataSource")
 	public void test(String testcaseName, String testcaseDescription, String environment, String mobile,
 			String pictureVerification, String smsCode, String password, String idCard, String realName,
@@ -99,6 +101,8 @@ public class Invest extends BaseCase {
 		biz_productInvest.productInvest(investMoney, payPwd, bankSmsCode,bankName, bankCardNum, realName, idCard, bankMobile, productTitle);
 		//退出
 		biz_common.click_me();
+		biz_investRecord.getInvestRecord("计划类");
+		biz_common.click_backBtn();
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");
 	}
