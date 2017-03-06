@@ -34,6 +34,24 @@ public class Biz_withdraw {
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
+	public void withdrawExc(String withdrawalAmount_lower,String withdrawalAmount_more,
+			String payPassword,String realName,String expectMessage){
+		logger.info("[Biz_提现异常]");
+		//输入提现金额为1元
+		page_withdrawal.input_withdrawal_amount(withdrawalAmount_lower);
+		page_withdrawal.sleep(1000);
+		page_withdrawal.click_withdrawal();
+		page_withdrawal.sleep(1000);
+		//输入提现金额大于可提现金额
+		page_withdrawal.input_withdrawal_amount(withdrawalAmount_more);
+		page_withdrawal.sleep(1000);
+		page_withdrawal.click_withdrawal();
+		page_withdrawal.sleep(1000);
+		page_withdrawal.input_CPM_payPassword(payPassword);
+		page_withdrawal.click_CPM_enter();
+		handleResult(expectMessage,realName);
+		
+	}
 	private void handleResult(String expectMessage,String realName) {
 		switch (expectMessage) {
 		case "提现":
