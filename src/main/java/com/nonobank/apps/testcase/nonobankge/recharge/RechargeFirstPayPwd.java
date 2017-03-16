@@ -43,7 +43,7 @@ public class RechargeFirstPayPwd extends BaseCase {
 		// 账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("设置支付密码");
 		// 设置支付密码----设置支付密码
-		biz_setPayPassword.setPayPassword(payPassword, payPassword_second, "账户安全");
+		biz_setPayPassword.setPayPassword(payPassword, payPassword_second, "账户安全",mobile);
 		// 点击返回
 		biz_common.click_backBtn();
 		// 点击返回
@@ -52,7 +52,7 @@ public class RechargeFirstPayPwd extends BaseCase {
 		biz_me.click_recharge("充值");
 		// 充值
 		biz_recharge.recharge_firstPayPassword(payPassword, rechargeSum, bankSmsCode,
-				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值");
+				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值",mobile);
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

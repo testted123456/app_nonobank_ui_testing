@@ -11,6 +11,7 @@ import com.nonobank.apps.business.nonobankge.Biz_withdraw;
 import com.nonobank.apps.testcase.base.BaseCase;
 
 
+@Test
 public class Withdraw extends BaseCase {
 	Biz_register biz_register;
 	Biz_common biz_common;
@@ -20,7 +21,6 @@ public class Withdraw extends BaseCase {
 	Biz_gesturePwd biz_gesturePwd;
 	Biz_setting biz_setting;
 
-	@Test(dataProvider = "dataSource")
 	public void test(String testcaseName, String testcaseDescription, String environment, String mobile,
 			String pictureVerification, String smsCode, String password,String idCard,
 			String realName, String payPassword, String payPassword_second, String rechargeSum,
@@ -39,13 +39,14 @@ public class Withdraw extends BaseCase {
 		biz_me.click_recharge("充值");
 		// 充值
 		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode,
-				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值");
+				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值",mobile);
 		// 点击我的
 		biz_common.click_me();
 		// 我的----提现
 		biz_me.click_takecash("提现");
 		// 提现----提现流程
-		biz_withdraw.withdraw(withdrawalAmount,payPassword,realName, "提现");
+		String accountBalance=String.valueOf(Double.parseDouble(rechargeSum)-Double.parseDouble(withdrawalAmount));
+		biz_withdraw.withdraw(withdrawalAmount,payPassword,realName, "提现",mobile,accountBalance);
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

@@ -44,7 +44,7 @@ public class ModifyPayPwd extends BaseCase{
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("设置支付密码");
 		//设置支付密码----设置支付密码
-		biz_setPayPassword.setPayPassword(payPassword, payPassword_second,"账户安全");
+		biz_setPayPassword.setPayPassword(payPassword, payPassword_second,"账户安全",mobile);
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("修改支付密码");
 		//修改支付密码

@@ -34,7 +34,7 @@ public class RealNameExc extends BaseCase{
 		//点击实名认证
 		biz_setting.click_realNameAuth("实名认证");
 		//实名认证
-		biz_realNameAuth.realNameAuthExc(realName,idCard_error,idCard_exist,idCard,"实名认证");
+		biz_realNameAuth.realNameAuthExc(realName,idCard_error,idCard_exist,idCard,"实名认证",mobile);
 		biz_common.click_backBtn();
 		biz_common.click_me();
 		biz_me.click_settingIcon("设置");

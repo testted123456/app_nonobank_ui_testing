@@ -46,7 +46,7 @@ public class RechargeFirstBankCard extends BaseCase {
 		// 账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("设置支付密码");
 		// 设置支付密码----设置支付密码
-		biz_setPayPassword.setPayPassword(payPassword,payPassword_second,"账户安全");
+		biz_setPayPassword.setPayPassword(payPassword,payPassword_second,"账户安全",mobile);
 		// 点击返回
 		biz_common.click_backBtn();
 		// 点击返回
@@ -55,11 +55,11 @@ public class RechargeFirstBankCard extends BaseCase {
 		biz_me.click_bankcard("银行卡管理");
 		KuaiqianPay.bindingBankcard();
 		// 绑定银行卡
-		biz_bindingBankcard.bindingBankcard(bankName,bankCardNum,realName,idCard,bankMobile,bankSmsCode,"我的银行卡");
+		biz_bindingBankcard.bindingBankcard(bankName,bankCardNum,realName,idCard,bankMobile,bankSmsCode,"我的银行卡",mobile);
 		// 我的---点击充值
 		biz_me.click_recharge("充值");
 		// 充值
-		biz_recharge.recharge_firstBankCard(payPassword,rechargeSum,realName,smsCode_recharge,"充值");
+		biz_recharge.recharge_firstBankCard(payPassword,rechargeSum,realName,smsCode_recharge,"充值",mobile);
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

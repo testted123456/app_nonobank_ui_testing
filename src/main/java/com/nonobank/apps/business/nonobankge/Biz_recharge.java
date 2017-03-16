@@ -8,6 +8,7 @@ import com.nonobank.apps.page.nonobankge.Page_recharge;
 import com.nonobank.apps.page.nonobankge.Page_rechargeSuccess;
 import com.nonobank.apps.page.nonobankge.Page_setPayPassword;
 import com.nonobank.apps.utils.data.Assertion;
+import com.nonobank.apps.checkPoint.nono.RechargeCheck;
 import com.nonobank.apps.page.nonobankge.Page_bindingBankcard;
 import com.nonobank.apps.page.nonobankge.Page_cashierDesk;
 import com.nonobank.apps.page.nonobankge.Page_common;
@@ -26,7 +27,7 @@ public class Biz_recharge {
 	public void recharge_noPayPassword(String payPassword,String payPassword_second,
 			String rechargeSum,String bankSmsCode,String bankName,String bankCardNum,
 			String bankMobile,String realName,String idCard,
-			String smsCode_recharge,String expectMessage){
+			String smsCode_recharge,String expectMessage,String mobile){
 		logger.info("[Biz_充值未设置支付密码]");
 		System.out.println("-------------------------------------------------");
 		page_recharge.input_recharge_sum(rechargeSum);
@@ -96,14 +97,15 @@ public class Biz_recharge {
 //		double rechargeMoney=page_rechargeSuccess.getText_rechargeMoney();
 		page_rechargeSuccess.click_finish();
 		page_rechargeSuccess.sleep(1000);
-		
+		//充值-数据库检查
+		RechargeCheck.verify_recharge(mobile, rechargeSum);
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
 	public void recharge_firstPayPassword(String payPassword,String rechargeSum,String bankSmsCode,
 			String bankName,String bankCardNum,
 			String bankMobile,String realName,String idCard,
-			String smsCode_recharge,String expectMessage){
+			String smsCode_recharge,String expectMessage,String mobile){
 		logger.info("[Biz_充值已设置支付密码]");
 		System.out.println("-------------------------------------------------");
 		page_recharge.input_recharge_sum(rechargeSum);
@@ -146,12 +148,13 @@ public class Biz_recharge {
 		page_recharge.sleep(1000);
 		page_rechargeSuccess.click_finish();
 		page_rechargeSuccess.sleep(1000);
-		
+		//充值-数据库检查
+		RechargeCheck.verify_recharge(mobile, rechargeSum);
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
 	public void recharge_firstBankCard(String payPassword,String rechargeSum,
-			String realName,String smsCode_recharge,String expectMessage){
+			String realName,String smsCode_recharge,String expectMessage,String mobile){
 		logger.info("[Biz_充值已绑卡]");
 		System.out.println("-------------------------------------------------");
 		page_recharge.input_recharge_sum(rechargeSum);
@@ -168,14 +171,15 @@ public class Biz_recharge {
 		page_recharge.sleep(1000);
 		page_rechargeSuccess.click_finish();
 		page_rechargeSuccess.sleep(1000);
-		
+		//充值-数据库检查
+		RechargeCheck.verify_recharge(mobile, rechargeSum);
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
 	public void rechargeExc(String payPassword,String payPassword_second,
 			String rechargeSum,String bankSmsCode,String bankName,String bankCardNum,
 			String bankMobile,String realName,String idCard,
-			String smsCode_recharge,String rechargeSum_zero,String expectMessage){
+			String smsCode_recharge,String rechargeSum_zero,String expectMessage,String mobile){
 		logger.info("[Biz_充值未设置支付密码]");
 		System.out.println("-------------------------------------------------");
 		page_recharge.input_recharge_sum(rechargeSum_zero);
@@ -263,6 +267,8 @@ public class Biz_recharge {
 		page_recharge.sleep(1000);
 		page_rechargeSuccess.click_finish();
 		page_rechargeSuccess.sleep(1000);
+		//充值-数据库检查
+		RechargeCheck.verify_recharge(mobile, rechargeSum);
 		handleResult(expectMessage,realName);
 	}
 	private void handleResult(String expectMessage,String realName) {

@@ -43,7 +43,7 @@ public class ModifyLoginPwdByRealName extends BaseCase {
 		//点击实名认证
 		biz_setting.click_realNameAuth("实名认证");
 		//实名认证
-		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证");
+		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证",mobile);
 		//点击账户安全
 		biz_setting.click_securityAccount("账户安全");
 		//点击登录密码

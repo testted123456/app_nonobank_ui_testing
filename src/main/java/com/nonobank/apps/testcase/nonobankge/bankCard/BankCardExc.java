@@ -40,7 +40,7 @@ public class BankCardExc extends BaseCase{
 		KuaiqianPay.bindingBankcard();
 		// 绑定银行卡
 		biz_bindingBankcard.bankCardExc(bankName_notBank, bankCardNum_notBank, bankCardNum_error,
-				bankName, bankCardNum, realName, idCard, bankMobile, bankSmsCode, "我的银行卡");
+				bankName, bankCardNum, realName, idCard, bankMobile, bankSmsCode, "我的银行卡",mobile);
 		//退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

@@ -36,7 +36,7 @@ public class RechargeExc extends BaseCase{
 		biz_me.click_recharge("充值");
 		// 充值
 		biz_recharge.rechargeExc(payPassword, payPassword_second, rechargeSum, bankSmsCode, bankName,
-				bankCardNum, bankMobile, realName, idCard, smsCode_recharge,"0", "充值");
+				bankCardNum, bankMobile, realName, idCard, smsCode_recharge,"0", "充值",mobile);
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

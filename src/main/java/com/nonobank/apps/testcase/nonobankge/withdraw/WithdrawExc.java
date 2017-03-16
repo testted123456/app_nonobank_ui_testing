@@ -40,13 +40,14 @@ public class WithdrawExc extends BaseCase{
 		biz_me.click_recharge("充值");
 		// 充值
 		biz_recharge.recharge_noPayPassword(payPassword, payPassword_second, rechargeSum, bankSmsCode,
-				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值");
+				bankName, bankCardNum, bankMobile, realName, idCard, smsCode_recharge, "充值",mobile);
 		// 点击我的
 		biz_common.click_me();
 		// 我的----提现
 		biz_me.click_takecash("提现");
 		// 提现----提现流程
-		biz_withdraw.withdrawExc(withdrawalAmount_lower,withdrawalAmount_more,payPassword_second,realName, "提现");
+		String accountBalance=String.valueOf(Double.parseDouble(rechargeSum)-Double.parseDouble(rechargeSum));
+		biz_withdraw.withdrawExc(withdrawalAmount_lower,withdrawalAmount_more,payPassword_second,realName, "提现",mobile,accountBalance);
 		// 退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

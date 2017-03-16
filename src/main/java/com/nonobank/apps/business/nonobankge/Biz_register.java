@@ -3,6 +3,7 @@ package com.nonobank.apps.business.nonobankge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.nonobank.apps.checkPoint.nono.RegisterCheck;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_gesturePassword;
 import com.nonobank.apps.page.nonobankge.Page_guide_portal;
@@ -81,6 +82,8 @@ public class Biz_register {
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();
+		//注册-数据库检查
+		RegisterCheck.verify_register(mobile);	
 		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
@@ -167,6 +170,8 @@ public class Biz_register {
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();
+		//注册-数据库检查
+		RegisterCheck.verify_register(mobile);	
 		handleResult(expectMessage);
 	}
 	private void handleResult(String expectMessage) {

@@ -39,13 +39,13 @@ public class BankCardFirstRealName extends BaseCase{
 		//点击实名认证
 		biz_setting.click_realNameAuth("实名认证");
 		//实名认证
-		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证");
+		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证",mobile);
 		biz_common.click_backBtn();
 		// 点击银行卡管理
 		biz_me.click_bankcard("银行卡管理");
 		KuaiqianPay.bindingBankcard();
 		// 绑定银行卡
-		biz_bindingBankcard.bindingBankcardFirstRealName(bankName,bankCardNum,realName,bankMobile,bankSmsCode,"我的银行卡");
+		biz_bindingBankcard.bindingBankcardFirstRealName(bankName,bankCardNum,realName,bankMobile,bankSmsCode,"我的银行卡",mobile);
 		//退出
 		biz_me.click_settingIcon("设置");
 		biz_setting.click_logout("退出");

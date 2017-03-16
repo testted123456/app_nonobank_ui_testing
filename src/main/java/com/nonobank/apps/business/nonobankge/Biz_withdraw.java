@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
+import com.nonobank.apps.checkPoint.nono.WithdrawCheck;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_me;
 import com.nonobank.apps.page.nonobankge.Page_withdrawal;
@@ -16,7 +17,7 @@ public class Biz_withdraw {
 	Page_me page_me=new Page_me();
 	
 	public void withdraw(String withdrawalAmount,String payPassword,
-			String realName,String expectMessage){
+			String realName,String expectMessage,String mobile,String accountBalance){
 		logger.info("[Biz_提现]");
 		System.out.println("-------------------------------------------------");
 		double withdrawal_amount=page_withdrawal.getText_withdrawal_amount();
@@ -31,11 +32,13 @@ public class Biz_withdraw {
 		Assert.assertEquals(withdrawalMoney,Double.parseDouble(withdrawalAmount));
 		page_withdrawal.input_CPM_payPassword(payPassword);
 		page_withdrawal.click_CPM_enter();
+		//提现-数据库检查
+		WithdrawCheck.verify_withdraw(mobile, accountBalance);
 		handleResult(expectMessage,realName);
 		System.out.println("-------------------------------------------------");
 	}
 	public void withdrawExc(String withdrawalAmount_lower,String withdrawalAmount_more,
-			String payPassword,String realName,String expectMessage){
+			String payPassword,String realName,String expectMessage,String mobile,String accountBalance){
 		logger.info("[Biz_提现异常]");
 		//输入提现金额为1元
 		page_withdrawal.input_withdrawal_amount(withdrawalAmount_lower);
@@ -49,6 +52,9 @@ public class Biz_withdraw {
 		page_withdrawal.sleep(1000);
 		page_withdrawal.input_CPM_payPassword(payPassword);
 		page_withdrawal.click_CPM_enter();
+		//提现-数据库检查
+		WithdrawCheck.verify_withdraw(mobile, accountBalance);
+		
 		handleResult(expectMessage,realName);
 		
 	}

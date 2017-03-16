@@ -43,7 +43,7 @@ public class ModifyMobileByRealName extends BaseCase{
 		//点击实名认证
 		biz_setting.click_realNameAuth("实名认证");
 		//实名认证
-		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证");
+		biz_realNameAuth.realNameAuth(realName, idCard,"实名认证",mobile);
 		// 设置---点击绑定手机
 		biz_setting.click_bindingMobile("设置");
 		//更换绑定手机号码

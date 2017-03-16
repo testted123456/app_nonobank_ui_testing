@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
+import com.nonobank.apps.checkPoint.nono.PayPwdCheck;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_setPayPassword;
 import com.nonobank.apps.utils.data.Assertion;
@@ -14,7 +15,7 @@ public class Biz_setPayPassword {
 	Page_setPayPassword page_setPayPassword=new Page_setPayPassword();
 	Page_common page_common=new Page_common();
 	
-	public void setPayPassword(String payPassword,String payPassword_second,String expectMessage){
+	public void setPayPassword(String payPassword,String payPassword_second,String expectMessage,String mobile){
 		logger.info("[Biz]设置支付密码。。。。。。");
 		System.out.println("------------------------------------------------");
 		page_setPayPassword.input_password(payPassword);
@@ -23,10 +24,12 @@ public class Biz_setPayPassword {
 		page_setPayPassword.sleep(2000);
 		page_setPayPassword.click_confirm();
 		handleResult(expectMessage);
+		//设置支付密码-数据库检查
+		PayPwdCheck.verify_paypwd(mobile);
 		System.out.println("------------------------------------------------");
 	}
 	public void setPayPasswordExc(String loginPwd,String payPwd_error,
-			String payPassword,String payPassword_second,String expectMessage){
+			String payPassword,String payPassword_second,String expectMessage,String mobile){
 		logger.info("[Biz]设置支付密码。。。。。。");
 		System.out.println("------------------------------------------------");
 		page_setPayPassword.input_password(payPwd_error);
@@ -45,6 +48,8 @@ public class Biz_setPayPassword {
 		page_setPayPassword.input_confirmPassword(payPassword_second);
 		page_setPayPassword.sleep(2000);
 		page_setPayPassword.click_confirm();
+		//设置支付密码-数据库检查
+		PayPwdCheck.verify_paypwd(mobile);
 		handleResult(expectMessage);
 		System.out.println("------------------------------------------------");
 	}

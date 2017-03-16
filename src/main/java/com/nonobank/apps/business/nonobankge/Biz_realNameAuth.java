@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
+import com.nonobank.apps.checkPoint.nono.RealNameCheck;
 import com.nonobank.apps.page.nonobankge.Page_common;
 import com.nonobank.apps.page.nonobankge.Page_realNameAuth;
 import com.nonobank.apps.page.nonobankge.Page_setting;
@@ -15,7 +16,7 @@ public class Biz_realNameAuth {
 	Page_common page_common=new Page_common();
 	Page_setting page_setting=new Page_setting();
 	
-	public void realNameAuth(String realName,String idCard,String expectMessage){
+	public void realNameAuth(String realName,String idCard,String expectMessage,String mobile){
 		logger.info("[Biz_实名认证]");
 		System.out.println("-------------------------------------------------");
 		page_realNameAuth.input_realName(realName);
@@ -29,11 +30,13 @@ public class Biz_realNameAuth {
 		String id_Card=page_realNameAuth.getText_CPM_idCard();
 		Assert.assertEquals(id_Card, idCard);
 		page_realNameAuth.click_CPM_enter();
+		//实名认证-数据库检查
+		RealNameCheck.verify_realName(mobile);
 		handleResult(expectMessage);
 		System.out.println("-------------------------------------------------");
 	}
 	public void realNameAuthExc(String realName,String idCard_error,String idCard_exist,
-			String idCard,String expectMessage){
+			String idCard,String expectMessage,String mobile){
 
 		logger.info("[Biz_实名认证]");
 		page_realNameAuth.click_auth();
@@ -77,6 +80,8 @@ public class Biz_realNameAuth {
 		page_realNameAuth.click_auth();
 		page_realNameAuth.sleep(2000);
 		page_realNameAuth.click_CPM_enter();
+		//实名认证-数据库检查
+		RealNameCheck.verify_realName(mobile);
 		handleResult(expectMessage);	
 	}
 	private void handleResult(String expectMessage) {

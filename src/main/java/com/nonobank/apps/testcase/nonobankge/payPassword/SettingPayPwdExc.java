@@ -43,7 +43,7 @@ public class SettingPayPwdExc extends BaseCase{
 		//账户安全---点击支付密码
 		biz_accountSecurity.click_payPassword("设置支付密码");
 		//设置支付密码----设置支付密码
-		biz_setPayPassword.setPayPasswordExc(password,payPwd_error,payPassword,payPassword_second,"账号安全");
+		biz_setPayPassword.setPayPasswordExc(password,payPwd_error,payPassword,payPassword_second,"账号安全",mobile);
 		//点击返回
 		biz_common.click_backBtn();
 		biz_setting.click_logout("退出");
