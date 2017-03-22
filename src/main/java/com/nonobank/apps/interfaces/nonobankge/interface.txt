@@ -16,6 +16,6 @@
 16:generateKQMobileOrderNoByPurchaseFeaturedPlanTest:生成订单号---购买精选计划
 17:getPayGNumByPurchaseFeaturedPlanTest:快速支付---购买精选计划
 18:
-
+19：FinancePlanAdd：精选计划增加
 
 

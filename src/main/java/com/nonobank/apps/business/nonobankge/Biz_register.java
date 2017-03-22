@@ -82,6 +82,7 @@ public class Biz_register {
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();
+		page_register.sleep(2000);
 		//注册-数据库检查
 		RegisterCheck.verify_register(mobile);	
 		handleResult(expectMessage);
@@ -170,6 +171,7 @@ public class Biz_register {
 		page_register.click_passwordByLock();
 		page_register.sleep(1000);
 		page_register.click_register();
+		page_register.sleep(3000);
 		//注册-数据库检查
 		RegisterCheck.verify_register(mobile);	
 		handleResult(expectMessage);
