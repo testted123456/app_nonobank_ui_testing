@@ -11,6 +11,7 @@
 11:generateKQMobileOrderNoByRechargeTest:生成订单号-账号余额充值
 12:getPayGNumByRechargeTest:快速支付发送验证码--账号余额充值
 13:qucikDynPayTest:快速支付--账号余额充值
+
 14:getFinancePlanListByTypeTest:短期投资列表
 15:canBuyFinancePLanTest:能否购买精选计划
 16:generateKQMobileOrderNoByPurchaseFeaturedPlanTest:生成订单号---购买精选计划

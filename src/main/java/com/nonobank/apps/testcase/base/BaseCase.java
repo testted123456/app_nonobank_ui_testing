@@ -33,6 +33,7 @@ import com.nonobank.apps.appium.AppiumOperation;
 import com.nonobank.apps.driver.DriverFactory;
 import com.nonobank.apps.utils.file.ParseProperties;
 import com.nonobank.apps.utils.file.ParseXLSX;
+import com.nonobank.apps.utils.file.WriteExcel;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -56,7 +57,25 @@ public class BaseCase {
 	public static String errorMessage = "请配置错误信息";
 	public static int passCount = 0;
 	public static int failCount = 0;
+	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	private static File hasFile;
 
+	/**
+	 * @return the hasFile
+	 */
+	public static File getHasFile() {
+		return hasFile;
+	}
+
+	/**
+	 * @param hasFile
+	 *            the hasFile to set
+	 */
+	public static void setHasFile(File hasFile) {
+		BaseCase.hasFile = hasFile;
+	}
+	
 	public BaseCase() {
 		logger.info("[case]初始化类:" + this.getClass().getName());
 
@@ -162,6 +181,24 @@ public class BaseCase {
 		newLst.add(actualResult);
 		newLst.add(errorMessage);
 		lst.add(newLst);
+		
+		try {
+			String filepath = WriteExcel.class.getResource("/").getPath() + sdf.format(new Date()) + ".xls";
+			
+			for (int i = 0; i < 5000; i++) {
+				String[] str = { caseName,caseDescription,inputParams,actualResult,errorMessage};
+				boolean has = WriteExcel.filecheck(filepath);
+				// 如果存在
+				if (has)
+					WriteExcel.addExcel(getHasFile(), str);
+				else {
+					WriteExcel.write(str);
+				}
+			}
+		} catch (Exception e) {
+			
+			
+		}
 
 	}
 

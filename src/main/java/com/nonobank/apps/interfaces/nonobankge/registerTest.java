@@ -20,7 +20,7 @@ public class registerTest {
 	
 	public static String register(String smsCode,String phone,String smscodeSessionId){
 		HashMap<String, String> requestParams = new HashMap<String, String>();
-		requestParams.put("borrowtype", "学生");
+		requestParams.put("borrowtype", "理财");
 		requestParams.put("validatemobile", smsCode);
 		requestParams.put("password", "d051d170235c6682e334e6a5abd8ebdb");
 		requestParams.put("terminal","13");
